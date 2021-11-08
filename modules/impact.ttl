@@ -1,0 +1,44 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix riskos: <https://w3id.org/risky/riskos#> .
+@prefix : <https://w3id.org/risky/riskonto#> .
+
+##############################################################################
+
+: a owl:Ontology ;
+    rdfs:label "RiskOnto - Impact"@en .
+
+##############################################################################
+
+# Impact of Consequence
+:Impact a rdfs:Class, owl:Class ;
+    rdfs:label "Impact"@en ;
+    rdfs:comment "Indicates potential impact(s) arising from consequence(s)"@en ;
+    rdfs:subClassOf :Consequence .
+
+:ImpactMaterialising a rdfs:Class, owl:Class ;
+    rdfs:label "Impact Materialising"@en ;
+    rdfs:comment "The materialisation of a Consequence leading to its potential Impact(s)"@en ;
+    rdfs:subClassOf :Event .
+
+:materialisingConsequence a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "materialising consequence"@en ;
+    rdfs:comment "Indicates the materialising consenquence causing potential imapct(s)"@en ;
+    rdfs:domain :ImpactMaterialising ;
+    rdfs:range :Consequence .
+
+:potentialImpact a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "potential impact"@en ;
+    rdfs:comment "Indicates the potential impact arising from materialising consequence(s)"@en ;
+    rdfs:domain :ImpactMaterialising ;
+    rdfs:range :Impact .
+
+:effectOfImpact a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "effect of impact"@en ;
+    rdfs:comment "Indicates effects of impact and the affected things, stakeholders, or events"@en ;
+    rdfs:domain :Impact ;
+    rdfs:range rdfs:Resource .
+
+##############################################################################
