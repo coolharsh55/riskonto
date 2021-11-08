@@ -1,0 +1,261 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix riskos: <https://w3id.org/risky/riskos#> .
+@prefix : <https://w3id.org/risky/riskonto#> .
+
+#Event
+:Event a rdfs:Class, owl:Class ;
+    rdfs:label "Event"@en ;
+    rdfs:comment "An occurrence of a process, activity, or something that takes place"@en .
+
+:Likelihood a rdfs:Class, owl:Class ;
+    rdfs:label "Likelihood"@en ;
+    rdfs:comment "The likelihood of an event to occur, whether subjectively or objectively"@en .
+:Frequency a rdfs:Class, owl:Class ;
+    rdfs:label "Frequency"@en ;
+    rdfs:comment "The likelihood of an event to occur in terms of frequency per temporal period"@en .
+:Probability a rdfs:Class, owl:Class ;
+    rdfs:label "Probability"@en ;
+    rdfs:comment "The likelihood of an event to occur in terms of statistical value expressing its probability (e.g. between 0 and 1)"@en .
+
+:hasLikelihood a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has likelihood"@en ;
+    rdfs:comment "Indicates the likelihood of an event to occur"@en ;
+    rdfs:domain :Event ;
+    rdfs:range :Likelihood .
+:hasInherentLikelihood a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has inherent likelihood"@en ;
+    rdfs:comment "Indicates the inherent likelihood of an event to occur"@en ;
+    rdfs:domain :Event ;
+    rdfs:range :Likelihood ;
+    rdfs:subPropertyOf :hasLikelihood .
+:hasResidualLikelihood a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has residual likelihood"@en ;
+    rdfs:comment "Indicates the residual likelihood of an event to occur after some measure has been applied"@en ;
+    rdfs:domain :Event ;
+    rdfs:range :Likelihood ;
+    rdfs:subPropertyOf :hasLikelihood .
+
+:hasFrequency a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has frequency"@en ;
+    rdfs:comment "Indicates the frequency of an event per temporal period"@en ;
+    rdfs:domain :Likelihood ;
+    rdfs:range :Frequency .
+:hasInherentFrequency a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has inherent frequency"@en ;
+    rdfs:comment "Indicates the inherent frequency of an event per temporal period"@en ;
+    rdfs:domain :Likelihood ;
+    rdfs:range :Frequency ;
+    rdfs:subPropertyOf :hasFrequency .
+:hasResidualFrequency a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has residual frequency"@en ;
+    rdfs:comment "Indicates the residual frequency of an event per temporal period after some measure has been applied"@en ;
+    rdfs:domain :Likelihood ;
+    rdfs:range :Frequency ;
+    rdfs:subPropertyOf :hasFrequency .
+:hasFrequencyValue a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has frequency value"@en ;
+    rdfs:label "Indicates the numerical value for frequency in terms of number of occurrences"@en ;
+    rdfs:domain :Frequency .
+:hasFrequencyPeriod a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has frequency period"@en ;
+    rdfs:label "Indicates the temporal period for expressing frequency"@en ;
+    rdfs:domain :Frequency .
+
+:hasProbability a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has probability"@en ;
+    rdfs:comment "Indicates the probability of an event to occur"@en ;
+    rdfs:domain :Likelihood ;
+    rdfs:range :Probability .
+:hasInherentProbability a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has inherent probability"@en ;
+    rdfs:comment "Indicates the inherent probability of an event to occur"@en ;
+    rdfs:domain :Likelihood ;
+    rdfs:range :Probability ;
+    rdfs:subPropertyOf :hasProbability .
+:hasResidualProbability a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has residual probability"@en ;
+    rdfs:comment "Indicates the residual probability of an event to occur after some measure has been applied"@en ;
+    rdfs:domain :Likelihood ;
+    rdfs:range :Probability ;
+    rdfs:subPropertyOf :hasProbability .
+:hasProbabilityValue a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has probability value"@en ;
+    rdfs:comment "Indicates the statistical value for probability for an event to occur"@en ;
+    rdfs:domain :Probability .
+
+# Risk
+:Risk a rdfs:Class, owl:Class ;
+    rdfs:label "Risk"@en ;
+    rdfs:subClassOf :Event .
+
+# Source of Risk
+:Source a rdfs:Class, owl:Class ;
+    rdfs:label "Source"@en ;
+    rdfs:comment "Indicates the source of risk i.e. the risk exists because of the source"@en .
+
+:hasRisk a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has risk"@en ;
+    rdfs:comment "Indicates a source has a risk associated with it"@en ;
+    rdfs:domain :Source ;
+    rdfs:range :Risk ;
+    owl:inverseOf :hasSource .
+
+:hasSource a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has source"@en ;
+    rdfs:comment "Indicates a risk has a source associated with it"@en ;
+    rdfs:domain :Risk ;
+    rdfs:range :Source ;
+    owl:inverseOf :isSourceForRisk .
+
+# ToDo: vulnerability
+# source has vulnerability to cause
+# safeguard is a measure against vulnerability
+# source-cause relation
+#:hasVulnerability a rdf:Property, owl:ObjectProperty ;
+#    rdfs:label "has vulnerability"@en ;
+#    rdfs:comment "Indicates vulnerability of a risk source to a cause or threat that leads to risk materialising"@en ;
+#    rdfs:domain :Source ;
+#    rdfs:range :Cause .
+#
+# a rdf:Property, owl:ObjectProperty ;
+#    rdfs:label "exploits vulnerability"
+
+# Cause of Risk
+:Cause a rdfs:Class, owl:Class ;
+    rdfs:label "Cause"@en ;
+    rdfs:comment "Indicates a cause or threat that has the potential to materialise associated risk(s)"@en ;
+    rdfs:subClassOf :Event .
+
+:Relation a rdfs:Class, owl:Class ;
+    rdfs:label "Relation"@en ;
+    rdfs:comment "Category of classes related to expressing information about relations between concepts"@en .
+
+:RiskCauseRelation a rdfs:Class, owl:Class ;
+    rdfs:label "Risk-Cause Relation" ;
+    rdfs:comment "Associates a Cause with its potential Risk(s)"@en ;
+    rdfs:subClassOf :Relation .
+
+:relatedCause a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "related cause"@en ;
+    rdfs:comment "Indicates a cause that has potential to materialise associated risk(s)"@en ;
+    rdfs:domain :RiskCauseRelation ;
+    rdfs:range :Cause ;
+    owl:inverseOf :relatesToPotentialRisk .
+
+:relatedPotentialRisk a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "related potential risk"@en ;
+    rdfs:comment "Indicates potential risk that may materialise from associated cause(s)"@en ;
+    rdfs:domain :RiskCauseRelation ;
+    rdfs:range :Risk ;
+    owl:inverseOf :relatesToCause .
+
+# Consequence of Risk
+:Consequence a rdfs:Class, owl:Class ;
+    rdfs:label "Consequence"@en ;
+    rdfs:comment "Indicates a potential consequence materialising from risk(s)"@en ;
+    rdfs:subClassOf :Event .
+
+:RiskConsequenceRelation a rdfs:Class, owl:Class ;
+    rdfs:label "Risk-Consequence Relation" ;
+    rdfs:comment "Associates a Risk with its potential Consequence(s)"@en ;
+    rdfs:subClassOf :Relation .
+
+:relatedConsequence a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "related consequence"@en ;
+    rdfs:comment "Indicates a potential consequence materialising from associated risk(s)"@en ;
+    rdfs:domain :RiskConsequenceRelation ;
+    rdfs:range :Consequence ;
+    owl:inverseOf :relatedMaterialisingRisk .
+
+:relatedMaterialisingRisk a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "related materialising risk"@en ;
+    rdfs:comment "Indicates risk materialising associated consequence(s)"@en ;
+    rdfs:domain :RiskConsequenceRelation ;
+    rdfs:range :Risk ;
+    owl:inverseOf :relatedConsequence .
+
+# Impact of Consequence
+:Impact a rdfs:Class, owl:Class ;
+    rdfs:label "Impact"@en ;
+    rdfs:comment "Indicates potential impact(s) arising from consequence(s)"@en ;
+    rdfs:subClassOf :Consequence .
+
+:isImpactOfConsequence a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "is impact of consequence"@en ;
+    rdfs:comment "Indicates the consenquence(s) causing this imapct"@en ;
+    rdfs:domain :Impact ;
+    rdfs:range :Consequence ;
+    owl:inverseOf :causesPotentialImpact .
+
+:causesPotentialImpact a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "causes potential impact"@en ;
+    rdfs:comment "Indicates the potential impact(s) arising from this consequence"@en ;
+    rdfs:domain :Consequence ;
+    rdfs:range :Impact ;
+    owl:inverseOf :isImpactOfConsequence .
+
+:effectOfImpact a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "effect of impact"@en ;
+    rdfs:comment "Indicates effects of impact and the affected things, stakeholders, or events"@en ;
+    rdfs:domain :Impact .
+
+# Measures
+:Measure a rdfs:Class, owl:Class ;
+    rdfs:label "Measure"@en ;
+    rdfs:comment "A measure is intended to change, modifiy, or remove the probability, likelihood, or severity of an event"@en .
+
+:ControlMeasure a rdfs:Class, owl:Class ;
+    rdfs:label "Control Measure"@en ;
+    rdfs:comment "A control is a measure intended to reduce the probability, likelihood, or severity of a cause with potential for risk"@en ;
+    rdfs:subClassOf :Measure .
+
+:MitigationMeasure a rdfs:Class, owl:Class ;
+    rdfs:label "Mitigation Measure"@en ;
+    rdfs:comment "A mitigation is a measure intended to reduce the probability, likelihood, or severity of a potential consequence resulting from risk"@en ;
+    rdfs:subClassOf :Measure .
+
+:MeasureChangeRelation a rdfs:Class, owl:Class ;
+    rdfs:label "Measure-Change Relation"@en ;
+    rdfs:comment "Associates a Measure with attributes it changes"@en ;
+    rdfs:subClassOf :Relation .
+
+:hasInherentCondition a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has inherent condition"@en ;
+    rdfs:comment "Indicates the inherent or pre-measure condition impacted by the measure"@en ;
+    rdfs:domain :MeasureChangeRelation .
+
+:hasResidualCondition a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has residual condition"@en ;
+    rdfs:comment "Indicates the residual or post-measure condition impacted by the measure"@en ;
+    rdfs:domain :MeasureChangeRelation .
+
+:hasControl a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has control"@en ;
+    rdfs:comment "Indicates use of control measure in Risk-Cause relationship"@en ;
+    rdfs:domain :RiskCauseRelation ;
+    rdfs:range :ControlMeasure ;
+    owl:inverseOf :controlsRiskCause .
+
+:controlsRiskCause a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "controls risk cause"@en ;
+    rdfs:comment "Indicates the risk-cause relationship affected by this control"@en ;
+    rdfs:domain :ControlMeasure ;
+    rdfs:range :RiskCauseRelation ;
+    owl:inverseOf :hasControl .
+
+:hasMitigation a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has mitigation"@en ;
+    rdfs:comment "Indicates use of mitigation measure in a Risk-Consequence relationship"@en ;
+    rdfs:domain :RiskConsequenceRelation ;
+    rdfs:range :MitigationMeasure ;
+    owl:inverseOf :mitigatesRiskConsequence .
+
+:mitigatesRiskConsequence a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "mitigates risk consequence"@en ;
+    rdfs:comment "Indicates the Risk-Consequence relationship affected by this mitigation"@en ;
+    rdfs:domain :MitigationMeasure ;
+    rdfs:range :RiskConsequenceRelation ;
+    owl:inverseOf :hasMitigation .
