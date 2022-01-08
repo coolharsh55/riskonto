@@ -1,220 +1,199 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <https://w3id.org/risky/riskonto#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix riskos: <https://w3id.org/risky/riskos#> .
-@prefix : <https://w3id.org/risky/riskonto#> .
+@base <https://w3id.org/risky/riskonto#> .
 
-##############################################################################
+<https://w3id.org/risky/riskonto#> rdf:type owl:Ontology ;
+                                    rdfs:label "RiskOnto"@en .
 
-: a owl:Ontology ;
-    rdfs:label "RiskOnto"@en .
+#################################################################
+#    Object Properties
+#################################################################
 
-##############################################################################
+###  https://w3id.org/risky/riskonto#hasCause
+:hasCause rdf:type owl:ObjectProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :ControlCause
+                                      :Risk
+                                    )
+                      ] ;
+          rdfs:range :Cause .
 
-# Risk
-:Risk a rdfs:Class, owl:Class ;
-    rdfs:label "Risk"@en ;
-    rdfs:subClassOf :Event .
 
-# Source of Risk
-:Source a rdfs:Class, owl:Class ;
-    rdfs:label "Source"@en ;
-    rdfs:comment "Indicates the source of risk i.e. the risk exists because of the source"@en .
+###  https://w3id.org/risky/riskonto#hasConsequence
+:hasConsequence rdf:type owl:ObjectProperty ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :ControlConsequence
+                                            :ControlImpact
+                                            :Impact
+                                            :Risk
+                                          )
+                            ] ;
+                rdfs:range :Risk .
 
-:hasRisk a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "has risk"@en ;
-    rdfs:comment "Indicates a source has a risk associated with it"@en ;
-    rdfs:domain :Source ;
-    rdfs:range :Risk ;
-    owl:inverseOf :hasSource .
 
-:hasSource a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "has source"@en ;
-    rdfs:comment "Indicates a risk has a source associated with it"@en ;
-    rdfs:domain :Risk ;
-    rdfs:range :Source ;
-    owl:inverseOf :isSourceForRisk .
+###  https://w3id.org/risky/riskonto#hasControl
+:hasControl rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasPart ;
+            owl:inverseOf :isControlOfSystem ;
+            rdfs:domain :System ;
+            rdfs:range :Control ;
+            rdfs:comment "Indicates use of control measure to prevent or reduce risk materialising"@en ;
+            rdfs:label "has control"@en .
 
-##############################################################################
 
-# Measures
-:Measure a rdfs:Class, owl:Class ;
-    rdfs:label "Measure"@en ;
-    rdfs:comment "A measure is intended to change, modifiy, or remove the probability, likelihood, or severity of an event"@en .
+###  https://w3id.org/risky/riskonto#hasImpact
+:hasImpact rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Consequence
+                                       :ControlImpact
+                                     )
+                       ] ;
+           rdfs:range :Impact .
 
-:ControlMeasure a rdfs:Class, owl:Class ;
-    rdfs:label "Control Measure"@en ;
-    rdfs:comment "A control is a measure intended to reduce the probability, likelihood, or severity of a cause with potential for risk"@en ;
-    rdfs:subClassOf :Measure .
 
-:MitigationMeasure a rdfs:Class, owl:Class ;
-    rdfs:label "Mitigation Measure"@en ;
-    rdfs:comment "A mitigation is a measure intended to reduce the probability, likelihood, or severity of a potential consequence resulting from risk"@en ;
-    rdfs:subClassOf :Measure .
+###  https://w3id.org/risky/riskonto#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isPartOf .
 
-:Safeguard a rdfs:Class, owl:Class ;
-    rdfs:label "Safegard"@en ;
-    rdfs:comment "A safeguard is a measure for reducing the vulnerability and/or its exploitation"@en ;
-    rdfs:subClassOf :Measure .
 
-##############################################################################
+###  https://w3id.org/risky/riskonto#hasRisk
+:hasRisk rdf:type owl:ObjectProperty ;
+         rdfs:domain [ rdf:type owl:Class ;
+                       owl:unionOf ( :Cause
+                                     :Consequence
+                                     :ControlCause
+                                     :ControlConsequence
+                                     :ControlSource
+                                     :Source
+                                   )
+                     ] ;
+         rdfs:range :Risk ;
+         rdfs:comment "Indicates a source has a risk associated with it"@en ;
+         rdfs:label "has risk"@en .
 
-# Cause of Risk
-:Cause a rdfs:Class, owl:Class ;
-    rdfs:label "Cause"@en ;
-    rdfs:comment "Indicates a cause or threat that has the potential to materialise associated risk(s)"@en ;
-    rdfs:subClassOf :Event .
 
-:RiskMaterialising a rdfs:Class, owl:Class ;
-    rdfs:label "Risk Materialising"@en ;
-    rdfs:comment "The materialisation of a Cause leading to its potential Risk(s)"@en ;
-    rdfs:subClassOf :Event .
+###  https://w3id.org/risky/riskonto#hasSource
+:hasSource rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :ControlSource
+                                       :Risk
+                                     )
+                       ] ;
+           rdfs:range :Source ;
+           rdfs:comment "Indicates a risk has a source associated with it"@en ;
+           rdfs:label "has source"@en .
 
-:materialisingCause a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "materialising cause"@en ;
-    rdfs:comment "Indicates cause of materialisation of associated risk(s)"@en ;
-    rdfs:domain :RiskMaterialising ;
-    rdfs:range :Cause .
 
-:potentialRisk a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "potential risk"@en ;
-    rdfs:comment "Indicates potential risk that may materialise from associated cause(s)"@en ;
-    rdfs:domain :RiskMaterialising ;
-    rdfs:range :Risk .
+###  https://w3id.org/risky/riskonto#isControlOfSystem
+:isControlOfSystem rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :isPartOf ;
+                   rdfs:domain :Control ;
+                   rdfs:range :System .
 
-:hasControl a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "has control"@en ;
-    rdfs:comment "Indicates use of control measure to prevent or reduce risk materialising"@en ;
-    rdfs:domain :RiskMaterialising ;
-    rdfs:range :ControlMeasure ;
-    owl:inverseOf :isControlForRisk .
 
-:isControlForRisk a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "is control for risk"@en ;
-    rdfs:comment "Indicates the materialising of risk this control affects"@en ;
-    rdfs:domain :ControlMeasure ;
-    rdfs:range :RiskMaterialising ;
-    owl:inverseOf :hasControl .
+###  https://w3id.org/risky/riskonto#isPartOf
+:isPartOf rdf:type owl:ObjectProperty .
 
-##############################################################################
 
-# Consequence of Risk
-:Consequence a rdfs:Class, owl:Class ;
-    rdfs:label "Consequence"@en ;
-    rdfs:comment "Indicates a potential consequence materialising from risk(s)"@en ;
-    rdfs:subClassOf :Event .
+#################################################################
+#    Classes
+#################################################################
 
-:ConsequenceMaterialising a rdfs:Class, owl:Class ;
-    rdfs:label "Consequence Materialising"@en ;
-    rdfs:comment "The materialisation of a Risk leading to its potential Consequence(s)"@en ;
-    rdfs:subClassOf :Event .
+###  https://w3id.org/risky/riskonto#Cause
+:Cause rdf:type owl:Class ;
+       rdfs:subClassOf :Event ;
+       rdfs:comment "Indicates a cause or threat that has the potential to materialise associated risk(s)"@en ;
+       rdfs:label "Cause"@en .
 
-:materialisingRisk a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "materialising risk"@en ;
-    rdfs:comment "Indicates materialising risk leading to potential consequence(s)"@en ;
-    rdfs:domain :ConsequenceMaterialising ;
-    rdfs:range :Risk .
 
-:potentialConsequence a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "potentialConsequence"@en ;
-    rdfs:comment "Indicates potential consequence arising from risk materialising"@en ;
-    rdfs:domain :ConsequenceMaterialising ;
-    rdfs:range :Consequence .
+###  https://w3id.org/risky/riskonto#Consequence
+:Consequence rdf:type owl:Class ;
+             rdfs:subClassOf :Event ;
+             rdfs:comment "Indicates a potential consequence materialising from risk(s)"@en ;
+             rdfs:label "Consequence"@en .
 
-:hasMitigation a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "has mitigation"@en ;
-    rdfs:comment "Indicates use of mitigation measure in a Risk-Consequence relationship"@en ;
-    rdfs:domain :ConsequenceMaterialising ;
-    rdfs:range :MitigationMeasure ;
-    owl:inverseOf :isMitigationForConsequenceMaterialising .
 
-:mitigatesConsequence a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "mitigates consequence"@en ;
-    rdfs:comment "Indicates the materialisation of consequence this mitigation affects"@en ;
-    rdfs:domain :MitigationMeasure ;
-    rdfs:range :ConsequenceMaterialising ;
-    owl:inverseOf :hasMitigation .
+###  https://w3id.org/risky/riskonto#Control
+:Control rdf:type owl:Class ;
+         rdfs:comment "A control is intended to change, modifiy, or remove the probability, likelihood, or severity of an event"@en ;
+         rdfs:label "Control"@en .
 
-##############################################################################
 
-# Impact of Consequence
-:Impact a rdfs:Class, owl:Class ;
-    rdfs:label "Impact"@en ;
-    rdfs:comment "Indicates potential impact(s) arising from consequence(s)"@en ;
-    rdfs:subClassOf :Consequence .
+###  https://w3id.org/risky/riskonto#ControlCause
+:ControlCause rdf:type owl:Class ;
+              rdfs:subClassOf :Control ;
+              rdfs:comment "A control applied to the risk cause to reduce the probability, likelihood, or severity of a potential risk materialising"@en ;
+              rdfs:label "Control Cause"@en .
 
-:ImpactMaterialising a rdfs:Class, owl:Class ;
-    rdfs:label "Impact Materialising"@en ;
-    rdfs:comment "The materialisation of a Consequence leading to its potential Impact(s)"@en ;
-    rdfs:subClassOf :Event .
 
-:materialisingConsequence a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "materialising consequence"@en ;
-    rdfs:comment "Indicates the materialising consenquence causing potential imapct(s)"@en ;
-    rdfs:domain :ImpactMaterialising ;
-    rdfs:range :Consequence .
+###  https://w3id.org/risky/riskonto#ControlConsequence
+:ControlConsequence rdf:type owl:Class ;
+                    rdfs:subClassOf :Control ;
+                    rdfs:comment "A control applied to reduce the probability, likelihood, or severity of a potential risk consequence"@en ;
+                    rdfs:label "Control Consequence"@en .
 
-:potentialImpact a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "potential impact"@en ;
-    rdfs:comment "Indicates the potential impact arising from materialising consequence(s)"@en ;
-    rdfs:domain :ImpactMaterialising ;
-    rdfs:range :Impact .
 
-:effectOfImpact a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "effect of impact"@en ;
-    rdfs:comment "Indicates effects of impact and the affected things, stakeholders, or events"@en ;
-    rdfs:domain :Impact ;
-    rdfs:range rdfs:Resource .
+###  https://w3id.org/risky/riskonto#ControlImpact
+:ControlImpact rdf:type owl:Class ;
+               rdfs:subClassOf :Control ;
+               rdfs:comment "A control applied to reduce the probability, likelihood, or severity of a potential consequence's impact"@en ;
+               rdfs:label "Control Impact"@en .
 
-##############################################################################
 
-# Vulnerability
-:Vulnerability a rdfs:Class, owl:Class ;
-    rdfs:label "Vulnerability"@en ;
-    rdfs:comment "Vulnerability of a Source that can potentially be exploited by threats and/or become a source of risk"@en ;
-    rdfs:subClassOf :Event .
+###  https://w3id.org/risky/riskonto#ControlSource
+:ControlSource rdf:type owl:Class ;
+               rdfs:subClassOf :Control ;
+               rdfs:comment "A control applied to the risk source to reduce the possibility, likelihood, or severity of risk" ;
+               rdfs:label "Control Source"@en .
 
-:hasVulnerability a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "has vulnerability"@en ;
-    rdfs:comment "Indicates the risk source has specified vulnerability"@en ;
-    rdfs:domain :Source ;
-    rdfs:range :Vulnerability ;
-    owl:inverseOf :isVulnerabilityOfSource .
 
-:isVulnerabilityOfSource a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "is vulnerability of source"@en ;
-    rdfs:comment "Indicates the related risk source that has specified vulnerability"@en ;
-    rdfs:domain :Vulnerability ;
-    rdfs:range :Source ;
-    owl:inverseOf :hasVulnerability .
+###  https://w3id.org/risky/riskonto#Event
+:Event rdf:type owl:Class .
 
-:exploitsVulnerability a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "exploits vulnerability"@en ;
-    rdfs:comment "Indicates a cause exploits specified vulnerabilities"@en ;
-    rdfs:domain :Cause ;
-    rdfs:range :Vulnerability ;
-    owl:inverseOf :isExploitedIn .
 
-:isExploitedForCause a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "is exploited for cause"@en ;
-    rdfs:comment "Indicates vulnerability is exploired in specified cause(s)"@en ;
-    rdfs:domain :Vulnerability ;
-    rdfs:range :Cause ;
-    owl:inverseOf :exploitsVulnerability .
+###  https://w3id.org/risky/riskonto#Impact
+:Impact rdf:type owl:Class ;
+        rdfs:subClassOf :Consequence ;
+        rdfs:comment "Indicates potential impact(s) arising from consequence(s)"@en ;
+        rdfs:label "Impact"@en .
 
-:hasSafeguard a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "has safeguard"@en ;
-    rdfs:comment "Indiciates applicability or existence of safeguard for vulnerability"@en ;
-    rdfs:domain :Vulnerability ;
-    rdfs:range :Safeguard ;
-    owl:inverseOf :safeguardsAgainstVulnerability .
 
-:safeguardsAgainstVulnerability a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "safeguards against vulnerability"@en ;
-    rdfs:comment "Indiciates applicability of safeguard for specified vulnerability"@en ;
-    rdfs:domain :Safeguard ;
-    rdfs:range :Vulnerability ;
-    owl:inverseOf :hasSafeguard .
+###  https://w3id.org/risky/riskonto#PartialControl
+:PartialControl rdf:type owl:Class ;
+                rdfs:subClassOf [ owl:intersectionOf ( :Control
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :isPartOf ;
+                                                         owl:someValuesFrom :Control
+                                                       ]
+                                                     ) ;
+                                  rdf:type owl:Class
+                                ] ;
+                rdfs:comment "A component or part of a larger control distinguished by its application"@en ;
+                rdfs:label "Partial Control"@en .
 
-##############################################################################
+
+###  https://w3id.org/risky/riskonto#Risk
+:Risk rdf:type owl:Class ;
+      rdfs:subClassOf :Event ;
+      rdfs:label "Risk"@en .
+
+
+###  https://w3id.org/risky/riskonto#Source
+:Source rdf:type owl:Class ;
+        rdfs:comment "Indicates the source of risk i.e. the risk exists because of the source"@en ;
+        rdfs:label "Source"@en .
+
+
+###  https://w3id.org/risky/riskonto#System
+:System rdf:type owl:Class ;
+        rdfs:comment "A system representing the operational and organisational processes relevant to risk and its sources, causes, consequences, and impacts"@en ;
+        rdfs:label "System"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
