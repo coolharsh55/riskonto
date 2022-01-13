@@ -6,14 +6,38 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix riskos: <https://w3id.org/risky/riskos#> .
-@base <https://w3id.org/risky/riskonto#> .
+@base <https://w3id.org/risky/riskonto> .
 
-<https://w3id.org/risky/riskonto#> rdf:type owl:Ontology ;
-                                    rdfs:label "RiskOnto"@en .
+<https://w3id.org/risky/riskonto> rdf:type owl:Ontology ;
+                                   rdfs:label "RiskOnto"@en .
 
 #################################################################
 #    Object Properties
 #################################################################
+
+###  https://w3id.org/risky/riskonto#detectsEvent
+:detectsEvent rdf:type owl:ObjectProperty ;
+              rdfs:domain :Control ;
+              rdfs:range :Event .
+
+
+###  https://w3id.org/risky/riskonto#eliminatesEvent
+:eliminatesEvent rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Control ;
+                 rdfs:range :NullifiedEvent .
+
+
+###  https://w3id.org/risky/riskonto#hasAgent
+:hasAgent rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isAgentFor ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Control
+                                      :Event
+                                      :System
+                                    )
+                      ] ;
+          rdfs:range :Agent .
+
 
 ###  https://w3id.org/risky/riskonto#hasCause
 :hasCause rdf:type owl:ObjectProperty ;
@@ -47,6 +71,18 @@
             rdfs:label "has control"@en .
 
 
+###  https://w3id.org/risky/riskonto#hasFrequencyOfOccurence
+:hasFrequencyOfOccurence rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Event ;
+                         rdfs:range :Occurence .
+
+
+###  https://w3id.org/risky/riskonto#hasFrequencyOverPeriod
+:hasFrequencyOverPeriod rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Event ;
+                        rdfs:range :Period .
+
+
 ###  https://w3id.org/risky/riskonto#hasImpact
 :hasImpact rdf:type owl:ObjectProperty ;
            rdfs:domain [ rdf:type owl:Class ;
@@ -57,9 +93,21 @@
            rdfs:range :Impact .
 
 
+###  https://w3id.org/risky/riskonto#hasLikelihood
+:hasLikelihood rdf:type owl:ObjectProperty ;
+               rdfs:domain :Event ;
+               rdfs:range :Occurence .
+
+
 ###  https://w3id.org/risky/riskonto#hasPart
 :hasPart rdf:type owl:ObjectProperty ;
          owl:inverseOf :isPartOf .
+
+
+###  https://w3id.org/risky/riskonto#hasProbability
+:hasProbability rdf:type owl:ObjectProperty ;
+                rdfs:domain :Event ;
+                rdfs:range :Occurence .
 
 
 ###  https://w3id.org/risky/riskonto#hasRisk
@@ -78,6 +126,12 @@
          rdfs:label "has risk"@en .
 
 
+###  https://w3id.org/risky/riskonto#hasSeverity
+:hasSeverity rdf:type owl:ObjectProperty ;
+             rdfs:domain :Event ;
+             rdfs:range :Scale .
+
+
 ###  https://w3id.org/risky/riskonto#hasSource
 :hasSource rdf:type owl:ObjectProperty ;
            rdfs:domain [ rdf:type owl:Class ;
@@ -90,6 +144,17 @@
            rdfs:label "has source"@en .
 
 
+###  https://w3id.org/risky/riskonto#isAgentFor
+:isAgentFor rdf:type owl:ObjectProperty ;
+            rdfs:domain :Agent ;
+            rdfs:range [ rdf:type owl:Class ;
+                         owl:unionOf ( :Control
+                                       :Event
+                                       :System
+                                     )
+                       ] .
+
+
 ###  https://w3id.org/risky/riskonto#isControlOfSystem
 :isControlOfSystem rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf :isPartOf ;
@@ -97,13 +162,48 @@
                    rdfs:range :System .
 
 
+###  https://w3id.org/risky/riskonto#isModifiedAs
+:isModifiedAs rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isModifiedFrom ;
+              rdfs:domain :Event ;
+              rdfs:range :Event .
+
+
+###  https://w3id.org/risky/riskonto#isModifiedFrom
+:isModifiedFrom rdf:type owl:ObjectProperty ;
+                rdfs:domain :Event ;
+                rdfs:range :Event .
+
+
 ###  https://w3id.org/risky/riskonto#isPartOf
 :isPartOf rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/risky/riskonto#modifiesEvent
+:modifiesEvent rdf:type owl:ObjectProperty ;
+               rdfs:domain :Control ;
+               rdfs:range :ResidualEvent .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/risky/riskonto#hadPriorValue
+:hadPriorValue rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/risky/riskonto#hasValue
+:hasValue rdf:type owl:DatatypeProperty .
 
 
 #################################################################
 #    Classes
 #################################################################
+
+###  https://w3id.org/risky/riskonto#Agent
+:Agent rdf:type owl:Class .
+
 
 ###  https://w3id.org/risky/riskonto#Cause
 :Cause rdf:type owl:Class ;
@@ -127,7 +227,11 @@
 
 ###  https://w3id.org/risky/riskonto#ControlCause
 :ControlCause rdf:type owl:Class ;
-              rdfs:subClassOf :Control ;
+              rdfs:subClassOf :Control ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasCause ;
+                                owl:someValuesFrom :Cause
+                              ] ;
               rdfs:comment "A control applied to the risk cause to reduce the probability, likelihood, or severity of a potential risk materialising"@en ;
               rdfs:label "Control Cause"@en .
 
@@ -160,22 +264,67 @@
 ###  https://w3id.org/risky/riskonto#Impact
 :Impact rdf:type owl:Class ;
         rdfs:subClassOf :Consequence ;
-        rdfs:comment "Indicates potential impact(s) arising from consequence(s)"@en ;
+        rdfs:comment "Indicates impact(s) arising from consequence(s)"@en ;
         rdfs:label "Impact"@en .
+
+
+###  https://w3id.org/risky/riskonto#Indicator
+:Indicator rdf:type owl:Class .
+
+
+###  https://w3id.org/risky/riskonto#InitialEvent
+:InitialEvent rdf:type owl:Class ;
+              rdfs:subClassOf :Event .
+
+
+###  https://w3id.org/risky/riskonto#NullifiedEvent
+:NullifiedEvent rdf:type owl:Class ;
+                rdfs:subClassOf :Event ,
+                                [ rdf:type owl:Class ;
+                                  owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasFrequencyOfOccurence ;
+                                                  owl:hasValue :Never
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasLikelihood ;
+                                                  owl:hasValue :Never
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasProbability ;
+                                                  owl:hasValue :Never
+                                                ]
+                                              )
+                                ] .
+
+
+###  https://w3id.org/risky/riskonto#Occurence
+:Occurence rdf:type owl:Class ;
+           rdfs:subClassOf :Indicator .
 
 
 ###  https://w3id.org/risky/riskonto#PartialControl
 :PartialControl rdf:type owl:Class ;
-                rdfs:subClassOf [ owl:intersectionOf ( :Control
-                                                       [ rdf:type owl:Restriction ;
-                                                         owl:onProperty :isPartOf ;
-                                                         owl:someValuesFrom :Control
-                                                       ]
-                                                     ) ;
-                                  rdf:type owl:Class
-                                ] ;
+                owl:equivalentClass [ owl:intersectionOf ( :Control
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :isPartOf ;
+                                                             owl:someValuesFrom :Control
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :Control ;
                 rdfs:comment "A component or part of a larger control distinguished by its application"@en ;
                 rdfs:label "Partial Control"@en .
+
+
+###  https://w3id.org/risky/riskonto#Period
+:Period rdf:type owl:Class ;
+        rdfs:subClassOf :Indicator .
+
+
+###  https://w3id.org/risky/riskonto#ResidualEvent
+:ResidualEvent rdf:type owl:Class ;
+               rdfs:subClassOf :Event .
 
 
 ###  https://w3id.org/risky/riskonto#Risk
@@ -184,8 +333,14 @@
       rdfs:label "Risk"@en .
 
 
+###  https://w3id.org/risky/riskonto#Scale
+:Scale rdf:type owl:Class ;
+       rdfs:subClassOf :Indicator .
+
+
 ###  https://w3id.org/risky/riskonto#Source
 :Source rdf:type owl:Class ;
+        rdfs:subClassOf :System ;
         rdfs:comment "Indicates the source of risk i.e. the risk exists because of the source"@en ;
         rdfs:label "Source"@en .
 
@@ -194,6 +349,142 @@
 :System rdf:type owl:Class ;
         rdfs:comment "A system representing the operational and organisational processes relevant to risk and its sources, causes, consequences, and impacts"@en ;
         rdfs:label "System"@en .
+
+
+###  https://w3id.org/risky/riskonto#SystemMaintainer
+:SystemMaintainer rdf:type owl:Class ;
+                  rdfs:subClassOf :Agent .
+
+
+###  https://w3id.org/risky/riskonto#SystemUser
+:SystemUser rdf:type owl:Class ;
+            rdfs:subClassOf :Agent .
+
+
+###  https://w3id.org/risky/riskonto#ThreatActor
+:ThreatActor rdf:type owl:Class ;
+             rdfs:subClassOf :Agent .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/risky/riskonto#Certain
+:Certain rdf:type owl:NamedIndividual ,
+                  :Occurence ;
+         :hasValue 1.0 .
+
+
+###  https://w3id.org/risky/riskonto#Day
+:Day rdf:type owl:NamedIndividual ,
+              :Period .
+
+
+###  https://w3id.org/risky/riskonto#Decade
+:Decade rdf:type owl:NamedIndividual ,
+                 :Period .
+
+
+###  https://w3id.org/risky/riskonto#ExtremelyHigh
+:ExtremelyHigh rdf:type owl:NamedIndividual ,
+                        :Scale ;
+               :hasValue 0.9 .
+
+
+###  https://w3id.org/risky/riskonto#ExtremelyLow
+:ExtremelyLow rdf:type owl:NamedIndividual ,
+                       :Scale ;
+              :hasValue 0.1 .
+
+
+###  https://w3id.org/risky/riskonto#ExtremelyRare
+:ExtremelyRare rdf:type owl:NamedIndividual ,
+                        :Occurence ;
+               :hasValue 0.05 .
+
+
+###  https://w3id.org/risky/riskonto#Frequent
+:Frequent rdf:type owl:NamedIndividual ,
+                   :Occurence ;
+          :hasValue 0.75 .
+
+
+###  https://w3id.org/risky/riskonto#High
+:High rdf:type owl:NamedIndividual ,
+               :Scale ;
+      :hasValue 0.75 .
+
+
+###  https://w3id.org/risky/riskonto#Hour
+:Hour rdf:type owl:NamedIndividual ,
+               :Period .
+
+
+###  https://w3id.org/risky/riskonto#Likely
+:Likely rdf:type owl:NamedIndividual ,
+                 :Occurence ;
+        :hasValue 0.5 .
+
+
+###  https://w3id.org/risky/riskonto#Low
+:Low rdf:type owl:NamedIndividual ,
+              :Scale ;
+     :hasValue 0.25 .
+
+
+###  https://w3id.org/risky/riskonto#Lustrum
+:Lustrum rdf:type owl:NamedIndividual ,
+                  :Period .
+
+
+###  https://w3id.org/risky/riskonto#Moderate
+:Moderate rdf:type owl:NamedIndividual ,
+                   :Scale ;
+          :hasValue 0.5 .
+
+
+###  https://w3id.org/risky/riskonto#Month
+:Month rdf:type owl:NamedIndividual ,
+                :Period .
+
+
+###  https://w3id.org/risky/riskonto#Never
+:Never rdf:type owl:NamedIndividual ,
+                :Occurence ;
+       :hasValue 0.0 .
+
+
+###  https://w3id.org/risky/riskonto#Occasional
+:Occasional rdf:type owl:NamedIndividual ,
+                     :Occurence ;
+            :hasValue 0.25 .
+
+
+###  https://w3id.org/risky/riskonto#QuarterYear
+:QuarterYear rdf:type owl:NamedIndividual ,
+                      :Period .
+
+
+###  https://w3id.org/risky/riskonto#Rare
+:Rare rdf:type owl:NamedIndividual ,
+               :Occurence ;
+      :hasValue 0.1 .
+
+
+###  https://w3id.org/risky/riskonto#SemiYear
+:SemiYear rdf:type owl:NamedIndividual ,
+                   :Period .
+
+
+###  https://w3id.org/risky/riskonto#Week
+:Week rdf:type owl:NamedIndividual ,
+               :Period .
+
+
+###  https://w3id.org/risky/riskonto#Year
+:Year rdf:type owl:NamedIndividual ,
+               :Period .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
