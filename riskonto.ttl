@@ -5,11 +5,66 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix riskos: <https://w3id.org/risky/riskos#> .
 @base <https://w3id.org/risky/riskonto> .
 
 <https://w3id.org/risky/riskonto> rdf:type owl:Ontology ;
-                                   rdfs:label "RiskOnto"@en .
+                                   <http://purl.org/dc/terms/created> "2022-01-15"^^xsd:anyURI ;
+                                   <http://purl.org/dc/terms/creator> <https://harshp.com/me#HJP> ;
+                                   <http://purl.org/dc/terms/description> "RiskOnto provides a concise ontology for representing concepts relevant for risks assessment."^^xsd:string ;
+                                   <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                   <http://purl.org/dc/terms/modified> "2022-01-13"^^xsd:date ;
+                                   <http://purl.org/dc/terms/publisher> "ADAPT Centre, Trinity College"^^xsd:string ;
+                                   <http://purl.org/dc/terms/title> "RiskOnto - A Concise Risk Ontology"@en ;
+                                   <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> ;
+                                   vann:preferredNamespacePrefix "risk"^^xsd:string ;
+                                   vann:preferredNamespaceUri "https://w3id.org/risky/riskonto"^^xsd:anyURI ;
+                                   owl:versionInfo "alpha-03"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -18,13 +73,17 @@
 ###  https://w3id.org/risky/riskonto#detectsEvent
 :detectsEvent rdf:type owl:ObjectProperty ;
               rdfs:domain :Control ;
-              rdfs:range :Event .
+              rdfs:range :Event ;
+              rdfs:comment "Indicates that the control detects occurence of specified event."@en ;
+              rdfs:label "detects event"@en .
 
 
 ###  https://w3id.org/risky/riskonto#eliminatesEvent
 :eliminatesEvent rdf:type owl:ObjectProperty ;
                  rdfs:domain :Control ;
-                 rdfs:range :NullifiedEvent .
+                 rdfs:range :NullifiedEvent ;
+                 rdfs:comment "Indicates that the control eliminates or nullifies or completely prevents occurence of specified event."@en ;
+                 rdfs:label "eliminates event"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasAgent
@@ -36,7 +95,9 @@
                                       :System
                                     )
                       ] ;
-          rdfs:range :Agent .
+          rdfs:range :Agent ;
+          rdfs:comment "Indicates the involvement or relevance of specified agent."@en ;
+          rdfs:label "has agent"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasCause
@@ -46,7 +107,9 @@
                                       :Risk
                                     )
                       ] ;
-          rdfs:range :Cause .
+          rdfs:range :Cause ;
+          rdfs:comment "Indicates the relevance of risk cause."@en ;
+          rdfs:label "has cause"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasConsequence
@@ -58,7 +121,9 @@
                                             :Risk
                                           )
                             ] ;
-                rdfs:range :Risk .
+                rdfs:range :Risk ;
+                rdfs:comment "Indicates the relevance of risk consequence."@en ;
+                rdfs:label "has consequence"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasControl
@@ -74,13 +139,17 @@
 ###  https://w3id.org/risky/riskonto#hasFrequencyOfOccurence
 :hasFrequencyOfOccurence rdf:type owl:ObjectProperty ;
                          rdfs:domain :Event ;
-                         rdfs:range :Occurence .
+                         rdfs:range :Occurence ;
+                         rdfs:comment "Indicates the frequency of an event in terms of occurences i.e. how frequently the event occurs e.g. occasionally or rarely."@en ;
+                         rdfs:label "has frequency of occurence"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasFrequencyOverPeriod
 :hasFrequencyOverPeriod rdf:type owl:ObjectProperty ;
                         rdfs:domain :Event ;
-                        rdfs:range :Period .
+                        rdfs:range :Period ;
+                        rdfs:comment "Indicates the frequency of an event in terms of temporal period i.e. over what period does the event occur e.g. annually or daily."@en ;
+                        rdfs:label "has frequency over period"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasImpact
@@ -90,24 +159,32 @@
                                        :ControlImpact
                                      )
                        ] ;
-           rdfs:range :Impact .
+           rdfs:range :Impact ;
+           rdfs:comment "Indicates relevance of impact arising from risk consequence."@en ;
+           rdfs:label "has impact"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasLikelihood
 :hasLikelihood rdf:type owl:ObjectProperty ;
                rdfs:domain :Event ;
-               rdfs:range :Occurence .
+               rdfs:range :Occurence ;
+               rdfs:comment "Indicates the likelihood of an event in terms of subjective or qualitative values e.g. rarely or certain."@en ;
+               rdfs:label "has likelihood"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasPart
 :hasPart rdf:type owl:ObjectProperty ;
-         owl:inverseOf :isPartOf .
+         owl:inverseOf :isPartOf ;
+         rdfs:comment "Indicates the specified thing (object) is part of this thing (subject)."@en ;
+         rdfs:label "has part"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasProbability
 :hasProbability rdf:type owl:ObjectProperty ;
                 rdfs:domain :Event ;
-                rdfs:range :Occurence .
+                rdfs:range :Occurence ;
+                rdfs:comment "Indicates the probability of an event in terms of statistical value i.e. what is the value between 0.0 (never) and 1.0 (certain) for occurence of an event. The value may be quantified to produce qualitative labels similar to likelihood e.g. rarely (0.1) or likely (0.5)."@en ;
+                rdfs:label "has probability"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasRisk
@@ -129,7 +206,9 @@
 ###  https://w3id.org/risky/riskonto#hasSeverity
 :hasSeverity rdf:type owl:ObjectProperty ;
              rdfs:domain :Event ;
-             rdfs:range :Scale .
+             rdfs:range :Scale ;
+             rdfs:comment "Indicates the severity of an event within some context e.g. severity of an impact. Severity can be associated with a quantified value as well as qualitative labels e.g. 0.9 indicating high severity and 0.1 indicating low or extremely low severity."@en ;
+             rdfs:label "has severity"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasSource
@@ -152,37 +231,49 @@
                                        :Event
                                        :System
                                      )
-                       ] .
+                       ] ;
+            rdfs:comment "Indicates the agent is relevant for specified context."@en ;
+            rdfs:label "is agent for"@en .
 
 
 ###  https://w3id.org/risky/riskonto#isControlOfSystem
 :isControlOfSystem rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf :isPartOf ;
                    rdfs:domain :Control ;
-                   rdfs:range :System .
+                   rdfs:range :System ;
+                   rdfs:comment "Indicates the Control is a part of the specified System."@en ;
+                   rdfs:label "is control of system"@en .
 
 
 ###  https://w3id.org/risky/riskonto#isModifiedAs
 :isModifiedAs rdf:type owl:ObjectProperty ;
               owl:inverseOf :isModifiedFrom ;
               rdfs:domain :Event ;
-              rdfs:range :Event .
+              rdfs:range :Event ;
+              rdfs:comment "Indicates the specified event is a modified form of this event e.g. change in likelihood due to use of control."@en ;
+              rdfs:label "is modified as"@en .
 
 
 ###  https://w3id.org/risky/riskonto#isModifiedFrom
 :isModifiedFrom rdf:type owl:ObjectProperty ;
                 rdfs:domain :Event ;
-                rdfs:range :Event .
+                rdfs:range :Event ;
+                rdfs:comment "Indicates this event is a modified form of the specified event e.g. change in likelihood."@en ;
+                rdfs:label "is modified from"@en .
 
 
 ###  https://w3id.org/risky/riskonto#isPartOf
-:isPartOf rdf:type owl:ObjectProperty .
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:comment "Indicates this thing (subject) is a part of the specified thing (object)."@en ;
+          rdfs:label "is part of"@en .
 
 
 ###  https://w3id.org/risky/riskonto#modifiesEvent
 :modifiesEvent rdf:type owl:ObjectProperty ;
                rdfs:domain :Control ;
-               rdfs:range :ResidualEvent .
+               rdfs:range :ResidualEvent ;
+               rdfs:comment "Indicates the Control modifies the specified Event."@en ;
+               rdfs:label "modifies event"@en .
 
 
 #################################################################
@@ -190,11 +281,15 @@
 #################################################################
 
 ###  https://w3id.org/risky/riskonto#hadPriorValue
-:hadPriorValue rdf:type owl:DatatypeProperty .
+:hadPriorValue rdf:type owl:DatatypeProperty ;
+               rdfs:comment "Specifies the prior or previous value before it was changed e.g. by a control."@en ;
+               rdfs:label "had prior value"@en .
 
 
 ###  https://w3id.org/risky/riskonto#hasValue
-:hasValue rdf:type owl:DatatypeProperty .
+:hasValue rdf:type owl:DatatypeProperty ;
+          rdfs:comment "Indicates a value associated with an object e.g. likelihood of an event expressed as a value between 0.0 and 0.1."@en ;
+          rdfs:label "has value"@en .
 
 
 #################################################################
@@ -202,7 +297,9 @@
 #################################################################
 
 ###  https://w3id.org/risky/riskonto#Agent
-:Agent rdf:type owl:Class .
+:Agent rdf:type owl:Class ;
+       rdfs:comment "An Agent associated with an Event or Control or System."@en ;
+       rdfs:label "Agent"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Cause
@@ -221,7 +318,7 @@
 
 ###  https://w3id.org/risky/riskonto#Control
 :Control rdf:type owl:Class ;
-         rdfs:comment "A control is intended to change, modifiy, or remove the probability, likelihood, or severity of an event"@en ;
+         rdfs:comment "A control is intended to detect, or to change, modifiy, or remove the probability, likelihood, or severity of an event"@en ;
          rdfs:label "Control"@en .
 
 
@@ -258,7 +355,9 @@
 
 
 ###  https://w3id.org/risky/riskonto#Event
-:Event rdf:type owl:Class .
+:Event rdf:type owl:Class ;
+       rdfs:comment "An event is an occurence or an activity that takes place."@en ;
+       rdfs:label "Event"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Impact
@@ -269,12 +368,16 @@
 
 
 ###  https://w3id.org/risky/riskonto#Indicator
-:Indicator rdf:type owl:Class .
+:Indicator rdf:type owl:Class ;
+           rdfs:comment "An indicator for expressing attributes associated with events, controls, and system components in relation to risk."@en ;
+           rdfs:label "Indicator"@en .
 
 
 ###  https://w3id.org/risky/riskonto#InitialEvent
 :InitialEvent rdf:type owl:Class ;
-              rdfs:subClassOf :Event .
+              rdfs:subClassOf :Event ;
+              rdfs:comment "An event that has not been modified or changed by any control."@en ;
+              rdfs:label "Initial Event"@en .
 
 
 ###  https://w3id.org/risky/riskonto#NullifiedEvent
@@ -294,12 +397,16 @@
                                                   owl:hasValue :Never
                                                 ]
                                               )
-                                ] .
+                                ] ;
+                rdfs:comment "An event that has been nullified or prevented completely by some control."@en ;
+                rdfs:label "Nullified Event"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Occurence
 :Occurence rdf:type owl:Class ;
-           rdfs:subClassOf :Indicator .
+           rdfs:subClassOf :Indicator ;
+           rdfs:comment "Occurence represents instances representing the likelihood of something e.g. an event to occur."@en ;
+           rdfs:label "Occurence"@en .
 
 
 ###  https://w3id.org/risky/riskonto#PartialControl
@@ -319,23 +426,30 @@
 
 ###  https://w3id.org/risky/riskonto#Period
 :Period rdf:type owl:Class ;
-        rdfs:subClassOf :Indicator .
+        rdfs:subClassOf :Indicator ;
+        rdfs:comment "Period represents instances representing the temporal period for something e.g. an event to occur."@en ;
+        rdfs:label "Period"@en .
 
 
 ###  https://w3id.org/risky/riskonto#ResidualEvent
 :ResidualEvent rdf:type owl:Class ;
-               rdfs:subClassOf :Event .
+               rdfs:subClassOf :Event ;
+               rdfs:comment "An event that has been modified or changed by a control such that it still has a chance to occur or take place."@en ;
+               rdfs:label "Residual Event"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Risk
 :Risk rdf:type owl:Class ;
       rdfs:subClassOf :Event ;
+      rdfs:comment "A 'risk' is an event representing the possibility of consequence and their impacts to occur based, which are usually considered to be negative or harmful."@en ;
       rdfs:label "Risk"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Scale
 :Scale rdf:type owl:Class ;
-       rdfs:subClassOf :Indicator .
+       rdfs:subClassOf :Indicator ;
+       rdfs:comment "Scale represents instances representing the chance or impact of something e.g. severity of an event to occur."@en ;
+       rdfs:label "Scale"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Source
@@ -353,17 +467,23 @@
 
 ###  https://w3id.org/risky/riskonto#SystemMaintainer
 :SystemMaintainer rdf:type owl:Class ;
-                  rdfs:subClassOf :Agent .
+                  rdfs:subClassOf :Agent ;
+                  rdfs:comment "A 'maintainer' of a system e.g. developer, manager, owner."@en ;
+                  rdfs:label "System Maintainer"@en .
 
 
 ###  https://w3id.org/risky/riskonto#SystemUser
 :SystemUser rdf:type owl:Class ;
-            rdfs:subClassOf :Agent .
+            rdfs:subClassOf :Agent ;
+            rdfs:comment "A 'user' of a system e.g. end user."@en ;
+            rdfs:label "System User"@en .
 
 
 ###  https://w3id.org/risky/riskonto#ThreatActor
 :ThreatActor rdf:type owl:Class ;
-             rdfs:subClassOf :Agent .
+             rdfs:subClassOf :Agent ;
+             rdfs:comment "An agent whose actions create a threat."@en ;
+             rdfs:label "Threat Actor"@en .
 
 
 #################################################################
@@ -373,118 +493,160 @@
 ###  https://w3id.org/risky/riskonto#Certain
 :Certain rdf:type owl:NamedIndividual ,
                   :Occurence ;
-         :hasValue 1.0 .
+         :hasValue 1.0 ;
+         rdfs:comment "A value representing certainty of occurence."@en ;
+         rdfs:label "Certain"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Day
 :Day rdf:type owl:NamedIndividual ,
-              :Period .
+              :Period ;
+     rdfs:comment "A value representing temporal period of a day."@en ;
+     rdfs:label "Day"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Decade
 :Decade rdf:type owl:NamedIndividual ,
-                 :Period .
+                 :Period ;
+        rdfs:comment "A value representing temporal period of a decade (10 years)."@en ;
+        rdfs:label "Decade"@en .
 
 
 ###  https://w3id.org/risky/riskonto#ExtremelyHigh
 :ExtremelyHigh rdf:type owl:NamedIndividual ,
                         :Scale ;
-               :hasValue 0.9 .
+               :hasValue 0.9 ;
+               rdfs:comment "A value representing extremely high rating on a scale."@en ;
+               rdfs:label "ExtremelyHigh"@en .
 
 
 ###  https://w3id.org/risky/riskonto#ExtremelyLow
 :ExtremelyLow rdf:type owl:NamedIndividual ,
                        :Scale ;
-              :hasValue 0.1 .
+              :hasValue 0.1 ;
+              rdfs:comment "A value representing extremely low rating on a scale."@en ;
+              rdfs:label "ExtremelyLow"@en .
 
 
 ###  https://w3id.org/risky/riskonto#ExtremelyRare
 :ExtremelyRare rdf:type owl:NamedIndividual ,
                         :Occurence ;
-               :hasValue 0.05 .
+               :hasValue 0.05 ;
+               rdfs:comment "A value representing extreme rarity of occurence."@en ;
+               rdfs:label "ExtremelyRare"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Frequent
 :Frequent rdf:type owl:NamedIndividual ,
                    :Occurence ;
-          :hasValue 0.75 .
+          :hasValue 0.75 ;
+          rdfs:comment "A value representing frequent occurence."@en ;
+          rdfs:label "Frequent"@en .
 
 
 ###  https://w3id.org/risky/riskonto#High
 :High rdf:type owl:NamedIndividual ,
                :Scale ;
-      :hasValue 0.75 .
+      :hasValue 0.75 ;
+      rdfs:comment "A value representing high rating on a scale."@en ;
+      rdfs:label "High"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Hour
 :Hour rdf:type owl:NamedIndividual ,
-               :Period .
+               :Period ;
+      rdfs:comment "A value representing temporal period of an hour."@en ;
+      rdfs:label "Hour"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Likely
 :Likely rdf:type owl:NamedIndividual ,
                  :Occurence ;
-        :hasValue 0.5 .
+        :hasValue 0.5 ;
+        rdfs:comment "A value representing likely occurence."@en ;
+        rdfs:label "Likely"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Low
 :Low rdf:type owl:NamedIndividual ,
               :Scale ;
-     :hasValue 0.25 .
+     :hasValue 0.25 ;
+     rdfs:comment "A value representing low rating on a scale."@en ;
+     rdfs:label "Low"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Lustrum
 :Lustrum rdf:type owl:NamedIndividual ,
-                  :Period .
+                  :Period ;
+         rdfs:comment "A value representing temporal period of a lustrum (5 years)."@en ;
+         rdfs:label "Lustrum"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Moderate
 :Moderate rdf:type owl:NamedIndividual ,
                    :Scale ;
-          :hasValue 0.5 .
+          :hasValue 0.5 ;
+          rdfs:comment "A value representing moderate rating on a scale."@en ;
+          rdfs:label "Moderate"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Month
 :Month rdf:type owl:NamedIndividual ,
-                :Period .
+                :Period ;
+       rdfs:comment "A value representing temporal period of a month. Note that a month may have variable number of days depending on how it is defined."@en ;
+       rdfs:label "Month"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Never
 :Never rdf:type owl:NamedIndividual ,
                 :Occurence ;
-       :hasValue 0.0 .
+       :hasValue 0.0 ;
+       rdfs:comment "A value representing certainty of occurence never taking place."@en ;
+       rdfs:label "Never"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Occasional
 :Occasional rdf:type owl:NamedIndividual ,
                      :Occurence ;
-            :hasValue 0.25 .
+            :hasValue 0.25 ;
+            rdfs:comment "A value representing occasional occurence."@en ;
+            rdfs:label "Occasional"@en .
 
 
 ###  https://w3id.org/risky/riskonto#QuarterYear
 :QuarterYear rdf:type owl:NamedIndividual ,
-                      :Period .
+                      :Period ;
+             rdfs:comment "A value representing temporal period of a yearly quarter (3 months)."@en ;
+             rdfs:label "QuarterYear"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Rare
 :Rare rdf:type owl:NamedIndividual ,
                :Occurence ;
-      :hasValue 0.1 .
+      :hasValue 0.1 ;
+      rdfs:comment "A value representing rarity of occurence."@en ;
+      rdfs:label "Rare"@en .
 
 
 ###  https://w3id.org/risky/riskonto#SemiYear
 :SemiYear rdf:type owl:NamedIndividual ,
-                   :Period .
+                   :Period ;
+          rdfs:comment "A value representing temporal period of a semi-year or bi-annual (6 months)."@en ;
+          rdfs:label "SemiYear"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Week
 :Week rdf:type owl:NamedIndividual ,
-               :Period .
+               :Period ;
+      rdfs:comment "A value representing temporal period of a week."@en ;
+      rdfs:label "Week"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Year
 :Year rdf:type owl:NamedIndividual ,
-               :Period .
+               :Period ;
+      rdfs:comment "A value representing temporal period of a year."@en ;
+      rdfs:label "Year"@en .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

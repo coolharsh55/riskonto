@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RiskOnto</title>
+    <title>RiskOnto - A Concise Risk Ontology</title>
     <style>
         #pylode {
             position: fixed;
@@ -267,10 +267,42 @@
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://harshp.com/me#HJP"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "2022-01-15"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-01-13"
+      }
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "RiskOnto provides a concise ontology for representing concepts relevant for risks assessment."
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
     "https://schema.org/name": [
       {
         "@language": "en",
-        "@value": "RiskOnto"
+        "@value": "RiskOnto - A Concise Risk Ontology"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@value": "ADAPT Centre, Trinity College"
       }
     ]
   }
@@ -280,7 +312,7 @@
   <body>
     <div id="content">
       <div class="section" id="metadata">
-        <h1>RiskOnto</h1>
+        <h1>RiskOnto - A Concise Risk Ontology</h1>
         <h2>Metadata</h2>
         <dl>
           <div>
@@ -295,7 +327,67 @@
             <dt>
               <a class="hover_property" href="http://purl.org/dc/terms/title" title="None. Defined in None">Title</a>
             </dt>
-            <dd><p>RiskOnto</p></dd>
+            <dd><p>RiskOnto - A Concise Risk Ontology</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/publisher" title="None. Defined in None">Publisher</a>
+            </dt>
+            <dd><p>ADAPT Centre, Trinity College</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/creator" title="None. Defined in None">Creator</a>
+            </dt>
+            <dd>
+              <a href="https://harshp.com/me#HJP">ns1:HJP</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/created" title="None. Defined in None">Created</a>
+            </dt>
+            <dd><p>2022-01-15</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/modified" title="None. Defined in None">Modified</a>
+            </dt>
+            <dd><p>2022-01-13</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/license" title="None. Defined in None">License</a>
+            </dt>
+            <dd>
+              <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="None. Defined in None">Version Info</a>
+            </dt>
+            <dd><p>alpha-03</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespacePrefix" title="None. Defined in None">Preferred Namespace Prefix</a>
+            </dt>
+            <dd><p>risk</p></dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespaceUri" title="None. Defined in None">Preferred Namespace Uri</a>
+            </dt>
+            <dd>
+              <a href="#riskonto">ns2:riskonto</a>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+            </dt>
+            <dd><p>RiskOnto provides a concise ontology for representing concepts relevant for risks assessment.</p></dd>
           </div>
         </dl>
       </div>
@@ -311,6 +403,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#Agent</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>An Agent associated with an Event or Control or System.</p></td>
             </tr>
             <tr>
               <th>
@@ -460,7 +558,7 @@
               <th>
                 <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
               </th>
-              <td><p>A control is intended to change, modifiy, or remove the probability, likelihood, or severity of an event</p></td>
+              <td><p>A control is intended to detect, or to change, modifiy, or remove the probability, likelihood, or severity of an event</p></td>
             </tr>
             <tr>
               <th>
@@ -695,6 +793,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>An event is an occurence or an activity that takes place.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="None. Defined in None">In Domain Of</a>
               </th>
               <td>
@@ -872,6 +976,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>An indicator for expressing attributes associated with events, controls, and system components in relation to risk.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="None. Defined in None">Super Class Of</a>
               </th>
               <td>
@@ -912,6 +1022,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>An event that has not been modified or changed by any control.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
               </th>
               <td>
@@ -936,6 +1052,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>An event that has been nullified or prevented completely by some control.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
               </th>
               <td>
@@ -949,13 +1071,6 @@
                   <li><span>
   <span>
     <span>
-      <a href="#hasLikelihood">hasLikelihood</a>
-      <sup class="sup-op" title="OWL Object Property">op</sup>
-    </span>value<br>
-  </span>
-</span> <span class="cardinality">or</span> <span>
-  <span>
-    <span>
       <a href="#hasProbability">hasProbability</a>
       <sup class="sup-op" title="OWL Object Property">op</sup>
     </span>value<br>
@@ -964,6 +1079,13 @@
   <span>
     <span>
       <a href="#hasFrequencyOfOccurence">hasFrequencyOfOccurence</a>
+      <sup class="sup-op" title="OWL Object Property">op</sup>
+    </span>value<br>
+  </span>
+</span> <span class="cardinality">or</span> <span>
+  <span>
+    <span>
+      <a href="#hasLikelihood">hasLikelihood</a>
       <sup class="sup-op" title="OWL Object Property">op</sup>
     </span>value<br>
   </span>
@@ -994,6 +1116,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#Occurence</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Occurence represents instances representing the likelihood of something e.g. an event to occur.</p></td>
             </tr>
             <tr>
               <th>
@@ -1068,15 +1196,15 @@
                 <a class="hover_property" href="http://www.w3.org/2002/07/owl#equivalentClass" title="None. Defined in None">Equivalent Class</a>
               </th>
               <td><span>
+  <a href="#Control">Control</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">and</span> <span>
   <span>
     <span>
       <a href="#isPartOf">isPartOf</a>
       <sup class="sup-op" title="OWL Object Property">op</sup>
     </span>some<br>
   </span>
-</span> <span class="cardinality">and</span> <span>
-  <a href="#Control">Control</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span></td>
             </tr>
           </table>
@@ -1091,6 +1219,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#Period</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Period represents instances representing the temporal period for something e.g. an event to occur.</p></td>
             </tr>
             <tr>
               <th>
@@ -1129,6 +1263,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>An event that has been modified or changed by a control such that it still has a chance to occur or take place.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
               </th>
               <td>
@@ -1161,6 +1301,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#Risk</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A 'risk' is an event representing the possibility of consequence and their impacts to occur based, which are usually considered to be negative or harmful.</p></td>
             </tr>
             <tr>
               <th>
@@ -1206,6 +1352,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#Scale</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Scale represents instances representing the chance or impact of something e.g. severity of an event to occur.</p></td>
             </tr>
             <tr>
               <th>
@@ -1337,6 +1489,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A 'maintainer' of a system e.g. developer, manager, owner.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
               </th>
               <td>
@@ -1361,6 +1519,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>A 'user' of a system e.g. end user.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="None. Defined in None">Sub Class Of</a>
               </th>
               <td>
@@ -1382,6 +1546,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#ThreatActor</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>An agent whose actions create a threat.</p></td>
             </tr>
             <tr>
               <th>
@@ -1448,6 +1618,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates that the control detects occurence of specified event.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td>
@@ -1480,6 +1656,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#eliminatesEvent</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates that the control eliminates or nullifies or completely prevents occurence of specified event.</p></td>
             </tr>
             <tr>
               <th>
@@ -1518,13 +1700,19 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the involvement or relevance of specified agent.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td><span>
-  <a href="#Control">Control</a>
+  <a href="#Event">Event</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
-  <a href="#Event">Event</a>
+  <a href="#Control">Control</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="#System">System</a>
@@ -1557,13 +1745,19 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the relevance of risk cause.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td><span>
-  <a href="#ControlCause">ControlCause</a>
+  <a href="#Risk">Risk</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
-  <a href="#Risk">Risk</a>
+  <a href="#ControlCause">ControlCause</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span></td>
             </tr>
@@ -1590,6 +1784,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#hasConsequence</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the relevance of risk consequence.</p></td>
             </tr>
             <tr>
               <th>
@@ -1687,6 +1887,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the frequency of an event in terms of occurences i.e. how frequently the event occurs e.g. occasionally or rarely.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td>
@@ -1722,6 +1928,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the frequency of an event in terms of temporal period i.e. over what period does the event occur e.g. annually or daily.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td>
@@ -1754,6 +1966,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#hasImpact</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates relevance of impact arising from risk consequence.</p></td>
             </tr>
             <tr>
               <th>
@@ -1793,6 +2011,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the likelihood of an event in terms of subjective or qualitative values e.g. rarely or certain.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td>
@@ -1828,6 +2052,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the specified thing (object) is part of this thing (subject).</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="None. Defined in None">Super Property Of</a>
               </th>
               <td>
@@ -1849,6 +2079,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#hasProbability</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the probability of an event in terms of statistical value i.e. what is the value between 0.0 (never) and 1.0 (certain) for occurence of an event. The value may be quantified to produce qualitative labels similar to likelihood e.g. rarely (0.1) or likely (0.5).</p></td>
             </tr>
             <tr>
               <th>
@@ -1896,22 +2132,22 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td><span>
-  <a href="#Cause">Cause</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span> <span class="cardinality">or</span> <span>
   <a href="#ControlCause">ControlCause</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span> <span class="cardinality">or</span> <span>
-  <a href="#ControlSource">ControlSource</a>
-  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span> <span class="cardinality">or</span> <span>
-  <a href="#Consequence">Consequence</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="#ControlConsequence">ControlConsequence</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
+  <a href="#ControlSource">ControlSource</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">or</span> <span>
+  <a href="#Cause">Cause</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">or</span> <span>
   <a href="#Source">Source</a>
+  <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span> <span class="cardinality">or</span> <span>
+  <a href="#Consequence">Consequence</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span></td>
             </tr>
@@ -1938,6 +2174,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#hasSeverity</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the severity of an event within some context e.g. severity of an impact. Severity can be associated with a quantified value as well as qualitative labels e.g. 0.9 indicating high severity and 0.1 indicating low or extremely low severity.</p></td>
             </tr>
             <tr>
               <th>
@@ -1985,10 +2227,10 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td><span>
-  <a href="#Risk">Risk</a>
+  <a href="#ControlSource">ControlSource</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
-  <a href="#ControlSource">ControlSource</a>
+  <a href="#Risk">Risk</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span></td>
             </tr>
@@ -2018,6 +2260,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the agent is relevant for specified context.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td>
@@ -2032,10 +2280,10 @@
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="None. Defined in None">Range</a>
               </th>
               <td><span>
-  <a href="#Control">Control</a>
+  <a href="#System">System</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
-  <a href="#System">System</a>
+  <a href="#Control">Control</a>
   <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span> <span class="cardinality">or</span> <span>
   <a href="#Event">Event</a>
@@ -2054,6 +2302,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#isControlOfSystem</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the Control is a part of the specified System.</p></td>
             </tr>
             <tr>
               <th>
@@ -2103,6 +2357,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the specified event is a modified form of this event e.g. change in likelihood due to use of control.</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="None. Defined in None">Domain</a>
               </th>
               <td>
@@ -2135,6 +2395,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#isModifiedFrom</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates this event is a modified form of the specified event e.g. change in likelihood.</p></td>
             </tr>
             <tr>
               <th>
@@ -2173,6 +2439,12 @@
             </tr>
             <tr>
               <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates this thing (subject) is a part of the specified thing (object).</p></td>
+            </tr>
+            <tr>
+              <th>
                 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="None. Defined in None">Super Property Of</a>
               </th>
               <td>
@@ -2194,6 +2466,12 @@
               <td>
                 <code>https://w3id.org/risky/riskonto#modifiesEvent</code>
               </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates the Control modifies the specified Event.</p></td>
             </tr>
             <tr>
               <th>
@@ -2310,7 +2588,7 @@
       </span>
       <div class="section" id="datatypeproperties">
         <h2>Datatype Properties</h2>
-        <div class="property entity" id="hadPriorValue">
+        <div class="property entity" id="hadpriorvalue">
           <h3>had prior value
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -2321,9 +2599,15 @@
                 <code>https://w3id.org/risky/riskonto#hadPriorValue</code>
               </td>
             </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Specifies the prior or previous value before it was changed e.g. by a control.</p></td>
+            </tr>
           </table>
         </div>
-        <div class="property entity" id="hasValue">
+        <div class="property entity" id="hasvalue">
           <h3>has value
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
           </h3>
@@ -2332,6 +2616,145 @@
               <th>IRI</th>
               <td>
                 <code>https://w3id.org/risky/riskonto#hasValue</code>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <a class="hover_property" href="http://purl.org/dc/terms/description" title="None. Defined in None">Description</a>
+              </th>
+              <td><p>Indicates a value associated with an object e.g. likelihood of an event expressed as a value between 0.0 and 0.1.</p></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="section" id="annotationproperties">
+        <h2>Annotation Properties</h2>
+        <div class="property entity" id="created">
+          <h3>created
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/created</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="creator">
+          <h3>creator
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/creator</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="description">
+          <h3>description
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/description</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="license">
+          <h3>license
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/license</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="modified">
+          <h3>modified
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/modified</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="publisher">
+          <h3>publisher
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/publisher</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="title">
+          <h3>title
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/dc/terms/title</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="status">
+          <h3>status
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/ontology/bibo/status</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="preferredNamespacePrefix">
+          <h3>preferred namespace prefix
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/vocab/vann/preferredNamespacePrefix</code>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="property entity" id="preferredNamespaceUri">
+          <h3>preferred namespace uri
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+          </h3>
+          <table>
+            <tr>
+              <th>IRI</th>
+              <td>
+                <code>http://purl.org/vocab/vann/preferredNamespaceUri</code>
               </td>
             </tr>
           </table>
@@ -2350,11 +2773,19 @@
           </dd>
           <dt id="ns1">ns1</dt>
           <dd>
+            <code>https://harshp.com/me#</code>
+          </dd>
+          <dt id="ns2">ns2</dt>
+          <dd>
             <code>https://w3id.org/risky/</code>
           </dd>
           <dt id="owl">owl</dt>
           <dd>
             <code>http://www.w3.org/2002/07/owl#</code>
+          </dd>
+          <dt id="prov">prov</dt>
+          <dd>
+            <code>http://www.w3.org/ns/prov#</code>
           </dd>
           <dt id="rdf">rdf</dt>
           <dd>
@@ -2363,6 +2794,10 @@
           <dt id="rdfs">rdfs</dt>
           <dd>
             <code>http://www.w3.org/2000/01/rdf-schema#</code>
+          </dd>
+          <dt id="vann">vann</dt>
+          <dd>
+            <code>http://purl.org/vocab/vann/</code>
           </dd>
         </dl>
       </div>
@@ -2386,6 +2821,12 @@
               <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
             </td>
             <td>Datatype Properties</td>
+          </tr>
+          <tr>
+            <td>
+              <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+            </td>
+            <td>Annotation Properties</td>
           </tr>
         </table>
       </div>
@@ -2563,10 +3004,47 @@
           </h4>
           <ul class="second">
             <li>
-              <a href="#hadPriorValue">had prior value</a>
+              <a href="#hadpriorvalue">had prior value</a>
             </li>
             <li>
-              <a href="#hasValue">has value</a>
+              <a href="#hasvalue">has value</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>
+            <a href="#annotationproperties">Annotation Properties</a>
+          </h4>
+          <ul class="second">
+            <li>
+              <a href="#created">created</a>
+            </li>
+            <li>
+              <a href="#creator">creator</a>
+            </li>
+            <li>
+              <a href="#description">description</a>
+            </li>
+            <li>
+              <a href="#license">license</a>
+            </li>
+            <li>
+              <a href="#modified">modified</a>
+            </li>
+            <li>
+              <a href="#publisher">publisher</a>
+            </li>
+            <li>
+              <a href="#title">title</a>
+            </li>
+            <li>
+              <a href="#status">status</a>
+            </li>
+            <li>
+              <a href="#preferredNamespacePrefix">preferred namespace prefix</a>
+            </li>
+            <li>
+              <a href="#preferredNamespaceUri">preferred namespace uri</a>
             </li>
           </ul>
         </li>
@@ -2585,13 +3063,22 @@
               <a href="#ns1">ns1</a>
             </li>
             <li>
+              <a href="#ns2">ns2</a>
+            </li>
+            <li>
               <a href="#owl">owl</a>
+            </li>
+            <li>
+              <a href="#prov">prov</a>
             </li>
             <li>
               <a href="#rdf">rdf</a>
             </li>
             <li>
               <a href="#rdfs">rdfs</a>
+            </li>
+            <li>
+              <a href="#vann">vann</a>
             </li>
           </ul>
         </li>
