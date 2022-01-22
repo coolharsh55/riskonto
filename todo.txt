@@ -1,7 +1,7 @@
-- [ ] add concepts for follows and isFollowedBy
-- [ ] add concept for risk level as combination of severity and likelihood
-- [ ] change Cause to Source
-- [ ] change Source to Thing
+- [x] add concepts for follows and isFollowedBy
+- [x] add concept for risk level as combination of severity and likelihood
+- [x] change Cause to Source
+- [x] change Source to Thing
 - [ ] add concepts for risk identification and risk assessment
 - [ ] add concepts for risk register and risk records
 - [ ] add concepts for risk management
