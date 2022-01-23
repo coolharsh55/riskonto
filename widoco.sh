@@ -26,5 +26,6 @@ fi;
 
 cp ./riskonto/index-en.html ./riskonto/index.html
 
+rm readme.md
 rm ./riskonto/readme.md
 

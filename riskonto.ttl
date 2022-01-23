@@ -4,20 +4,23 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix riskos: <https://w3id.org/risky/riskos#> .
 @base <https://w3id.org/risky/riskonto> .
 
 <https://w3id.org/risky/riskonto> rdf:type owl:Ontology ;
                                    <http://purl.org/dc/terms/created> "2022-01-15"^^xsd:anyURI ;
-                                   <http://purl.org/dc/terms/creator> "Harshvardhan J. Pandit" ;
-                                   <http://purl.org/dc/terms/description> "RiskOnto provides a concise ontology for representing concepts relevant for risks assessment." ;
+                                   <http://purl.org/dc/terms/creator> "Harshvardhan J. Pandit"^^xsd:string ;
+                                   <http://purl.org/dc/terms/description> "RiskOnto provides a concise ontology for representing concepts relevant for risks assessment."^^xsd:string ;
                                    <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
                                    <http://purl.org/dc/terms/modified> "2022-01-22"^^xsd:date ;
-                                   <http://purl.org/dc/terms/publisher> "ADAPT Centre, Trinity College" ;
+                                   <http://purl.org/dc/terms/publisher> "ADAPT Centre, Trinity College"^^xsd:string ;
                                    <http://purl.org/dc/terms/title> "RiskOnto - A Concise Risk Ontology"@en ;
                                    <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> ;
-                                   <http://purl.org/vocab/vann/preferredNamespacePrefix> "risk" ;
-                                   <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/risky/riskonto"^^xsd:anyURI ;
-                                   owl:versionInfo "alpha-03" .
+                                   vann:preferredNamespacePrefix "risk"^^xsd:string ;
+                                   vann:preferredNamespaceUri "https://w3id.org/risky/riskonto"^^xsd:anyURI ;
+                                   owl:versionInfo "alpha-03"^^xsd:string .
 
 #################################################################
 #    Annotation properties
@@ -56,11 +59,11 @@
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -81,6 +84,18 @@
                  rdfs:range :NullifiedEvent ;
                  rdfs:comment "Indicates that the control eliminates or nullifies or completely prevents occurence of specified event."@en ;
                  rdfs:label "eliminates event"@en .
+
+
+###  https://w3id.org/risky/riskonto#exploitsVulnerability
+:exploitsVulnerability rdf:type owl:ObjectProperty ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( :Impact
+                                                   :Source
+                                                   :ThreatActor
+                                                 )
+                                   ] ;
+                       rdfs:range :Vulnerability ;
+                       rdfs:label "exploitsVulnerability"@en .
 
 
 ###  https://w3id.org/risky/riskonto#follows
@@ -222,9 +237,20 @@
                                        :Risk
                                      )
                        ] ;
-           rdfs:range :Origin ;
+           rdfs:range :Source ;
            rdfs:comment "Indicates a risk has a source associated with it"@en ;
            rdfs:label "has source"@en .
+
+
+###  https://w3id.org/risky/riskonto#hasVulnerability
+:hasVulnerability rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Agent
+                                              :Origin
+                                            )
+                              ] ;
+                  rdfs:range :Vulnerability ;
+                  rdfs:label "has vulnerability"@en .
 
 
 ###  https://w3id.org/risky/riskonto#isAgentFor
@@ -413,7 +439,8 @@
                                             rdf:type owl:Class
                                           ]
                                         )
-                          ] .
+                          ] ;
+          rdfs:label "High Risk"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Impact
@@ -551,7 +578,8 @@
                                            rdf:type owl:Class
                                          ]
                                        )
-                         ] .
+                         ] ;
+         rdfs:label "Low Risk"@en .
 
 
 ###  https://w3id.org/risky/riskonto#ModerateRisk
@@ -614,7 +642,8 @@
                                                 rdf:type owl:Class
                                               ]
                                             )
-                              ] .
+                              ] ;
+              rdfs:label "Moderate Risk"@en .
 
 
 ###  https://w3id.org/risky/riskonto#NullifiedEvent
@@ -828,7 +857,8 @@
                                                      ]
                                                    ) ;
                                 rdf:type owl:Class
-                              ] .
+                              ] ;
+              rdfs:label "Very High Risk"@en .
 
 
 ###  https://w3id.org/risky/riskonto#VeryLowRisk
@@ -902,7 +932,13 @@
                                                rdf:type owl:Class
                                              ]
                                            )
-                             ] .
+                             ] ;
+             rdfs:label "Very Low Risk"@en .
+
+
+###  https://w3id.org/risky/riskonto#Vulnerability
+:Vulnerability rdf:type owl:Class ;
+               rdfs:label "Vulnerability"@en .
 
 
 #################################################################
@@ -1068,4 +1104,4 @@
       rdfs:label "Year"@en .
 
 
-###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

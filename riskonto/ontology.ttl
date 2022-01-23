@@ -83,6 +83,18 @@
                  rdfs:label "eliminates event"@en .
 
 
+###  https://w3id.org/risky/riskonto#exploitsVulnerability
+:exploitsVulnerability rdf:type owl:ObjectProperty ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( :Impact
+                                                   :Source
+                                                   :ThreatActor
+                                                 )
+                                   ] ;
+                       rdfs:range :Vulnerability ;
+                       rdfs:label "exploitsVulnerability"@en .
+
+
 ###  https://w3id.org/risky/riskonto#follows
 :follows rdf:type owl:ObjectProperty ;
          owl:inverseOf :isFollowedBy ;
@@ -222,9 +234,20 @@
                                        :Risk
                                      )
                        ] ;
-           rdfs:range :Origin ;
+           rdfs:range :Source ;
            rdfs:comment "Indicates a risk has a source associated with it"@en ;
            rdfs:label "has source"@en .
+
+
+###  https://w3id.org/risky/riskonto#hasVulnerability
+:hasVulnerability rdf:type owl:ObjectProperty ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Agent
+                                              :Origin
+                                            )
+                              ] ;
+                  rdfs:range :Vulnerability ;
+                  rdfs:label "has vulnerability"@en .
 
 
 ###  https://w3id.org/risky/riskonto#isAgentFor
@@ -413,7 +436,8 @@
                                             rdf:type owl:Class
                                           ]
                                         )
-                          ] .
+                          ] ;
+          rdfs:label "High Risk"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Impact
@@ -551,7 +575,8 @@
                                            rdf:type owl:Class
                                          ]
                                        )
-                         ] .
+                         ] ;
+         rdfs:label "Low Risk"@en .
 
 
 ###  https://w3id.org/risky/riskonto#ModerateRisk
@@ -614,7 +639,8 @@
                                                 rdf:type owl:Class
                                               ]
                                             )
-                              ] .
+                              ] ;
+              rdfs:label "Moderate Risk"@en .
 
 
 ###  https://w3id.org/risky/riskonto#NullifiedEvent
@@ -828,7 +854,8 @@
                                                      ]
                                                    ) ;
                                 rdf:type owl:Class
-                              ] .
+                              ] ;
+              rdfs:label "Very High Risk"@en .
 
 
 ###  https://w3id.org/risky/riskonto#VeryLowRisk
@@ -902,7 +929,13 @@
                                                rdf:type owl:Class
                                              ]
                                            )
-                             ] .
+                             ] ;
+             rdfs:label "Very Low Risk"@en .
+
+
+###  https://w3id.org/risky/riskonto#Vulnerability
+:Vulnerability rdf:type owl:Class ;
+               rdfs:label "Vulnerability"@en .
 
 
 #################################################################

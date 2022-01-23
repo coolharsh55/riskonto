@@ -144,6 +144,25 @@
     
 
 
+    <!-- https://w3id.org/risky/riskonto#exploitsVulnerability -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#exploitsVulnerability">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Impact"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Source"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#ThreatActor"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Vulnerability"/>
+        <rdfs:label xml:lang="en">exploitsVulnerability</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/risky/riskonto#follows -->
 
 
@@ -355,9 +374,27 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Origin"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Source"/>
         <rdfs:comment xml:lang="en">Indicates a risk has a source associated with it</rdfs:comment>
         <rdfs:label xml:lang="en">has source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasVulnerability -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasVulnerability">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Agent"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Origin"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Vulnerability"/>
+        <rdfs:label xml:lang="en">has vulnerability</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -652,6 +689,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">High Risk</rdfs:label>
     </owl:Class>
     
 
@@ -819,6 +857,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Low Risk</rdfs:label>
     </owl:Class>
     
 
@@ -894,6 +933,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Moderate Risk</rdfs:label>
     </owl:Class>
     
 
@@ -1191,6 +1231,7 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Very High Risk</rdfs:label>
     </owl:Class>
     
 
@@ -1278,6 +1319,16 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Very Low Risk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Vulnerability -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Vulnerability">
+        <rdfs:label xml:lang="en">Vulnerability</rdfs:label>
     </owl:Class>
     
 
