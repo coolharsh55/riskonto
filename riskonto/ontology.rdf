@@ -1,0 +1,1543 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/risky/riskonto#"
+     xml:base="https://w3id.org/risky/riskonto"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:riskonto="https://w3id.org/risky/riskonto#">
+    <owl:Ontology rdf:about="https://w3id.org/risky/riskonto">
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">2022-01-15</terms:created>
+        <terms:creator>Harshvardhan J. Pandit</terms:creator>
+        <terms:description>RiskOnto provides a concise ontology for representing concepts relevant for risks assessment.</terms:description>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-22</terms:modified>
+        <terms:publisher>ADAPT Centre, Trinity College</terms:publisher>
+        <terms:title xml:lang="en">RiskOnto - A Concise Risk Ontology</terms:title>
+        <bibo:status rdf:resource="http://purl.org/ontology/bibo/status/draft"/>
+        <vann:preferredNamespacePrefix>risk</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://w3id.org/risky/riskonto</vann:preferredNamespaceUri>
+        <owl:versionInfo>alpha-03</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/status -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/status"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#detectsEvent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#detectsEvent">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:comment xml:lang="en">Indicates that the control detects occurence of specified event.</rdfs:comment>
+        <rdfs:label xml:lang="en">detects event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#eliminatesEvent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#eliminatesEvent">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#NullifiedEvent"/>
+        <rdfs:comment xml:lang="en">Indicates that the control eliminates or nullifies or completely prevents occurence of specified event.</rdfs:comment>
+        <rdfs:label xml:lang="en">eliminates event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#follows -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#follows">
+        <owl:inverseOf rdf:resource="https://w3id.org/risky/riskonto#isFollowedBy"/>
+        <rdfs:comment xml:lang="en">Indicates specified &apos;Thing&apos; follows this &apos;Thing&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">follows</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasAgent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasAgent">
+        <owl:inverseOf rdf:resource="https://w3id.org/risky/riskonto#isAgentFor"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Control"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Event"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#System"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Agent"/>
+        <rdfs:comment xml:lang="en">Indicates the involvement or relevance of specified agent.</rdfs:comment>
+        <rdfs:label xml:lang="en">has agent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasConsequence -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasConsequence">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#ControlConsequence"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#ControlImpact"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Impact"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Risk"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Risk"/>
+        <rdfs:comment xml:lang="en">Indicates the relevance of risk consequence.</rdfs:comment>
+        <rdfs:label xml:lang="en">has consequence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasControl -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasControl">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/risky/riskonto#hasPart"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/risky/riskonto#isControlOfSystem"/>
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#System"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:comment xml:lang="en">Indicates use of control measure to prevent or reduce risk materialising</rdfs:comment>
+        <rdfs:label xml:lang="en">has control</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasFrequencyOfOccurence -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasFrequencyOfOccurence">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <rdfs:comment xml:lang="en">Indicates the frequency of an event in terms of occurences i.e. how frequently the event occurs e.g. occasionally or rarely.</rdfs:comment>
+        <rdfs:label xml:lang="en">has frequency of occurence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasFrequencyOverPeriod -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasFrequencyOverPeriod">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">Indicates the frequency of an event in terms of temporal period i.e. over what period does the event occur e.g. annually or daily.</rdfs:comment>
+        <rdfs:label xml:lang="en">has frequency over period</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasImpact -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasImpact">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Consequence"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#ControlImpact"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Impact"/>
+        <rdfs:comment xml:lang="en">Indicates relevance of impact arising from risk consequence.</rdfs:comment>
+        <rdfs:label xml:lang="en">has impact</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasLikelihood -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasLikelihood">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <rdfs:comment xml:lang="en">Indicates the likelihood of an event in terms of subjective or qualitative values e.g. rarely or certain.</rdfs:comment>
+        <rdfs:label xml:lang="en">has likelihood</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasOrigin -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasOrigin">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#ControlOrigin"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Risk"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Origin"/>
+        <rdfs:comment xml:lang="en">Indicates the relevance of risk origin.</rdfs:comment>
+        <rdfs:label xml:lang="en">has origin</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/risky/riskonto#isPartOf"/>
+        <rdfs:comment xml:lang="en">Indicates the specified thing (object) is part of this thing (subject).</rdfs:comment>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasProbability -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasProbability">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <rdfs:comment xml:lang="en">Indicates the probability of an event in terms of statistical value i.e. what is the value between 0.0 (never) and 1.0 (certain) for occurence of an event. The value may be quantified to produce qualitative labels similar to likelihood e.g. rarely (0.1) or likely (0.5).</rdfs:comment>
+        <rdfs:label xml:lang="en">has probability</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasRisk -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasRisk">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Consequence"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#ControlConsequence"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#ControlOrigin"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#ControlSource"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Origin"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Source"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Risk"/>
+        <rdfs:comment xml:lang="en">Indicates a source has a risk associated with it</rdfs:comment>
+        <rdfs:label xml:lang="en">has risk</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasSeverity -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasSeverity">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Scale"/>
+        <rdfs:comment xml:lang="en">Indicates the severity of an event within some context e.g. severity of an impact. Severity can be associated with a quantified value as well as qualitative labels e.g. 0.9 indicating high severity and 0.1 indicating low or extremely low severity.</rdfs:comment>
+        <rdfs:label xml:lang="en">has severity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasSource -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#hasSource">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#ControlSource"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Risk"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Origin"/>
+        <rdfs:comment xml:lang="en">Indicates a risk has a source associated with it</rdfs:comment>
+        <rdfs:label xml:lang="en">has source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#isAgentFor -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#isAgentFor">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Agent"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Control"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Event"/>
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#System"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Indicates the agent is relevant for specified context.</rdfs:comment>
+        <rdfs:label xml:lang="en">is agent for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#isControlOfSystem -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#isControlOfSystem">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/risky/riskonto#isPartOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#System"/>
+        <rdfs:comment xml:lang="en">Indicates the Control is a part of the specified System.</rdfs:comment>
+        <rdfs:label xml:lang="en">is control of system</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#isFollowedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#isFollowedBy">
+        <rdfs:comment xml:lang="en">Indicates this &apos;Thing&apos; is followed by specified &apos;Thing&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">is followed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#isModifiedAs -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#isModifiedAs">
+        <owl:inverseOf rdf:resource="https://w3id.org/risky/riskonto#isModifiedFrom"/>
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:comment xml:lang="en">Indicates the specified event is a modified form of this event e.g. change in likelihood due to use of control.</rdfs:comment>
+        <rdfs:label xml:lang="en">is modified as</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#isModifiedFrom -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#isModifiedFrom">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:comment xml:lang="en">Indicates this event is a modified form of the specified event e.g. change in likelihood.</rdfs:comment>
+        <rdfs:label xml:lang="en">is modified from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#isPartOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#isPartOf">
+        <rdfs:comment xml:lang="en">Indicates this thing (subject) is a part of the specified thing (object).</rdfs:comment>
+        <rdfs:label xml:lang="en">is part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#modifiesEvent -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/risky/riskonto#modifiesEvent">
+        <rdfs:domain rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:range rdf:resource="https://w3id.org/risky/riskonto#ResidualEvent"/>
+        <rdfs:comment xml:lang="en">Indicates the Control modifies the specified Event.</rdfs:comment>
+        <rdfs:label xml:lang="en">modifies event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hadPriorValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/risky/riskonto#hadPriorValue">
+        <rdfs:comment xml:lang="en">Specifies the prior or previous value before it was changed e.g. by a control.</rdfs:comment>
+        <rdfs:label xml:lang="en">had prior value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#hasValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/risky/riskonto#hasValue">
+        <rdfs:comment xml:lang="en">Indicates a value associated with an object e.g. likelihood of an event expressed as a value between 0.0 and 0.1.</rdfs:comment>
+        <rdfs:label xml:lang="en">has value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Agent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Agent">
+        <rdfs:comment xml:lang="en">An Agent associated with an Event or Control or System.</rdfs:comment>
+        <rdfs:label xml:lang="en">Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Consequence -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Consequence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:comment xml:lang="en">Indicates a potential consequence materialising from risk(s)</rdfs:comment>
+        <rdfs:label xml:lang="en">Consequence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Control -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Control">
+        <rdfs:comment xml:lang="en">A control is intended to detect, or to change, modifiy, or remove the probability, likelihood, or severity of an event</rdfs:comment>
+        <rdfs:label xml:lang="en">Control</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ControlConsequence -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#ControlConsequence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasConsequence"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/risky/riskonto#Consequence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A control applied to reduce the probability, likelihood, or severity of a potential risk consequence</rdfs:comment>
+        <rdfs:label xml:lang="en">Control Consequence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ControlImpact -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#ControlImpact">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasImpact"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/risky/riskonto#Impact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A control applied to reduce the probability, likelihood, or severity of a potential consequence&apos;s impact</rdfs:comment>
+        <rdfs:label xml:lang="en">Control Impact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ControlOrigin -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#ControlOrigin">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasOrigin"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/risky/riskonto#Origin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A control applied to the risk cause to reduce the probability, likelihood, or severity of a potential risk materialising</rdfs:comment>
+        <rdfs:label xml:lang="en">Control Origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ControlSource -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#ControlSource">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSource"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/risky/riskonto#Source"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A control applied to the risk source to reduce the possibility, likelihood, or severity of risk</rdfs:comment>
+        <rdfs:label xml:lang="en">Control Source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Event -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Event">
+        <rdfs:comment xml:lang="en">An event is an occurence or an activity that takes place.</rdfs:comment>
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#HighRisk -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#HighRisk">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Risk"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Certain"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Frequent"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyHigh"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Frequent"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Impact -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Impact">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Consequence"/>
+        <rdfs:comment xml:lang="en">Indicates impact(s) arising from consequence(s)</rdfs:comment>
+        <rdfs:label xml:lang="en">Impact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Indicator -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Indicator">
+        <rdfs:comment xml:lang="en">An indicator for expressing attributes associated with events, controls, and system components in relation to risk.</rdfs:comment>
+        <rdfs:label xml:lang="en">Indicator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#InitialEvent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#InitialEvent">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:comment xml:lang="en">An event that has not been modified or changed by any control.</rdfs:comment>
+        <rdfs:label xml:lang="en">Initial Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#LowRisk -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#LowRisk">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Risk"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Certain"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyLow"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Certain"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Low"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Frequent"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyLow"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Frequent"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Low"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Likely"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Low"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Occasional"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyHigh"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Occasional"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Occasional"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Moderate"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Rare"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyHigh"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Rare"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ModerateRisk -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#ModerateRisk">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Risk"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Certain"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Moderate"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Frequent"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Moderate"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Likely"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyHigh"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Likely"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Likely"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Moderate"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#NullifiedEvent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#NullifiedEvent">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasFrequencyOfOccurence"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Never"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Never"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasProbability"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Never"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An event that has been nullified or prevented completely by some control.</rdfs:comment>
+        <rdfs:label xml:lang="en">Nullified Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Occurence -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Occurence">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Indicator"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Certain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyHigh"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Certain"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Moderate"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Frequent"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Moderate"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Likely"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyHigh"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Likely"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Likely"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Moderate"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Occurence represents instances representing the likelihood of something e.g. an event to occur.</rdfs:comment>
+        <rdfs:label xml:lang="en">Occurence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Origin -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Origin">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#System"/>
+        <rdfs:comment xml:lang="en">Indicates the source of risk i.e. the risk exists because of the source</rdfs:comment>
+        <rdfs:label xml:lang="en">Origin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#PartialControl -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#PartialControl">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/risky/riskonto#Control"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#isPartOf"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Control"/>
+        <rdfs:comment xml:lang="en">A component or part of a larger control distinguished by its application</rdfs:comment>
+        <rdfs:label xml:lang="en">Partial Control</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Period -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Period">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Indicator"/>
+        <rdfs:comment xml:lang="en">Period represents instances representing the temporal period for something e.g. an event to occur.</rdfs:comment>
+        <rdfs:label xml:lang="en">Period</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ResidualEvent -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#ResidualEvent">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:comment xml:lang="en">An event that has been modified or changed by a control such that it still has a chance to occur or take place.</rdfs:comment>
+        <rdfs:label xml:lang="en">Residual Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Risk -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Risk">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:comment xml:lang="en">A &apos;risk&apos; is an event representing the possibility of consequence and their impacts to occur based, which are usually considered to be negative or harmful.</rdfs:comment>
+        <rdfs:label xml:lang="en">Risk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#RiskLevel -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#RiskLevel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Scale"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/risky/riskonto#Scale"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Scale -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Scale">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Indicator"/>
+        <rdfs:comment xml:lang="en">Scale represents instances representing the chance or impact of something e.g. severity of an event to occur.</rdfs:comment>
+        <rdfs:label xml:lang="en">Scale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Source -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#Source">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Event"/>
+        <rdfs:comment xml:lang="en">Indicates the source or threat that has the potential to materialise associated risk(s)</rdfs:comment>
+        <rdfs:label xml:lang="en">Source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#System -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#System">
+        <rdfs:comment xml:lang="en">A system representing the operational and organisational processes relevant to risk and its sources, causes, consequences, and impacts</rdfs:comment>
+        <rdfs:label xml:lang="en">System</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#SystemMaintainer -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#SystemMaintainer">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Agent"/>
+        <rdfs:comment xml:lang="en">A &apos;maintainer&apos; of a system e.g. developer, manager, owner.</rdfs:comment>
+        <rdfs:label xml:lang="en">System Maintainer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#SystemUser -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#SystemUser">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Agent"/>
+        <rdfs:comment xml:lang="en">A &apos;user&apos; of a system e.g. end user.</rdfs:comment>
+        <rdfs:label xml:lang="en">System User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ThreatActor -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#ThreatActor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Agent"/>
+        <rdfs:comment xml:lang="en">An agent whose actions create a threat.</rdfs:comment>
+        <rdfs:label xml:lang="en">Threat Actor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#VeryHighRisk -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#VeryHighRisk">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Risk"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Certain"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyHigh"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#VeryLowRisk -->
+
+
+    <owl:Class rdf:about="https://w3id.org/risky/riskonto#VeryLowRisk">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/risky/riskonto#Risk"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Likely"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyLow"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Occasional"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyLow"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Occasional"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Low"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Rare"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#ExtremelyLow"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Rare"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Low"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasLikelihood"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Rare"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/risky/riskonto#hasSeverity"/>
+                                <owl:hasValue rdf:resource="https://w3id.org/risky/riskonto#Moderate"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Certain -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Certain">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</hasValue>
+        <rdfs:comment xml:lang="en">A value representing certainty of occurence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Certain</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Day -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Day">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">A value representing temporal period of a day.</rdfs:comment>
+        <rdfs:label xml:lang="en">Day</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Decade -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Decade">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">A value representing temporal period of a decade (10 years).</rdfs:comment>
+        <rdfs:label xml:lang="en">Decade</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ExtremelyHigh -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#ExtremelyHigh">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Scale"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.9</hasValue>
+        <rdfs:comment xml:lang="en">A value representing extremely high rating on a scale.</rdfs:comment>
+        <rdfs:label xml:lang="en">ExtremelyHigh</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ExtremelyLow -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#ExtremelyLow">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Scale"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</hasValue>
+        <rdfs:comment xml:lang="en">A value representing extremely low rating on a scale.</rdfs:comment>
+        <rdfs:label xml:lang="en">ExtremelyLow</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#ExtremelyRare -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#ExtremelyRare">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.05</hasValue>
+        <rdfs:comment xml:lang="en">A value representing extreme rarity of occurence.</rdfs:comment>
+        <rdfs:label xml:lang="en">ExtremelyRare</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Frequent -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Frequent">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.75</hasValue>
+        <rdfs:comment xml:lang="en">A value representing frequent occurence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Frequent</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#High -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#High">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Scale"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.75</hasValue>
+        <rdfs:comment xml:lang="en">A value representing high rating on a scale.</rdfs:comment>
+        <rdfs:label xml:lang="en">High</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Hour -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Hour">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">A value representing temporal period of an hour.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hour</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Likely -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Likely">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</hasValue>
+        <rdfs:comment xml:lang="en">A value representing likely occurence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Likely</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Low -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Low">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Scale"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.25</hasValue>
+        <rdfs:comment xml:lang="en">A value representing low rating on a scale.</rdfs:comment>
+        <rdfs:label xml:lang="en">Low</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Lustrum -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Lustrum">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">A value representing temporal period of a lustrum (5 years).</rdfs:comment>
+        <rdfs:label xml:lang="en">Lustrum</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Moderate -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Moderate">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Scale"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.5</hasValue>
+        <rdfs:comment xml:lang="en">A value representing moderate rating on a scale.</rdfs:comment>
+        <rdfs:label xml:lang="en">Moderate</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Month -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Month">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">A value representing temporal period of a month. Note that a month may have variable number of days depending on how it is defined.</rdfs:comment>
+        <rdfs:label xml:lang="en">Month</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Never -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Never">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</hasValue>
+        <rdfs:comment xml:lang="en">A value representing certainty of occurence never taking place.</rdfs:comment>
+        <rdfs:label xml:lang="en">Never</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Occasional -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Occasional">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.25</hasValue>
+        <rdfs:comment xml:lang="en">A value representing occasional occurence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Occasional</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#QuarterYear -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#QuarterYear">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">A value representing temporal period of a yearly quarter (3 months).</rdfs:comment>
+        <rdfs:label xml:lang="en">QuarterYear</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Rare -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Rare">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Occurence"/>
+        <hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</hasValue>
+        <rdfs:comment xml:lang="en">A value representing rarity of occurence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Rare</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#SemiYear -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#SemiYear">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">A value representing temporal period of a semi-year or bi-annual (6 months).</rdfs:comment>
+        <rdfs:label xml:lang="en">SemiYear</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Week -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Week">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">A value representing temporal period of a week.</rdfs:comment>
+        <rdfs:label xml:lang="en">Week</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/risky/riskonto#Year -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/risky/riskonto#Year">
+        <rdf:type rdf:resource="https://w3id.org/risky/riskonto#Period"/>
+        <rdfs:comment xml:lang="en">A value representing temporal period of a year.</rdfs:comment>
+        <rdfs:label xml:lang="en">Year</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
+

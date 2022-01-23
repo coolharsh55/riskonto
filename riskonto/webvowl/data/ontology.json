@@ -1,0 +1,1545 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "https://w3id.org/risky/riskonto" ],
+    "title" : {
+      "en" : "RiskOnto - A Concise Risk Ontology"
+    },
+    "iri" : "https://w3id.org/risky/riskonto",
+    "version" : "alpha-03",
+    "author" : [ "Harshvardhan J. Pandit" ],
+    "description" : {
+      "undefined" : "RiskOnto provides a concise ontology for representing concepts relevant for risks assessment."
+    },
+    "other" : {
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Harshvardhan J. Pandit",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2022-01-15",
+        "type" : "label"
+      } ],
+      "preferredNamespacePrefix" : [ {
+        "identifier" : "preferredNamespacePrefix",
+        "language" : "undefined",
+        "value" : "risk",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "ADAPT Centre, Trinity College",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2022-01-22",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "https://w3id.org/risky/riskonto",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "alpha-03",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "RiskOnto - A Concise Risk Ontology",
+        "type" : "label"
+      } ],
+      "status" : [ {
+        "identifier" : "status",
+        "language" : "undefined",
+        "value" : "http://purl.org/ontology/bibo/status/draft",
+        "type" : "iri"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "39",
+    "type" : "owl:Class"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "5",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "45",
+    "type" : "owl:intersectionOf"
+  }, {
+    "id" : "31",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
+    "type" : "owl:Class"
+  }, {
+    "id" : "43",
+    "type" : "owl:Class"
+  }, {
+    "id" : "63",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
+    "type" : "owl:Class"
+  }, {
+    "id" : "48",
+    "type" : "owl:Class"
+  }, {
+    "id" : "72",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "26",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "57",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "60",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "86",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "77",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "17",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "83",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "62",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/risky/riskonto#ControlImpact",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ControlImpact",
+      "en" : "Control Impact"
+    },
+    "comment" : {
+      "en" : "A control applied to reduce the probability, likelihood, or severity of a potential consequence's impact"
+    },
+    "id" : "6",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Origin",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Origin",
+      "en" : "Origin"
+    },
+    "comment" : {
+      "en" : "Indicates the source of risk i.e. the risk exists because of the source"
+    },
+    "id" : "8",
+    "superClasses" : [ "9" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#ModerateRisk",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ModerateRisk"
+    },
+    "id" : "10",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Source",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Source",
+      "en" : "Source"
+    },
+    "comment" : {
+      "en" : "Indicates the source or threat that has the potential to materialise associated risk(s)"
+    },
+    "id" : "39",
+    "superClasses" : [ "36" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "49",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Control",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Control",
+      "en" : "Control"
+    },
+    "subClasses" : [ "52", "6", "43", "41", "45" ],
+    "comment" : {
+      "en" : "A control is intended to detect, or to change, modifiy, or remove the probability, likelihood, or severity of an event"
+    },
+    "id" : "7"
+  }, {
+    "instances" : 0,
+    "union" : [ "9", "7", "36" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "5",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Agent",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Agent",
+      "en" : "Agent"
+    },
+    "subClasses" : [ "31", "28", "34" ],
+    "comment" : {
+      "en" : "An Agent associated with an Event or Control or System."
+    },
+    "id" : "29"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "4",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#VeryLowRisk",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "VeryLowRisk"
+    },
+    "id" : "15",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#VeryHighRisk",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "VeryHighRisk"
+    },
+    "id" : "19",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#RiskLevel",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "RiskLevel"
+    },
+    "id" : "61",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Event",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Event",
+      "en" : "Event"
+    },
+    "subClasses" : [ "62", "39", "63", "48", "11", "64" ],
+    "comment" : {
+      "en" : "An event is an occurence or an activity that takes place."
+    },
+    "id" : "36"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#SystemMaintainer",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SystemMaintainer",
+      "en" : "System Maintainer"
+    },
+    "comment" : {
+      "en" : "A 'maintainer' of a system e.g. developer, manager, owner."
+    },
+    "id" : "28",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#PartialControl",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PartialControl",
+      "en" : "Partial Control"
+    },
+    "intersection" : [ "7" ],
+    "comment" : {
+      "en" : "A component or part of a larger control distinguished by its application"
+    },
+    "attributes" : [ "intersection" ],
+    "id" : "45",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#SystemUser",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "SystemUser",
+      "en" : "System User"
+    },
+    "comment" : {
+      "en" : "A 'user' of a system e.g. end user."
+    },
+    "id" : "31",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#NullifiedEvent",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "NullifiedEvent",
+      "en" : "Nullified Event"
+    },
+    "comment" : {
+      "en" : "An event that has been nullified or prevented completely by some control."
+    },
+    "id" : "64",
+    "superClasses" : [ "36" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#ControlSource",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ControlSource",
+      "en" : "Control Source"
+    },
+    "comment" : {
+      "undefined" : "A control applied to the risk source to reduce the possibility, likelihood, or severity of risk"
+    },
+    "id" : "43",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#ResidualEvent",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ResidualEvent",
+      "en" : "Residual Event"
+    },
+    "comment" : {
+      "en" : "An event that has been modified or changed by a control such that it still has a chance to occur or take place."
+    },
+    "id" : "63",
+    "superClasses" : [ "36" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#LowRisk",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "LowRisk"
+    },
+    "id" : "24",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#ControlOrigin",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ControlOrigin",
+      "en" : "Control Origin"
+    },
+    "comment" : {
+      "en" : "A control applied to the risk cause to reduce the probability, likelihood, or severity of a potential risk materialising"
+    },
+    "id" : "52",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Impact",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Impact",
+      "en" : "Impact"
+    },
+    "comment" : {
+      "en" : "Indicates impact(s) arising from consequence(s)"
+    },
+    "id" : "47",
+    "superClasses" : [ "48" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Consequence",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Consequence",
+      "en" : "Consequence"
+    },
+    "subClasses" : [ "47" ],
+    "comment" : {
+      "en" : "Indicates a potential consequence materialising from risk(s)"
+    },
+    "id" : "48",
+    "superClasses" : [ "36" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Period",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Period",
+      "en" : "Period"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/risky/riskonto#Hour",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing temporal period of an hour."
+      },
+      "labels" : {
+        "IRI-based" : "Hour",
+        "en" : "Hour"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#SemiYear",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing temporal period of a semi-year or bi-annual (6 months)."
+      },
+      "labels" : {
+        "IRI-based" : "SemiYear",
+        "en" : "SemiYear"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Year",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing temporal period of a year."
+      },
+      "labels" : {
+        "IRI-based" : "Year",
+        "en" : "Year"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Month",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing temporal period of a month. Note that a month may have variable number of days depending on how it is defined."
+      },
+      "labels" : {
+        "IRI-based" : "Month",
+        "en" : "Month"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Decade",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing temporal period of a decade (10 years)."
+      },
+      "labels" : {
+        "IRI-based" : "Decade",
+        "en" : "Decade"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#QuarterYear",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing temporal period of a yearly quarter (3 months)."
+      },
+      "labels" : {
+        "IRI-based" : "QuarterYear",
+        "en" : "QuarterYear"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Day",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing temporal period of a day."
+      },
+      "labels" : {
+        "IRI-based" : "Day",
+        "en" : "Day"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Week",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing temporal period of a week."
+      },
+      "labels" : {
+        "IRI-based" : "Week",
+        "en" : "Week"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Lustrum",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing temporal period of a lustrum (5 years)."
+      },
+      "labels" : {
+        "IRI-based" : "Lustrum",
+        "en" : "Lustrum"
+      }
+    } ],
+    "comment" : {
+      "en" : "Period represents instances representing the temporal period for something e.g. an event to occur."
+    },
+    "id" : "72",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#System",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "System",
+      "en" : "System"
+    },
+    "subClasses" : [ "8" ],
+    "comment" : {
+      "en" : "A system representing the operational and organisational processes relevant to risk and its sources, causes, consequences, and impacts"
+    },
+    "id" : "9"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#HighRisk",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HighRisk"
+    },
+    "id" : "26",
+    "superClasses" : [ "11" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Risk",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Risk",
+      "en" : "Risk"
+    },
+    "subClasses" : [ "10", "19", "26", "24", "15" ],
+    "comment" : {
+      "en" : "A 'risk' is an event representing the possibility of consequence and their impacts to occur based, which are usually considered to be negative or harmful."
+    },
+    "id" : "11",
+    "superClasses" : [ "36" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "9", "7", "36" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "57"
+  }, {
+    "instances" : 0,
+    "union" : [ "6", "47", "11", "41" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "60"
+  }, {
+    "instances" : 0,
+    "union" : [ "6", "48" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "86"
+  }, {
+    "instances" : 0,
+    "union" : [ "52", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "77"
+  }, {
+    "instances" : 0,
+    "union" : [ "52", "8", "39", "43", "48", "41" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "17"
+  }, {
+    "instances" : 0,
+    "union" : [ "43", "11" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "83"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#InitialEvent",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InitialEvent",
+      "en" : "Initial Event"
+    },
+    "comment" : {
+      "en" : "An event that has not been modified or changed by any control."
+    },
+    "id" : "62",
+    "superClasses" : [ "36" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#ControlConsequence",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ControlConsequence",
+      "en" : "Control Consequence"
+    },
+    "comment" : {
+      "en" : "A control applied to reduce the probability, likelihood, or severity of a potential risk consequence"
+    },
+    "id" : "41",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Indicator",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Indicator",
+      "en" : "Indicator"
+    },
+    "subClasses" : [ "13", "1", "72" ],
+    "comment" : {
+      "en" : "An indicator for expressing attributes associated with events, controls, and system components in relation to risk."
+    },
+    "id" : "2"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#ThreatActor",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ThreatActor",
+      "en" : "Threat Actor"
+    },
+    "comment" : {
+      "en" : "An agent whose actions create a threat."
+    },
+    "id" : "34",
+    "superClasses" : [ "29" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Occurence",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Occurence",
+      "en" : "Occurence"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/risky/riskonto#Never",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing certainty of occurence never taking place."
+      },
+      "labels" : {
+        "IRI-based" : "Never",
+        "en" : "Never"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Frequent",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing frequent occurence."
+      },
+      "labels" : {
+        "IRI-based" : "Frequent",
+        "en" : "Frequent"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Likely",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing likely occurence."
+      },
+      "labels" : {
+        "IRI-based" : "Likely",
+        "en" : "Likely"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Occasional",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing occasional occurence."
+      },
+      "labels" : {
+        "IRI-based" : "Occasional",
+        "en" : "Occasional"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#ExtremelyRare",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing extreme rarity of occurence."
+      },
+      "labels" : {
+        "IRI-based" : "ExtremelyRare",
+        "en" : "ExtremelyRare"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Rare",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing rarity of occurence."
+      },
+      "labels" : {
+        "IRI-based" : "Rare",
+        "en" : "Rare"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Certain",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing certainty of occurence."
+      },
+      "labels" : {
+        "IRI-based" : "Certain",
+        "en" : "Certain"
+      }
+    } ],
+    "comment" : {
+      "en" : "Occurence represents instances representing the likelihood of something e.g. an event to occur."
+    },
+    "id" : "13",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#Scale",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Scale",
+      "en" : "Scale"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/risky/riskonto#High",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing high rating on a scale."
+      },
+      "labels" : {
+        "IRI-based" : "High",
+        "en" : "High"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Low",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing low rating on a scale."
+      },
+      "labels" : {
+        "IRI-based" : "Low",
+        "en" : "Low"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#ExtremelyHigh",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing extremely high rating on a scale."
+      },
+      "labels" : {
+        "IRI-based" : "ExtremelyHigh",
+        "en" : "ExtremelyHigh"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#ExtremelyLow",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing extremely low rating on a scale."
+      },
+      "labels" : {
+        "IRI-based" : "ExtremelyLow",
+        "en" : "ExtremelyLow"
+      }
+    }, {
+      "iri" : "https://w3id.org/risky/riskonto#Moderate",
+      "baseIri" : "https://w3id.org/risky/riskonto",
+      "comment" : {
+        "en" : "A value representing moderate rating on a scale."
+      },
+      "labels" : {
+        "IRI-based" : "Moderate",
+        "en" : "Moderate"
+      }
+    } ],
+    "subClasses" : [ "61" ],
+    "comment" : {
+      "en" : "Scale represents instances representing the chance or impact of something e.g. severity of an event to occur."
+    },
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "3",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "25",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "33",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "51",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "55",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "56",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "59",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "65",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "66",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "67",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "68",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "69",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "70",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "73",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "76",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "38",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "78",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "79",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "80",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "82",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "84",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "85",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "87",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "88",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "89",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "90",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "81",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "92",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasValue",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "hasValue",
+      "en" : "has value"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Indicates a value associated with an object e.g. likelihood of an event expressed as a value between 0.0 and 0.1."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "3"
+  }, {
+    "range" : "2",
+    "domain" : "13",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "12"
+  }, {
+    "range" : "11",
+    "domain" : "15",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "14"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasRisk",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "hasRisk",
+      "en" : "has risk"
+    },
+    "domain" : "17",
+    "comment" : {
+      "en" : "Indicates a source has a risk associated with it"
+    },
+    "attributes" : [ "object" ],
+    "id" : "16"
+  }, {
+    "range" : "11",
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "18"
+  }, {
+    "range" : "11",
+    "domain" : "10",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#isPartOf",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "isPartOf",
+      "en" : "is part of"
+    },
+    "domain" : "4",
+    "subproperty" : [ "22" ],
+    "comment" : {
+      "en" : "Indicates this thing (subject) is a part of the specified thing (object)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "21"
+  }, {
+    "range" : "11",
+    "domain" : "24",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "23"
+  }, {
+    "range" : "11",
+    "domain" : "26",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "25"
+  }, {
+    "range" : "29",
+    "domain" : "28",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "27"
+  }, {
+    "range" : "29",
+    "domain" : "31",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "30"
+  }, {
+    "range" : "9",
+    "domain" : "8",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "32"
+  }, {
+    "range" : "29",
+    "domain" : "34",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "33"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasProbability",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "hasProbability",
+      "en" : "has probability"
+    },
+    "domain" : "36",
+    "comment" : {
+      "en" : "Indicates the probability of an event in terms of statistical value i.e. what is the value between 0.0 (never) and 1.0 (certain) for occurence of an event. The value may be quantified to produce qualitative labels similar to likelihood e.g. rarely (0.1) or likely (0.5)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "35"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#isControlOfSystem",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "isControlOfSystem",
+      "en" : "is control of system"
+    },
+    "superproperty" : [ "21" ],
+    "domain" : "7",
+    "comment" : {
+      "en" : "Indicates the Control is a part of the specified System."
+    },
+    "attributes" : [ "object" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasPart",
+    "inverse" : "21",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasPart",
+      "en" : "has part"
+    },
+    "domain" : "4",
+    "subproperty" : [ "38" ],
+    "comment" : {
+      "en" : "Indicates the specified thing (object) is part of this thing (subject)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "37"
+  }, {
+    "range" : "7",
+    "domain" : "41",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "40"
+  }, {
+    "range" : "7",
+    "domain" : "43",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "42"
+  }, {
+    "range" : "7",
+    "domain" : "45",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "44"
+  }, {
+    "range" : "48",
+    "domain" : "47",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "46"
+  }, {
+    "range" : "7",
+    "domain" : "6",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "50"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#isModifiedFrom",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "isModifiedFrom",
+      "en" : "is modified from"
+    },
+    "domain" : "36",
+    "comment" : {
+      "en" : "Indicates this event is a modified form of the specified event e.g. change in likelihood."
+    },
+    "attributes" : [ "object" ],
+    "id" : "51"
+  }, {
+    "range" : "7",
+    "domain" : "52",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "53"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasSeverity",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "hasSeverity",
+      "en" : "has severity"
+    },
+    "domain" : "36",
+    "comment" : {
+      "en" : "Indicates the severity of an event within some context e.g. severity of an impact. Severity can be associated with a quantified value as well as qualitative labels e.g. 0.9 indicating high severity and 0.1 indicating low or extremely low severity."
+    },
+    "attributes" : [ "object" ],
+    "id" : "55"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasAgent",
+    "inverse" : "58",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "hasAgent",
+      "en" : "has agent"
+    },
+    "domain" : "57",
+    "comment" : {
+      "en" : "Indicates the involvement or relevance of specified agent."
+    },
+    "attributes" : [ "object" ],
+    "id" : "56"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasConsequence",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "hasConsequence",
+      "en" : "has consequence"
+    },
+    "domain" : "60",
+    "comment" : {
+      "en" : "Indicates the relevance of risk consequence."
+    },
+    "attributes" : [ "object" ],
+    "id" : "59"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#eliminatesEvent",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "64",
+    "label" : {
+      "IRI-based" : "eliminatesEvent",
+      "en" : "eliminates event"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Indicates that the control eliminates or nullifies or completely prevents occurence of specified event."
+    },
+    "attributes" : [ "object" ],
+    "id" : "65"
+  }, {
+    "range" : "36",
+    "domain" : "11",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "66"
+  }, {
+    "range" : "36",
+    "domain" : "48",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "67"
+  }, {
+    "range" : "1",
+    "domain" : "61",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "68"
+  }, {
+    "range" : "36",
+    "domain" : "64",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "69"
+  }, {
+    "range" : "36",
+    "domain" : "62",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "70"
+  }, {
+    "range" : "2",
+    "domain" : "72",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "71"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#isModifiedAs",
+    "inverse" : "51",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "isModifiedAs",
+      "en" : "is modified as"
+    },
+    "domain" : "36",
+    "comment" : {
+      "en" : "Indicates the specified event is a modified form of this event e.g. change in likelihood due to use of control."
+    },
+    "attributes" : [ "object" ],
+    "id" : "73"
+  }, {
+    "range" : "36",
+    "domain" : "63",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "74"
+  }, {
+    "range" : "36",
+    "domain" : "39",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "75"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasOrigin",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasOrigin",
+      "en" : "has origin"
+    },
+    "domain" : "77",
+    "comment" : {
+      "en" : "Indicates the relevance of risk origin."
+    },
+    "attributes" : [ "object" ],
+    "id" : "76"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasControl",
+    "inverse" : "22",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasControl",
+      "en" : "has control"
+    },
+    "superproperty" : [ "37" ],
+    "domain" : "9",
+    "comment" : {
+      "en" : "Indicates use of control measure to prevent or reduce risk materialising"
+    },
+    "attributes" : [ "object" ],
+    "id" : "38"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#isAgentFor",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "54",
+    "label" : {
+      "IRI-based" : "isAgentFor",
+      "en" : "is agent for"
+    },
+    "domain" : "29",
+    "comment" : {
+      "en" : "Indicates the agent is relevant for specified context."
+    },
+    "attributes" : [ "object" ],
+    "id" : "58"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#modifiesEvent",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "modifiesEvent",
+      "en" : "modifies event"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Indicates the Control modifies the specified Event."
+    },
+    "attributes" : [ "object" ],
+    "id" : "78"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hadPriorValue",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "49",
+    "label" : {
+      "IRI-based" : "hadPriorValue",
+      "en" : "had prior value"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Specifies the prior or previous value before it was changed e.g. by a control."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "79"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#follows",
+    "inverse" : "81",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "follows",
+      "en" : "follows"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Indicates specified 'Thing' follows this 'Thing'."
+    },
+    "attributes" : [ "object" ],
+    "id" : "80"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasSource",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasSource",
+      "en" : "has source"
+    },
+    "domain" : "83",
+    "comment" : {
+      "en" : "Indicates a risk has a source associated with it"
+    },
+    "attributes" : [ "object" ],
+    "id" : "82"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasOrigin",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "hasOrigin",
+      "en" : "has origin"
+    },
+    "domain" : "52",
+    "comment" : {
+      "en" : "Indicates the relevance of risk origin."
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "84"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasSource",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "hasSource",
+      "en" : "has source"
+    },
+    "domain" : "43",
+    "comment" : {
+      "en" : "Indicates a risk has a source associated with it"
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "85"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasConsequence",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "hasConsequence",
+      "en" : "has consequence"
+    },
+    "domain" : "41",
+    "comment" : {
+      "en" : "Indicates the relevance of risk consequence."
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "87"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasImpact",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "47",
+    "label" : {
+      "IRI-based" : "hasImpact",
+      "en" : "has impact"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Indicates relevance of impact arising from risk consequence."
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "88"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasLikelihood",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "hasLikelihood",
+      "en" : "has likelihood"
+    },
+    "domain" : "36",
+    "comment" : {
+      "en" : "Indicates the likelihood of an event in terms of subjective or qualitative values e.g. rarely or certain."
+    },
+    "attributes" : [ "object" ],
+    "id" : "89"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasImpact",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "47",
+    "label" : {
+      "IRI-based" : "hasImpact",
+      "en" : "has impact"
+    },
+    "domain" : "86",
+    "comment" : {
+      "en" : "Indicates relevance of impact arising from risk consequence."
+    },
+    "attributes" : [ "object" ],
+    "id" : "90"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#isFollowedBy",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "isFollowedBy",
+      "en" : "is followed by"
+    },
+    "domain" : "4",
+    "comment" : {
+      "en" : "Indicates this 'Thing' is followed by specified 'Thing'."
+    },
+    "attributes" : [ "object" ],
+    "id" : "81"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#detectsEvent",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "36",
+    "label" : {
+      "IRI-based" : "detectsEvent",
+      "en" : "detects event"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Indicates that the control detects occurence of specified event."
+    },
+    "attributes" : [ "object" ],
+    "id" : "91"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasFrequencyOverPeriod",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "72",
+    "label" : {
+      "IRI-based" : "hasFrequencyOverPeriod",
+      "en" : "has frequency over period"
+    },
+    "domain" : "36",
+    "comment" : {
+      "en" : "Indicates the frequency of an event in terms of temporal period i.e. over what period does the event occur e.g. annually or daily."
+    },
+    "attributes" : [ "object" ],
+    "id" : "92"
+  }, {
+    "iri" : "https://w3id.org/risky/riskonto#hasFrequencyOfOccurence",
+    "baseIri" : "https://w3id.org/risky/riskonto",
+    "range" : "13",
+    "label" : {
+      "IRI-based" : "hasFrequencyOfOccurence",
+      "en" : "has frequency of occurence"
+    },
+    "domain" : "36",
+    "comment" : {
+      "en" : "Indicates the frequency of an event in terms of occurences i.e. how frequently the event occurs e.g. occasionally or rarely."
+    },
+    "attributes" : [ "object" ],
+    "id" : "93"
+  } ]
+}

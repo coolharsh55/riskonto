@@ -1,0 +1,2531 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>RiskOnto - A Concise Risk Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/risky/riskonto","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/risky/riskonto","name":"RiskOnto - A Concise Risk Ontology", "headline":"RiskOnto provides a concise ontology for representing concepts relevant for risks assessment.", "datePublished":"2022-01-22", "version":"alpha-03", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Harshvardhan J. Pandit"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>RiskOnto - A Concise Risk Ontology</h1>
+<h2>Release  2022-01-22</h2>
+
+
+<dl>
+<dt>Revision:</dt>
+<dd>alpha-03</dd>
+<dt>Authors:</dt>
+<dd>Harshvardhan J. Pandit</dd>
+
+<dt>Publisher:</dt>
+<dd>ADAPT Centre, Trinity College</dd>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Harshvardhan J. Pandit. RiskOnto - A Concise Risk Ontology. Revision: alpha-03.</dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+RiskOnto provides a concise ontology for representing concepts relevant for risks assessment.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>risk</b></td><td>&lt;https://w3id.org/risky/riskonto&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>bibo</b></td><td>&lt;http://purl.org/ontology/bibo&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">RiskOnto - A Concise Risk Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#Agent" title="https://w3id.org/risky/riskonto#Agent">Agent</a>
+   </li>
+   <li>
+      <a href="#Consequence" title="https://w3id.org/risky/riskonto#Consequence">Consequence</a>
+   </li>
+   <li>
+      <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+   </li>
+   <li>
+      <a href="#ControlConsequence"
+         title="https://w3id.org/risky/riskonto#ControlConsequence">Control Consequence</a>
+   </li>
+   <li>
+      <a href="#ControlImpact" title="https://w3id.org/risky/riskonto#ControlImpact">Control Impact</a>
+   </li>
+   <li>
+      <a href="#ControlOrigin" title="https://w3id.org/risky/riskonto#ControlOrigin">Control Origin</a>
+   </li>
+   <li>
+      <a href="#ControlSource" title="https://w3id.org/risky/riskonto#ControlSource">Control Source</a>
+   </li>
+   <li>
+      <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+   </li>
+   <li>
+      <a href="#HighRisk" title="https://w3id.org/risky/riskonto#HighRisk">
+         <span>high risk</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Impact" title="https://w3id.org/risky/riskonto#Impact">Impact</a>
+   </li>
+   <li>
+      <a href="#Indicator" title="https://w3id.org/risky/riskonto#Indicator">Indicator</a>
+   </li>
+   <li>
+      <a href="#InitialEvent" title="https://w3id.org/risky/riskonto#InitialEvent">Initial Event</a>
+   </li>
+   <li>
+      <a href="#LowRisk" title="https://w3id.org/risky/riskonto#LowRisk">
+         <span>low risk</span>
+      </a>
+   </li>
+   <li>
+      <a href="#ModerateRisk" title="https://w3id.org/risky/riskonto#ModerateRisk">
+         <span>moderate risk</span>
+      </a>
+   </li>
+   <li>
+      <a href="#NullifiedEvent" title="https://w3id.org/risky/riskonto#NullifiedEvent">Nullified Event</a>
+   </li>
+   <li>
+      <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+   </li>
+   <li>
+      <a href="#Origin" title="https://w3id.org/risky/riskonto#Origin">Origin</a>
+   </li>
+   <li>
+      <a href="#PartialControl" title="https://w3id.org/risky/riskonto#PartialControl">Partial Control</a>
+   </li>
+   <li>
+      <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+   </li>
+   <li>
+      <a href="#ResidualEvent" title="https://w3id.org/risky/riskonto#ResidualEvent">Residual Event</a>
+   </li>
+   <li>
+      <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+   </li>
+   <li>
+      <a href="#RiskLevel" title="https://w3id.org/risky/riskonto#RiskLevel">
+         <span>risk level</span>
+      </a>
+   </li>
+   <li>
+      <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+   </li>
+   <li>
+      <a href="#Source" title="https://w3id.org/risky/riskonto#Source">Source</a>
+   </li>
+   <li>
+      <a href="#System" title="https://w3id.org/risky/riskonto#System">System</a>
+   </li>
+   <li>
+      <a href="#SystemMaintainer"
+         title="https://w3id.org/risky/riskonto#SystemMaintainer">System Maintainer</a>
+   </li>
+   <li>
+      <a href="#SystemUser" title="https://w3id.org/risky/riskonto#SystemUser">System User</a>
+   </li>
+   <li>
+      <a href="#ThreatActor" title="https://w3id.org/risky/riskonto#ThreatActor">Threat Actor</a>
+   </li>
+   <li>
+      <a href="#VeryHighRisk" title="https://w3id.org/risky/riskonto#VeryHighRisk">
+         <span>very high risk</span>
+      </a>
+   </li>
+   <li>
+      <a href="#VeryLowRisk" title="https://w3id.org/risky/riskonto#VeryLowRisk">
+         <span>very low risk</span>
+      </a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#detectsEvent" title="https://w3id.org/risky/riskonto#detectsEvent">detects event</a>
+   </li>
+   <li>
+      <a href="#eliminatesEvent" title="https://w3id.org/risky/riskonto#eliminatesEvent">eliminates event</a>
+   </li>
+   <li>
+      <a href="#follows" title="https://w3id.org/risky/riskonto#follows">follows</a>
+   </li>
+   <li>
+      <a href="#hasAgent" title="https://w3id.org/risky/riskonto#hasAgent">has agent</a>
+   </li>
+   <li>
+      <a href="#hasConsequence" title="https://w3id.org/risky/riskonto#hasConsequence">has consequence</a>
+   </li>
+   <li>
+      <a href="#hasControl" title="https://w3id.org/risky/riskonto#hasControl">has control</a>
+   </li>
+   <li>
+      <a href="#hasFrequencyOfOccurence"
+         title="https://w3id.org/risky/riskonto#hasFrequencyOfOccurence">has frequency of occurence</a>
+   </li>
+   <li>
+      <a href="#hasFrequencyOverPeriod"
+         title="https://w3id.org/risky/riskonto#hasFrequencyOverPeriod">has frequency over period</a>
+   </li>
+   <li>
+      <a href="#hasImpact" title="https://w3id.org/risky/riskonto#hasImpact">has impact</a>
+   </li>
+   <li>
+      <a href="#hasLikelihood" title="https://w3id.org/risky/riskonto#hasLikelihood">has likelihood</a>
+   </li>
+   <li>
+      <a href="#hasOrigin" title="https://w3id.org/risky/riskonto#hasOrigin">has origin</a>
+   </li>
+   <li>
+      <a href="#hasPart" title="https://w3id.org/risky/riskonto#hasPart">has part</a>
+   </li>
+   <li>
+      <a href="#hasProbability" title="https://w3id.org/risky/riskonto#hasProbability">has probability</a>
+   </li>
+   <li>
+      <a href="#hasRisk" title="https://w3id.org/risky/riskonto#hasRisk">has risk</a>
+   </li>
+   <li>
+      <a href="#hasSeverity" title="https://w3id.org/risky/riskonto#hasSeverity">has severity</a>
+   </li>
+   <li>
+      <a href="#hasSource" title="https://w3id.org/risky/riskonto#hasSource">has source</a>
+   </li>
+   <li>
+      <a href="#isAgentFor" title="https://w3id.org/risky/riskonto#isAgentFor">is agent for</a>
+   </li>
+   <li>
+      <a href="#isControlOfSystem"
+         title="https://w3id.org/risky/riskonto#isControlOfSystem">is control of system</a>
+   </li>
+   <li>
+      <a href="#isFollowedBy" title="https://w3id.org/risky/riskonto#isFollowedBy">is followed by</a>
+   </li>
+   <li>
+      <a href="#isModifiedAs" title="https://w3id.org/risky/riskonto#isModifiedAs">is modified as</a>
+   </li>
+   <li>
+      <a href="#isModifiedFrom" title="https://w3id.org/risky/riskonto#isModifiedFrom">is modified from</a>
+   </li>
+   <li>
+      <a href="#isPartOf" title="https://w3id.org/risky/riskonto#isPartOf">is part of</a>
+   </li>
+   <li>
+      <a href="#modifiesEvent" title="https://w3id.org/risky/riskonto#modifiesEvent">modifies event</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#hadPriorValue" title="https://w3id.org/risky/riskonto#hadPriorValue">had prior value</a>
+   </li>
+   <li>
+      <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#Certain" title="https://w3id.org/risky/riskonto#Certain">Certain</a>
+   </li>
+   <li>
+      <a href="#Day" title="https://w3id.org/risky/riskonto#Day">Day</a>
+   </li>
+   <li>
+      <a href="#Decade" title="https://w3id.org/risky/riskonto#Decade">Decade</a>
+   </li>
+   <li>
+      <a href="#ExtremelyHigh" title="https://w3id.org/risky/riskonto#ExtremelyHigh">ExtremelyHigh</a>
+   </li>
+   <li>
+      <a href="#ExtremelyLow" title="https://w3id.org/risky/riskonto#ExtremelyLow">ExtremelyLow</a>
+   </li>
+   <li>
+      <a href="#ExtremelyRare" title="https://w3id.org/risky/riskonto#ExtremelyRare">ExtremelyRare</a>
+   </li>
+   <li>
+      <a href="#Frequent" title="https://w3id.org/risky/riskonto#Frequent">Frequent</a>
+   </li>
+   <li>
+      <a href="#High" title="https://w3id.org/risky/riskonto#High">High</a>
+   </li>
+   <li>
+      <a href="#Hour" title="https://w3id.org/risky/riskonto#Hour">Hour</a>
+   </li>
+   <li>
+      <a href="#Likely" title="https://w3id.org/risky/riskonto#Likely">Likely</a>
+   </li>
+   <li>
+      <a href="#Low" title="https://w3id.org/risky/riskonto#Low">Low</a>
+   </li>
+   <li>
+      <a href="#Lustrum" title="https://w3id.org/risky/riskonto#Lustrum">Lustrum</a>
+   </li>
+   <li>
+      <a href="#Moderate" title="https://w3id.org/risky/riskonto#Moderate">Moderate</a>
+   </li>
+   <li>
+      <a href="#Month" title="https://w3id.org/risky/riskonto#Month">Month</a>
+   </li>
+   <li>
+      <a href="#Never" title="https://w3id.org/risky/riskonto#Never">Never</a>
+   </li>
+   <li>
+      <a href="#Occasional" title="https://w3id.org/risky/riskonto#Occasional">Occasional</a>
+   </li>
+   <li>
+      <a href="#QuarterYear" title="https://w3id.org/risky/riskonto#QuarterYear">QuarterYear</a>
+   </li>
+   <li>
+      <a href="#Rare" title="https://w3id.org/risky/riskonto#Rare">Rare</a>
+   </li>
+   <li>
+      <a href="#SemiYear" title="https://w3id.org/risky/riskonto#SemiYear">SemiYear</a>
+   </li>
+   <li>
+      <a href="#Week" title="https://w3id.org/risky/riskonto#Week">Week</a>
+   </li>
+   <li>
+      <a href="#Year" title="https://w3id.org/risky/riskonto#Year">Year</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">RiskOnto - A Concise Risk Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for RiskOnto - A Concise Risk Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by RiskOnto - A Concise Risk Ontology.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Agent" title="https://w3id.org/risky/riskonto#Agent">Agent</a>
+      </li>
+      <li>
+         <a href="#Consequence" title="https://w3id.org/risky/riskonto#Consequence">Consequence</a>
+      </li>
+      <li>
+         <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+      </li>
+      <li>
+         <a href="#ControlConsequence"
+            title="https://w3id.org/risky/riskonto#ControlConsequence">Control Consequence</a>
+      </li>
+      <li>
+         <a href="#ControlImpact" title="https://w3id.org/risky/riskonto#ControlImpact">Control Impact</a>
+      </li>
+      <li>
+         <a href="#ControlOrigin" title="https://w3id.org/risky/riskonto#ControlOrigin">Control Origin</a>
+      </li>
+      <li>
+         <a href="#ControlSource" title="https://w3id.org/risky/riskonto#ControlSource">Control Source</a>
+      </li>
+      <li>
+         <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+      </li>
+      <li>
+         <a href="#HighRisk" title="https://w3id.org/risky/riskonto#HighRisk">
+            <span>high risk</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Impact" title="https://w3id.org/risky/riskonto#Impact">Impact</a>
+      </li>
+      <li>
+         <a href="#Indicator" title="https://w3id.org/risky/riskonto#Indicator">Indicator</a>
+      </li>
+      <li>
+         <a href="#InitialEvent" title="https://w3id.org/risky/riskonto#InitialEvent">Initial Event</a>
+      </li>
+      <li>
+         <a href="#LowRisk" title="https://w3id.org/risky/riskonto#LowRisk">
+            <span>low risk</span>
+         </a>
+      </li>
+      <li>
+         <a href="#ModerateRisk" title="https://w3id.org/risky/riskonto#ModerateRisk">
+            <span>moderate risk</span>
+         </a>
+      </li>
+      <li>
+         <a href="#NullifiedEvent" title="https://w3id.org/risky/riskonto#NullifiedEvent">Nullified Event</a>
+      </li>
+      <li>
+         <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+      </li>
+      <li>
+         <a href="#Origin" title="https://w3id.org/risky/riskonto#Origin">Origin</a>
+      </li>
+      <li>
+         <a href="#PartialControl" title="https://w3id.org/risky/riskonto#PartialControl">Partial Control</a>
+      </li>
+      <li>
+         <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+      </li>
+      <li>
+         <a href="#ResidualEvent" title="https://w3id.org/risky/riskonto#ResidualEvent">Residual Event</a>
+      </li>
+      <li>
+         <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+      </li>
+      <li>
+         <a href="#RiskLevel" title="https://w3id.org/risky/riskonto#RiskLevel">
+            <span>risk level</span>
+         </a>
+      </li>
+      <li>
+         <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+      </li>
+      <li>
+         <a href="#Source" title="https://w3id.org/risky/riskonto#Source">Source</a>
+      </li>
+      <li>
+         <a href="#System" title="https://w3id.org/risky/riskonto#System">System</a>
+      </li>
+      <li>
+         <a href="#SystemMaintainer"
+            title="https://w3id.org/risky/riskonto#SystemMaintainer">System Maintainer</a>
+      </li>
+      <li>
+         <a href="#SystemUser" title="https://w3id.org/risky/riskonto#SystemUser">System User</a>
+      </li>
+      <li>
+         <a href="#ThreatActor" title="https://w3id.org/risky/riskonto#ThreatActor">Threat Actor</a>
+      </li>
+      <li>
+         <a href="#VeryHighRisk" title="https://w3id.org/risky/riskonto#VeryHighRisk">
+            <span>very high risk</span>
+         </a>
+      </li>
+      <li>
+         <a href="#VeryLowRisk" title="https://w3id.org/risky/riskonto#VeryLowRisk">
+            <span>very low risk</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="Agent">
+      <h3>Agent<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Agent</p>
+      <div class="comment">
+         <span class="markdown">An Agent associated with an Event or Control or System.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#SystemMaintainer"
+               title="https://w3id.org/risky/riskonto#SystemMaintainer">System Maintainer</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SystemUser" title="https://w3id.org/risky/riskonto#SystemUser">System User</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ThreatActor" title="https://w3id.org/risky/riskonto#ThreatActor">Threat Actor</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isAgentFor" title="https://w3id.org/risky/riskonto#isAgentFor">is agent for</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasAgent" title="https://w3id.org/risky/riskonto#hasAgent">has agent</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Consequence">
+      <h3>Consequence<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Consequence</p>
+      <div class="comment">
+         <span class="markdown">Indicates a potential consequence materialising from risk(s)</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Impact" title="https://w3id.org/risky/riskonto#Impact">Impact</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Control">
+      <h3>Control<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Control</p>
+      <div class="comment">
+         <span class="markdown">A control is intended to detect, or to change, modifiy, or remove the probability, likelihood, or severity of an event</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#ControlConsequence"
+               title="https://w3id.org/risky/riskonto#ControlConsequence">Control Consequence</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ControlImpact" title="https://w3id.org/risky/riskonto#ControlImpact">Control Impact</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ControlOrigin" title="https://w3id.org/risky/riskonto#ControlOrigin">Control Origin</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ControlSource" title="https://w3id.org/risky/riskonto#ControlSource">Control Source</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PartialControl" title="https://w3id.org/risky/riskonto#PartialControl">Partial Control</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#detectsEvent" title="https://w3id.org/risky/riskonto#detectsEvent">detects event</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#eliminatesEvent" title="https://w3id.org/risky/riskonto#eliminatesEvent">eliminates event</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isControlOfSystem"
+               title="https://w3id.org/risky/riskonto#isControlOfSystem">is control of system</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#modifiesEvent" title="https://w3id.org/risky/riskonto#modifiesEvent">modifies event</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasControl" title="https://w3id.org/risky/riskonto#hasControl">has control</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ControlConsequence">
+      <h3>Control Consequence<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ControlConsequence</p>
+      <div class="comment">
+         <span class="markdown">A control applied to reduce the probability, likelihood, or severity of a potential risk consequence</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ControlImpact">
+      <h3>Control Impact<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ControlImpact</p>
+      <div class="comment">
+         <span class="markdown">A control applied to reduce the probability, likelihood, or severity of a potential consequence's impact</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ControlOrigin">
+      <h3>Control Origin<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ControlOrigin</p>
+      <div class="comment">
+         <span class="markdown">A control applied to the risk cause to reduce the probability, likelihood, or severity of a potential risk materialising</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ControlSource">
+      <h3>Control Source<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ControlSource</p>
+      <div class="comment">
+         <span class="markdown">A control applied to the risk source to reduce the possibility, likelihood, or severity of risk</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Event">
+      <h3>Event<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Event</p>
+      <div class="comment">
+         <span class="markdown">An event is an occurence or an activity that takes place.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Consequence" title="https://w3id.org/risky/riskonto#Consequence">Consequence</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#InitialEvent" title="https://w3id.org/risky/riskonto#InitialEvent">Initial Event</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#NullifiedEvent" title="https://w3id.org/risky/riskonto#NullifiedEvent">Nullified Event</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ResidualEvent" title="https://w3id.org/risky/riskonto#ResidualEvent">Residual Event</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Source" title="https://w3id.org/risky/riskonto#Source">Source</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasFrequencyOfOccurence"
+               title="https://w3id.org/risky/riskonto#hasFrequencyOfOccurence">has frequency of occurence</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasFrequencyOverPeriod"
+               title="https://w3id.org/risky/riskonto#hasFrequencyOverPeriod">has frequency over period</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasLikelihood" title="https://w3id.org/risky/riskonto#hasLikelihood">has likelihood</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasProbability" title="https://w3id.org/risky/riskonto#hasProbability">has probability</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSeverity" title="https://w3id.org/risky/riskonto#hasSeverity">has severity</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isModifiedAs" title="https://w3id.org/risky/riskonto#isModifiedAs">is modified as</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isModifiedFrom" title="https://w3id.org/risky/riskonto#isModifiedFrom">is modified from</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#detectsEvent" title="https://w3id.org/risky/riskonto#detectsEvent">detects event</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isModifiedAs" title="https://w3id.org/risky/riskonto#isModifiedAs">is modified as</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isModifiedFrom" title="https://w3id.org/risky/riskonto#isModifiedFrom">is modified from</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="HighRisk">
+      <h3>high risk<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#HighRisk</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Impact">
+      <h3>Impact<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Impact</p>
+      <div class="comment">
+         <span class="markdown">Indicates impact(s) arising from consequence(s)</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Consequence" title="https://w3id.org/risky/riskonto#Consequence">Consequence</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasImpact" title="https://w3id.org/risky/riskonto#hasImpact">has impact</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Indicator">
+      <h3>Indicator<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Indicator</p>
+      <div class="comment">
+         <span class="markdown">An indicator for expressing attributes associated with events, controls, and system components in relation to risk.</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="InitialEvent">
+      <h3>Initial Event<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#InitialEvent</p>
+      <div class="comment">
+         <span class="markdown">An event that has not been modified or changed by any control.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="LowRisk">
+      <h3>low risk<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#LowRisk</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ModerateRisk">
+      <h3>moderate risk<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ModerateRisk</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="NullifiedEvent">
+      <h3>Nullified Event<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#NullifiedEvent</p>
+      <div class="comment">
+         <span class="markdown">An event that has been nullified or prevented completely by some control.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#eliminatesEvent" title="https://w3id.org/risky/riskonto#eliminatesEvent">eliminates event</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Occurence">
+      <h3>Occurence<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Occurence</p>
+      <div class="comment">
+         <span class="markdown">Occurence represents instances representing the likelihood of something e.g. an event to occur.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Indicator" title="https://w3id.org/risky/riskonto#Indicator">Indicator</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasFrequencyOfOccurence"
+               title="https://w3id.org/risky/riskonto#hasFrequencyOfOccurence">has frequency of occurence</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasLikelihood" title="https://w3id.org/risky/riskonto#hasLikelihood">has likelihood</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasProbability" title="https://w3id.org/risky/riskonto#hasProbability">has probability</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Certain" title="https://w3id.org/risky/riskonto#Certain">Certain</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ExtremelyRare" title="https://w3id.org/risky/riskonto#ExtremelyRare">ExtremelyRare</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Frequent" title="https://w3id.org/risky/riskonto#Frequent">Frequent</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Likely" title="https://w3id.org/risky/riskonto#Likely">Likely</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Never" title="https://w3id.org/risky/riskonto#Never">Never</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Occasional" title="https://w3id.org/risky/riskonto#Occasional">Occasional</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Rare" title="https://w3id.org/risky/riskonto#Rare">Rare</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Origin">
+      <h3>Origin<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Origin</p>
+      <div class="comment">
+         <span class="markdown">Indicates the source of risk i.e. the risk exists because of the source</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#System" title="https://w3id.org/risky/riskonto#System">System</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasOrigin" title="https://w3id.org/risky/riskonto#hasOrigin">has origin</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSource" title="https://w3id.org/risky/riskonto#hasSource">has source</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PartialControl">
+      <h3>Partial Control<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#PartialControl</p>
+      <div class="comment">
+         <span class="markdown">A component or part of a larger control distinguished by its application</span>
+      </div>
+      <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">and</span> (<a href="#isPartOf" title="https://w3id.org/risky/riskonto#isPartOf">is part of</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+            <sup class="type-c" title="class">c</sup>)</dd>
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Period">
+      <h3>Period<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Period</p>
+      <div class="comment">
+         <span class="markdown">Period represents instances representing the temporal period for something e.g. an event to occur.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Indicator" title="https://w3id.org/risky/riskonto#Indicator">Indicator</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasFrequencyOverPeriod"
+               title="https://w3id.org/risky/riskonto#hasFrequencyOverPeriod">has frequency over period</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Day" title="https://w3id.org/risky/riskonto#Day">Day</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Decade" title="https://w3id.org/risky/riskonto#Decade">Decade</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Hour" title="https://w3id.org/risky/riskonto#Hour">Hour</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Lustrum" title="https://w3id.org/risky/riskonto#Lustrum">Lustrum</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Month" title="https://w3id.org/risky/riskonto#Month">Month</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#QuarterYear" title="https://w3id.org/risky/riskonto#QuarterYear">QuarterYear</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#SemiYear" title="https://w3id.org/risky/riskonto#SemiYear">SemiYear</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Week" title="https://w3id.org/risky/riskonto#Week">Week</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Year" title="https://w3id.org/risky/riskonto#Year">Year</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ResidualEvent">
+      <h3>Residual Event<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ResidualEvent</p>
+      <div class="comment">
+         <span class="markdown">An event that has been modified or changed by a control such that it still has a chance to occur or take place.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#modifiesEvent" title="https://w3id.org/risky/riskonto#modifiesEvent">modifies event</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Risk">
+      <h3>Risk<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Risk</p>
+      <div class="comment">
+         <span class="markdown">A 'risk' is an event representing the possibility of consequence and their impacts to occur based, which are usually considered to be negative or harmful.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#HighRisk" title="https://w3id.org/risky/riskonto#HighRisk">high risk</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#LowRisk" title="https://w3id.org/risky/riskonto#LowRisk">low risk</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ModerateRisk" title="https://w3id.org/risky/riskonto#ModerateRisk">moderate risk</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#VeryHighRisk" title="https://w3id.org/risky/riskonto#VeryHighRisk">very high risk</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#VeryLowRisk" title="https://w3id.org/risky/riskonto#VeryLowRisk">very low risk</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasConsequence" title="https://w3id.org/risky/riskonto#hasConsequence">has consequence</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasRisk" title="https://w3id.org/risky/riskonto#hasRisk">has risk</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="RiskLevel">
+      <h3>risk level<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#RiskLevel</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Scale">
+      <h3>Scale<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Scale</p>
+      <div class="comment">
+         <span class="markdown">Scale represents instances representing the chance or impact of something e.g. severity of an event to occur.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Indicator" title="https://w3id.org/risky/riskonto#Indicator">Indicator</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#RiskLevel" title="https://w3id.org/risky/riskonto#RiskLevel">risk level</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasSeverity" title="https://w3id.org/risky/riskonto#hasSeverity">has severity</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#ExtremelyHigh" title="https://w3id.org/risky/riskonto#ExtremelyHigh">ExtremelyHigh</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#ExtremelyLow" title="https://w3id.org/risky/riskonto#ExtremelyLow">ExtremelyLow</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#High" title="https://w3id.org/risky/riskonto#High">High</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Low" title="https://w3id.org/risky/riskonto#Low">Low</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Moderate" title="https://w3id.org/risky/riskonto#Moderate">Moderate</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Source">
+      <h3>Source<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Source</p>
+      <div class="comment">
+         <span class="markdown">Indicates the source or threat that has the potential to materialise associated risk(s)</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="System">
+      <h3>System<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#System</p>
+      <div class="comment">
+         <span class="markdown">A system representing the operational and organisational processes relevant to risk and its sources, causes, consequences, and impacts</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Origin" title="https://w3id.org/risky/riskonto#Origin">Origin</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasControl" title="https://w3id.org/risky/riskonto#hasControl">has control</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#isControlOfSystem"
+               title="https://w3id.org/risky/riskonto#isControlOfSystem">is control of system</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SystemMaintainer">
+      <h3>System Maintainer<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#SystemMaintainer</p>
+      <div class="comment">
+         <span class="markdown">A 'maintainer' of a system e.g. developer, manager, owner.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Agent" title="https://w3id.org/risky/riskonto#Agent">Agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SystemUser">
+      <h3>System User<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#SystemUser</p>
+      <div class="comment">
+         <span class="markdown">A 'user' of a system e.g. end user.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Agent" title="https://w3id.org/risky/riskonto#Agent">Agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ThreatActor">
+      <h3>Threat Actor<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ThreatActor</p>
+      <div class="comment">
+         <span class="markdown">An agent whose actions create a threat.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Agent" title="https://w3id.org/risky/riskonto#Agent">Agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="VeryHighRisk">
+      <h3>very high risk<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#VeryHighRisk</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="VeryLowRisk">
+      <h3>very low risk<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#VeryLowRisk</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#detectsEvent" title="https://w3id.org/risky/riskonto#detectsEvent">detects event</a>
+      </li>
+      <li>
+         <a href="#eliminatesEvent" title="https://w3id.org/risky/riskonto#eliminatesEvent">eliminates event</a>
+      </li>
+      <li>
+         <a href="#follows" title="https://w3id.org/risky/riskonto#follows">follows</a>
+      </li>
+      <li>
+         <a href="#hasAgent" title="https://w3id.org/risky/riskonto#hasAgent">has agent</a>
+      </li>
+      <li>
+         <a href="#hasConsequence" title="https://w3id.org/risky/riskonto#hasConsequence">has consequence</a>
+      </li>
+      <li>
+         <a href="#hasControl" title="https://w3id.org/risky/riskonto#hasControl">has control</a>
+      </li>
+      <li>
+         <a href="#hasFrequencyOfOccurence"
+            title="https://w3id.org/risky/riskonto#hasFrequencyOfOccurence">has frequency of occurence</a>
+      </li>
+      <li>
+         <a href="#hasFrequencyOverPeriod"
+            title="https://w3id.org/risky/riskonto#hasFrequencyOverPeriod">has frequency over period</a>
+      </li>
+      <li>
+         <a href="#hasImpact" title="https://w3id.org/risky/riskonto#hasImpact">has impact</a>
+      </li>
+      <li>
+         <a href="#hasLikelihood" title="https://w3id.org/risky/riskonto#hasLikelihood">has likelihood</a>
+      </li>
+      <li>
+         <a href="#hasOrigin" title="https://w3id.org/risky/riskonto#hasOrigin">has origin</a>
+      </li>
+      <li>
+         <a href="#hasPart" title="https://w3id.org/risky/riskonto#hasPart">has part</a>
+      </li>
+      <li>
+         <a href="#hasProbability" title="https://w3id.org/risky/riskonto#hasProbability">has probability</a>
+      </li>
+      <li>
+         <a href="#hasRisk" title="https://w3id.org/risky/riskonto#hasRisk">has risk</a>
+      </li>
+      <li>
+         <a href="#hasSeverity" title="https://w3id.org/risky/riskonto#hasSeverity">has severity</a>
+      </li>
+      <li>
+         <a href="#hasSource" title="https://w3id.org/risky/riskonto#hasSource">has source</a>
+      </li>
+      <li>
+         <a href="#isAgentFor" title="https://w3id.org/risky/riskonto#isAgentFor">is agent for</a>
+      </li>
+      <li>
+         <a href="#isControlOfSystem"
+            title="https://w3id.org/risky/riskonto#isControlOfSystem">is control of system</a>
+      </li>
+      <li>
+         <a href="#isFollowedBy" title="https://w3id.org/risky/riskonto#isFollowedBy">is followed by</a>
+      </li>
+      <li>
+         <a href="#isModifiedAs" title="https://w3id.org/risky/riskonto#isModifiedAs">is modified as</a>
+      </li>
+      <li>
+         <a href="#isModifiedFrom" title="https://w3id.org/risky/riskonto#isModifiedFrom">is modified from</a>
+      </li>
+      <li>
+         <a href="#isPartOf" title="https://w3id.org/risky/riskonto#isPartOf">is part of</a>
+      </li>
+      <li>
+         <a href="#modifiesEvent" title="https://w3id.org/risky/riskonto#modifiesEvent">modifies event</a>
+      </li>
+   </ul>
+   <div class="entity" id="detectsEvent">
+      <h3>detects event<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#detectsEvent</p>
+      <div class="comment">
+         <span class="markdown">Indicates that the control detects occurence of specified event.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="eliminatesEvent">
+      <h3>eliminates event<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#eliminatesEvent</p>
+      <div class="comment">
+         <span class="markdown">Indicates that the control eliminates or nullifies or completely prevents occurence of specified event.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#NullifiedEvent" title="https://w3id.org/risky/riskonto#NullifiedEvent">Nullified Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="follows">
+      <h3>follows<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#follows</p>
+      <div class="comment">
+         <span class="markdown">Indicates specified 'Thing' follows this 'Thing'.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isFollowedBy" title="https://w3id.org/risky/riskonto#isFollowedBy">is followed by</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasAgent">
+      <h3>has agent<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasAgent</p>
+      <div class="comment">
+         <span class="markdown">Indicates the involvement or relevance of specified agent.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#System" title="https://w3id.org/risky/riskonto#System">System</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Agent" title="https://w3id.org/risky/riskonto#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isAgentFor" title="https://w3id.org/risky/riskonto#isAgentFor">is agent for</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasConsequence">
+      <h3>has consequence<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasConsequence</p>
+      <div class="comment">
+         <span class="markdown">Indicates the relevance of risk consequence.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ControlConsequence"
+                  title="https://w3id.org/risky/riskonto#ControlConsequence">Control Consequence</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#ControlImpact" title="https://w3id.org/risky/riskonto#ControlImpact">Control Impact</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Impact" title="https://w3id.org/risky/riskonto#Impact">Impact</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasControl">
+      <h3>has control<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasControl</p>
+      <div class="comment">
+         <span class="markdown">Indicates use of control measure to prevent or reduce risk materialising</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#hasPart" title="https://w3id.org/risky/riskonto#hasPart">has part</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#System" title="https://w3id.org/risky/riskonto#System">System</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isControlOfSystem"
+                  title="https://w3id.org/risky/riskonto#isControlOfSystem">is control of system</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasFrequencyOfOccurence">
+      <h3>has frequency of occurence<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasFrequencyOfOccurence</p>
+      <div class="comment">
+         <span class="markdown">Indicates the frequency of an event in terms of occurences i.e. how frequently the event occurs e.g. occasionally or rarely.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasFrequencyOverPeriod">
+      <h3>has frequency over period<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasFrequencyOverPeriod</p>
+      <div class="comment">
+         <span class="markdown">Indicates the frequency of an event in terms of temporal period i.e. over what period does the event occur e.g. annually or daily.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasImpact">
+      <h3>has impact<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasImpact</p>
+      <div class="comment">
+         <span class="markdown">Indicates relevance of impact arising from risk consequence.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consequence" title="https://w3id.org/risky/riskonto#Consequence">Consequence</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#ControlImpact" title="https://w3id.org/risky/riskonto#ControlImpact">Control Impact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Impact" title="https://w3id.org/risky/riskonto#Impact">Impact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasLikelihood">
+      <h3>has likelihood<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasLikelihood</p>
+      <div class="comment">
+         <span class="markdown">Indicates the likelihood of an event in terms of subjective or qualitative values e.g. rarely or certain.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasOrigin">
+      <h3>has origin<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasOrigin</p>
+      <div class="comment">
+         <span class="markdown">Indicates the relevance of risk origin.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ControlOrigin" title="https://w3id.org/risky/riskonto#ControlOrigin">Control Origin</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Origin" title="https://w3id.org/risky/riskonto#Origin">Origin</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasPart">
+      <h3>has part<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasPart</p>
+      <div class="comment">
+         <span class="markdown">Indicates the specified thing (object) is part of this thing (subject).</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#hasControl" title="https://w3id.org/risky/riskonto#hasControl">has control</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isPartOf" title="https://w3id.org/risky/riskonto#isPartOf">is part of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasProbability">
+      <h3>has probability<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasProbability</p>
+      <div class="comment">
+         <span class="markdown">Indicates the probability of an event in terms of statistical value i.e. what is the value between 0.0 (never) and 1.0 (certain) for occurence of an event. The value may be quantified to produce qualitative labels similar to likelihood e.g. rarely (0.1) or likely (0.5).</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasRisk">
+      <h3>has risk<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasRisk</p>
+      <div class="comment">
+         <span class="markdown">Indicates a source has a risk associated with it</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Consequence" title="https://w3id.org/risky/riskonto#Consequence">Consequence</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#ControlConsequence"
+                  title="https://w3id.org/risky/riskonto#ControlConsequence">Control Consequence</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#ControlOrigin" title="https://w3id.org/risky/riskonto#ControlOrigin">Control Origin</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#ControlSource" title="https://w3id.org/risky/riskonto#ControlSource">Control Source</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Origin" title="https://w3id.org/risky/riskonto#Origin">Origin</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Source" title="https://w3id.org/risky/riskonto#Source">Source</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSeverity">
+      <h3>has severity<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasSeverity</p>
+      <div class="comment">
+         <span class="markdown">Indicates the severity of an event within some context e.g. severity of an impact. Severity can be associated with a quantified value as well as qualitative labels e.g. 0.9 indicating high severity and 0.1 indicating low or extremely low severity.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSource">
+      <h3>has source<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasSource</p>
+      <div class="comment">
+         <span class="markdown">Indicates a risk has a source associated with it</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ControlSource" title="https://w3id.org/risky/riskonto#ControlSource">Control Source</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Risk" title="https://w3id.org/risky/riskonto#Risk">Risk</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Origin" title="https://w3id.org/risky/riskonto#Origin">Origin</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isAgentFor">
+      <h3>is agent for<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#isAgentFor</p>
+      <div class="comment">
+         <span class="markdown">Indicates the agent is relevant for specified context.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Agent" title="https://w3id.org/risky/riskonto#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#System" title="https://w3id.org/risky/riskonto#System">System</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasAgent" title="https://w3id.org/risky/riskonto#hasAgent">has agent</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isControlOfSystem">
+      <h3>is control of system<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#isControlOfSystem</p>
+      <div class="comment">
+         <span class="markdown">Indicates the Control is a part of the specified System.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#isPartOf" title="https://w3id.org/risky/riskonto#isPartOf">is part of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#System" title="https://w3id.org/risky/riskonto#System">System</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasControl" title="https://w3id.org/risky/riskonto#hasControl">has control</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isFollowedBy">
+      <h3>is followed by<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#isFollowedBy</p>
+      <div class="comment">
+         <span class="markdown">Indicates this 'Thing' is followed by specified 'Thing'.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#follows" title="https://w3id.org/risky/riskonto#follows">follows</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isModifiedAs">
+      <h3>is modified as<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#isModifiedAs</p>
+      <div class="comment">
+         <span class="markdown">Indicates the specified event is a modified form of this event e.g. change in likelihood due to use of control.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isModifiedFrom" title="https://w3id.org/risky/riskonto#isModifiedFrom">is modified from</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isModifiedFrom">
+      <h3>is modified from<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#isModifiedFrom</p>
+      <div class="comment">
+         <span class="markdown">Indicates this event is a modified form of the specified event e.g. change in likelihood.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Event" title="https://w3id.org/risky/riskonto#Event">Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isModifiedAs" title="https://w3id.org/risky/riskonto#isModifiedAs">is modified as</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isPartOf">
+      <h3>is part of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#isPartOf</p>
+      <div class="comment">
+         <span class="markdown">Indicates this thing (subject) is a part of the specified thing (object).</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#isControlOfSystem"
+                  title="https://w3id.org/risky/riskonto#isControlOfSystem">is control of system</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#hasPart" title="https://w3id.org/risky/riskonto#hasPart">has part</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="modifiesEvent">
+      <h3>modifies event<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#modifiesEvent</p>
+      <div class="comment">
+         <span class="markdown">Indicates the Control modifies the specified Event.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Control" title="https://w3id.org/risky/riskonto#Control">Control</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ResidualEvent" title="https://w3id.org/risky/riskonto#ResidualEvent">Residual Event</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hadPriorValue" title="https://w3id.org/risky/riskonto#hadPriorValue">had prior value</a>
+      </li>
+      <li>
+         <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+      </li>
+   </ul>
+   <div class="entity" id="hadPriorValue">
+      <h3>had prior value<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hadPriorValue</p>
+      <div class="comment">
+         <span class="markdown">Specifies the prior or previous value before it was changed e.g. by a control.</span>
+      </div>
+   </div>
+   <div class="entity" id="hasValue">
+      <h3>has value<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#hasValue</p>
+      <div class="comment">
+         <span class="markdown">Indicates a value associated with an object e.g. likelihood of an event expressed as a value between 0.0 and 0.1.</span>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Certain" title="https://w3id.org/risky/riskonto#Certain">Certain</a>
+      </li>
+      <li>
+         <a href="#Day" title="https://w3id.org/risky/riskonto#Day">Day</a>
+      </li>
+      <li>
+         <a href="#Decade" title="https://w3id.org/risky/riskonto#Decade">Decade</a>
+      </li>
+      <li>
+         <a href="#ExtremelyHigh" title="https://w3id.org/risky/riskonto#ExtremelyHigh">ExtremelyHigh</a>
+      </li>
+      <li>
+         <a href="#ExtremelyLow" title="https://w3id.org/risky/riskonto#ExtremelyLow">ExtremelyLow</a>
+      </li>
+      <li>
+         <a href="#ExtremelyRare" title="https://w3id.org/risky/riskonto#ExtremelyRare">ExtremelyRare</a>
+      </li>
+      <li>
+         <a href="#Frequent" title="https://w3id.org/risky/riskonto#Frequent">Frequent</a>
+      </li>
+      <li>
+         <a href="#High" title="https://w3id.org/risky/riskonto#High">High</a>
+      </li>
+      <li>
+         <a href="#Hour" title="https://w3id.org/risky/riskonto#Hour">Hour</a>
+      </li>
+      <li>
+         <a href="#Likely" title="https://w3id.org/risky/riskonto#Likely">Likely</a>
+      </li>
+      <li>
+         <a href="#Low" title="https://w3id.org/risky/riskonto#Low">Low</a>
+      </li>
+      <li>
+         <a href="#Lustrum" title="https://w3id.org/risky/riskonto#Lustrum">Lustrum</a>
+      </li>
+      <li>
+         <a href="#Moderate" title="https://w3id.org/risky/riskonto#Moderate">Moderate</a>
+      </li>
+      <li>
+         <a href="#Month" title="https://w3id.org/risky/riskonto#Month">Month</a>
+      </li>
+      <li>
+         <a href="#Never" title="https://w3id.org/risky/riskonto#Never">Never</a>
+      </li>
+      <li>
+         <a href="#Occasional" title="https://w3id.org/risky/riskonto#Occasional">Occasional</a>
+      </li>
+      <li>
+         <a href="#QuarterYear" title="https://w3id.org/risky/riskonto#QuarterYear">QuarterYear</a>
+      </li>
+      <li>
+         <a href="#Rare" title="https://w3id.org/risky/riskonto#Rare">Rare</a>
+      </li>
+      <li>
+         <a href="#SemiYear" title="https://w3id.org/risky/riskonto#SemiYear">SemiYear</a>
+      </li>
+      <li>
+         <a href="#Week" title="https://w3id.org/risky/riskonto#Week">Week</a>
+      </li>
+      <li>
+         <a href="#Year" title="https://w3id.org/risky/riskonto#Year">Year</a>
+      </li>
+   </ul>
+   <div class="entity" id="Certain">
+      <h3>Certain<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Certain</p>
+      <div class="comment">
+         <span class="markdown">A value representing certainty of occurence.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"1.0"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Day">
+      <h3>Day<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Day</p>
+      <div class="comment">
+         <span class="markdown">A value representing temporal period of a day.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Decade">
+      <h3>Decade<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Decade</p>
+      <div class="comment">
+         <span class="markdown">A value representing temporal period of a decade (10 years).</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExtremelyHigh">
+      <h3>ExtremelyHigh<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ExtremelyHigh</p>
+      <div class="comment">
+         <span class="markdown">A value representing extremely high rating on a scale.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.9"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExtremelyLow">
+      <h3>ExtremelyLow<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ExtremelyLow</p>
+      <div class="comment">
+         <span class="markdown">A value representing extremely low rating on a scale.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.1"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ExtremelyRare">
+      <h3>ExtremelyRare<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#ExtremelyRare</p>
+      <div class="comment">
+         <span class="markdown">A value representing extreme rarity of occurence.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.05"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Frequent">
+      <h3>Frequent<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Frequent</p>
+      <div class="comment">
+         <span class="markdown">A value representing frequent occurence.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.75"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="High">
+      <h3>High<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#High</p>
+      <div class="comment">
+         <span class="markdown">A value representing high rating on a scale.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.75"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Hour">
+      <h3>Hour<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Hour</p>
+      <div class="comment">
+         <span class="markdown">A value representing temporal period of an hour.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Likely">
+      <h3>Likely<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Likely</p>
+      <div class="comment">
+         <span class="markdown">A value representing likely occurence.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.5"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Low">
+      <h3>Low<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Low</p>
+      <div class="comment">
+         <span class="markdown">A value representing low rating on a scale.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.25"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Lustrum">
+      <h3>Lustrum<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Lustrum</p>
+      <div class="comment">
+         <span class="markdown">A value representing temporal period of a lustrum (5 years).</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Moderate">
+      <h3>Moderate<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Moderate</p>
+      <div class="comment">
+         <span class="markdown">A value representing moderate rating on a scale.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Scale" title="https://w3id.org/risky/riskonto#Scale">Scale</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.5"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Month">
+      <h3>Month<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Month</p>
+      <div class="comment">
+         <span class="markdown">A value representing temporal period of a month. Note that a month may have variable number of days depending on how it is defined.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Never">
+      <h3>Never<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Never</p>
+      <div class="comment">
+         <span class="markdown">A value representing certainty of occurence never taking place.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.0"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Occasional">
+      <h3>Occasional<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Occasional</p>
+      <div class="comment">
+         <span class="markdown">A value representing occasional occurence.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.25"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="QuarterYear">
+      <h3>QuarterYear<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#QuarterYear</p>
+      <div class="comment">
+         <span class="markdown">A value representing temporal period of a yearly quarter (3 months).</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Rare">
+      <h3>Rare<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Rare</p>
+      <div class="comment">
+         <span class="markdown">A value representing rarity of occurence.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Occurence" title="https://w3id.org/risky/riskonto#Occurence">Occurence</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#hasValue" title="https://w3id.org/risky/riskonto#hasValue">has value</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"0.1"^^<a href="http://www.w3.org/2001/XMLSchema#decimal"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SemiYear">
+      <h3>SemiYear<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#SemiYear</p>
+      <div class="comment">
+         <span class="markdown">A value representing temporal period of a semi-year or bi-annual (6 months).</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Week">
+      <h3>Week<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Week</p>
+      <div class="comment">
+         <span class="markdown">A value representing temporal period of a week.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Year">
+      <h3>Year<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/risky/riskonto#Year</p>
+      <div class="comment">
+         <span class="markdown">A value representing temporal period of a year.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Period" title="https://w3id.org/risky/riskonto#Period">Period</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

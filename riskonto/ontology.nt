@@ -1,0 +1,1241 @@
+<https://w3id.org/risky/riskonto> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/risky/riskonto> <http://purl.org/dc/terms/created> "2022-01-15"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/risky/riskonto> <http://purl.org/dc/terms/creator> "Harshvardhan J. Pandit" .
+<https://w3id.org/risky/riskonto> <http://purl.org/dc/terms/description> "RiskOnto provides a concise ontology for representing concepts relevant for risks assessment." .
+<https://w3id.org/risky/riskonto> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/risky/riskonto> <http://purl.org/dc/terms/modified> "2022-01-22"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://w3id.org/risky/riskonto> <http://purl.org/dc/terms/publisher> "ADAPT Centre, Trinity College" .
+<https://w3id.org/risky/riskonto> <http://purl.org/dc/terms/title> "RiskOnto - A Concise Risk Ontology"@en .
+<https://w3id.org/risky/riskonto> <http://purl.org/ontology/bibo/status> <http://purl.org/ontology/bibo/status/draft> .
+<https://w3id.org/risky/riskonto> <http://purl.org/vocab/vann/preferredNamespacePrefix> "risk" .
+<https://w3id.org/risky/riskonto> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/risky/riskonto"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<https://w3id.org/risky/riskonto> <http://www.w3.org/2002/07/owl#versionInfo> "alpha-03" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/risky/riskonto#detectsEvent
+<https://w3id.org/risky/riskonto#detectsEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#detectsEvent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#detectsEvent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#detectsEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the control detects occurence of specified event."@en .
+<https://w3id.org/risky/riskonto#detectsEvent> <http://www.w3.org/2000/01/rdf-schema#label> "detects event"@en .
+# 
+# https://w3id.org/risky/riskonto#eliminatesEvent
+<https://w3id.org/risky/riskonto#eliminatesEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#eliminatesEvent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#eliminatesEvent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#NullifiedEvent> .
+<https://w3id.org/risky/riskonto#eliminatesEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that the control eliminates or nullifies or completely prevents occurence of specified event."@en .
+<https://w3id.org/risky/riskonto#eliminatesEvent> <http://www.w3.org/2000/01/rdf-schema#label> "eliminates event"@en .
+# 
+# https://w3id.org/risky/riskonto#follows
+<https://w3id.org/risky/riskonto#follows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#follows> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/risky/riskonto#isFollowedBy> .
+<https://w3id.org/risky/riskonto#follows> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates specified 'Thing' follows this 'Thing'."@en .
+<https://w3id.org/risky/riskonto#follows> <http://www.w3.org/2000/01/rdf-schema#label> "follows"@en .
+# 
+# https://w3id.org/risky/riskonto#hasAgent
+<https://w3id.org/risky/riskonto#hasAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasAgent> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/risky/riskonto#isAgentFor> .
+<https://w3id.org/risky/riskonto#hasAgent> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Control> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Event> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#System> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/risky/riskonto#hasAgent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Agent> .
+<https://w3id.org/risky/riskonto#hasAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the involvement or relevance of specified agent."@en .
+<https://w3id.org/risky/riskonto#hasAgent> <http://www.w3.org/2000/01/rdf-schema#label> "has agent"@en .
+# 
+# https://w3id.org/risky/riskonto#hasConsequence
+<https://w3id.org/risky/riskonto#hasConsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasConsequence> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid5 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#ControlConsequence> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#ControlImpact> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Impact> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Risk> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/risky/riskonto#hasConsequence> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Risk> .
+<https://w3id.org/risky/riskonto#hasConsequence> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the relevance of risk consequence."@en .
+<https://w3id.org/risky/riskonto#hasConsequence> <http://www.w3.org/2000/01/rdf-schema#label> "has consequence"@en .
+# 
+# https://w3id.org/risky/riskonto#hasControl
+<https://w3id.org/risky/riskonto#hasControl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasControl> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/risky/riskonto#hasPart> .
+<https://w3id.org/risky/riskonto#hasControl> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/risky/riskonto#isControlOfSystem> .
+<https://w3id.org/risky/riskonto#hasControl> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#System> .
+<https://w3id.org/risky/riskonto#hasControl> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#hasControl> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates use of control measure to prevent or reduce risk materialising"@en .
+<https://w3id.org/risky/riskonto#hasControl> <http://www.w3.org/2000/01/rdf-schema#label> "has control"@en .
+# 
+# https://w3id.org/risky/riskonto#hasFrequencyOfOccurence
+<https://w3id.org/risky/riskonto#hasFrequencyOfOccurence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasFrequencyOfOccurence> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#hasFrequencyOfOccurence> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#hasFrequencyOfOccurence> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the frequency of an event in terms of occurences i.e. how frequently the event occurs e.g. occasionally or rarely."@en .
+<https://w3id.org/risky/riskonto#hasFrequencyOfOccurence> <http://www.w3.org/2000/01/rdf-schema#label> "has frequency of occurence"@en .
+# 
+# https://w3id.org/risky/riskonto#hasFrequencyOverPeriod
+<https://w3id.org/risky/riskonto#hasFrequencyOverPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasFrequencyOverPeriod> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#hasFrequencyOverPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#hasFrequencyOverPeriod> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the frequency of an event in terms of temporal period i.e. over what period does the event occur e.g. annually or daily."@en .
+<https://w3id.org/risky/riskonto#hasFrequencyOverPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "has frequency over period"@en .
+# 
+# https://w3id.org/risky/riskonto#hasImpact
+<https://w3id.org/risky/riskonto#hasImpact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasImpact> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Consequence> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#ControlImpact> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/risky/riskonto#hasImpact> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Impact> .
+<https://w3id.org/risky/riskonto#hasImpact> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates relevance of impact arising from risk consequence."@en .
+<https://w3id.org/risky/riskonto#hasImpact> <http://www.w3.org/2000/01/rdf-schema#label> "has impact"@en .
+# 
+# https://w3id.org/risky/riskonto#hasLikelihood
+<https://w3id.org/risky/riskonto#hasLikelihood> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasLikelihood> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#hasLikelihood> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#hasLikelihood> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the likelihood of an event in terms of subjective or qualitative values e.g. rarely or certain."@en .
+<https://w3id.org/risky/riskonto#hasLikelihood> <http://www.w3.org/2000/01/rdf-schema#label> "has likelihood"@en .
+# 
+# https://w3id.org/risky/riskonto#hasOrigin
+<https://w3id.org/risky/riskonto#hasOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasOrigin> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid13 <http://www.w3.org/2002/07/owl#unionOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#ControlOrigin> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Risk> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/risky/riskonto#hasOrigin> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Origin> .
+<https://w3id.org/risky/riskonto#hasOrigin> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the relevance of risk origin."@en .
+<https://w3id.org/risky/riskonto#hasOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "has origin"@en .
+# 
+# https://w3id.org/risky/riskonto#hasPart
+<https://w3id.org/risky/riskonto#hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/risky/riskonto#isPartOf> .
+<https://w3id.org/risky/riskonto#hasPart> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the specified thing (object) is part of this thing (subject)."@en .
+<https://w3id.org/risky/riskonto#hasPart> <http://www.w3.org/2000/01/rdf-schema#label> "has part"@en .
+# 
+# https://w3id.org/risky/riskonto#hasProbability
+<https://w3id.org/risky/riskonto#hasProbability> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasProbability> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#hasProbability> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#hasProbability> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the probability of an event in terms of statistical value i.e. what is the value between 0.0 (never) and 1.0 (certain) for occurence of an event. The value may be quantified to produce qualitative labels similar to likelihood e.g. rarely (0.1) or likely (0.5)."@en .
+<https://w3id.org/risky/riskonto#hasProbability> <http://www.w3.org/2000/01/rdf-schema#label> "has probability"@en .
+# 
+# https://w3id.org/risky/riskonto#hasRisk
+<https://w3id.org/risky/riskonto#hasRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasRisk> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid16 <http://www.w3.org/2002/07/owl#unionOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Consequence> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#ControlConsequence> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#ControlOrigin> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#ControlSource> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Origin> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Source> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/risky/riskonto#hasRisk> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Risk> .
+<https://w3id.org/risky/riskonto#hasRisk> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a source has a risk associated with it"@en .
+<https://w3id.org/risky/riskonto#hasRisk> <http://www.w3.org/2000/01/rdf-schema#label> "has risk"@en .
+# 
+# https://w3id.org/risky/riskonto#hasSeverity
+<https://w3id.org/risky/riskonto#hasSeverity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Scale> .
+<https://w3id.org/risky/riskonto#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the severity of an event within some context e.g. severity of an impact. Severity can be associated with a quantified value as well as qualitative labels e.g. 0.9 indicating high severity and 0.1 indicating low or extremely low severity."@en .
+<https://w3id.org/risky/riskonto#hasSeverity> <http://www.w3.org/2000/01/rdf-schema#label> "has severity"@en .
+# 
+# https://w3id.org/risky/riskonto#hasSource
+<https://w3id.org/risky/riskonto#hasSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#hasSource> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid23 <http://www.w3.org/2002/07/owl#unionOf> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#ControlSource> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Risk> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/risky/riskonto#hasSource> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Origin> .
+<https://w3id.org/risky/riskonto#hasSource> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a risk has a source associated with it"@en .
+<https://w3id.org/risky/riskonto#hasSource> <http://www.w3.org/2000/01/rdf-schema#label> "has source"@en .
+# 
+# https://w3id.org/risky/riskonto#isAgentFor
+<https://w3id.org/risky/riskonto#isAgentFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#isAgentFor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Agent> .
+<https://w3id.org/risky/riskonto#isAgentFor> <http://www.w3.org/2000/01/rdf-schema#range> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid26 <http://www.w3.org/2002/07/owl#unionOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Control> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Event> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#System> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/risky/riskonto#isAgentFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the agent is relevant for specified context."@en .
+<https://w3id.org/risky/riskonto#isAgentFor> <http://www.w3.org/2000/01/rdf-schema#label> "is agent for"@en .
+# 
+# https://w3id.org/risky/riskonto#isControlOfSystem
+<https://w3id.org/risky/riskonto#isControlOfSystem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#isControlOfSystem> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/risky/riskonto#isPartOf> .
+<https://w3id.org/risky/riskonto#isControlOfSystem> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#isControlOfSystem> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#System> .
+<https://w3id.org/risky/riskonto#isControlOfSystem> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the Control is a part of the specified System."@en .
+<https://w3id.org/risky/riskonto#isControlOfSystem> <http://www.w3.org/2000/01/rdf-schema#label> "is control of system"@en .
+# 
+# https://w3id.org/risky/riskonto#isFollowedBy
+<https://w3id.org/risky/riskonto#isFollowedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#isFollowedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates this 'Thing' is followed by specified 'Thing'."@en .
+<https://w3id.org/risky/riskonto#isFollowedBy> <http://www.w3.org/2000/01/rdf-schema#label> "is followed by"@en .
+# 
+# https://w3id.org/risky/riskonto#isModifiedAs
+<https://w3id.org/risky/riskonto#isModifiedAs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#isModifiedAs> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/risky/riskonto#isModifiedFrom> .
+<https://w3id.org/risky/riskonto#isModifiedAs> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#isModifiedAs> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#isModifiedAs> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the specified event is a modified form of this event e.g. change in likelihood due to use of control."@en .
+<https://w3id.org/risky/riskonto#isModifiedAs> <http://www.w3.org/2000/01/rdf-schema#label> "is modified as"@en .
+# 
+# https://w3id.org/risky/riskonto#isModifiedFrom
+<https://w3id.org/risky/riskonto#isModifiedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#isModifiedFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#isModifiedFrom> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#isModifiedFrom> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates this event is a modified form of the specified event e.g. change in likelihood."@en .
+<https://w3id.org/risky/riskonto#isModifiedFrom> <http://www.w3.org/2000/01/rdf-schema#label> "is modified from"@en .
+# 
+# https://w3id.org/risky/riskonto#isPartOf
+<https://w3id.org/risky/riskonto#isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#isPartOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates this thing (subject) is a part of the specified thing (object)."@en .
+<https://w3id.org/risky/riskonto#isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is part of"@en .
+# 
+# https://w3id.org/risky/riskonto#modifiesEvent
+<https://w3id.org/risky/riskonto#modifiesEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/risky/riskonto#modifiesEvent> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#modifiesEvent> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/risky/riskonto#ResidualEvent> .
+<https://w3id.org/risky/riskonto#modifiesEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the Control modifies the specified Event."@en .
+<https://w3id.org/risky/riskonto#modifiesEvent> <http://www.w3.org/2000/01/rdf-schema#label> "modifies event"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/risky/riskonto#hadPriorValue
+<https://w3id.org/risky/riskonto#hadPriorValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/risky/riskonto#hadPriorValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the prior or previous value before it was changed e.g. by a control."@en .
+<https://w3id.org/risky/riskonto#hadPriorValue> <http://www.w3.org/2000/01/rdf-schema#label> "had prior value"@en .
+# 
+# https://w3id.org/risky/riskonto#hasValue
+<https://w3id.org/risky/riskonto#hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/risky/riskonto#hasValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a value associated with an object e.g. likelihood of an event expressed as a value between 0.0 and 0.1."@en .
+<https://w3id.org/risky/riskonto#hasValue> <http://www.w3.org/2000/01/rdf-schema#label> "has value"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/risky/riskonto#Agent
+<https://w3id.org/risky/riskonto#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An Agent associated with an Event or Control or System."@en .
+<https://w3id.org/risky/riskonto#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent"@en .
+# 
+# https://w3id.org/risky/riskonto#Consequence
+<https://w3id.org/risky/riskonto#Consequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Consequence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#Consequence> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates a potential consequence materialising from risk(s)"@en .
+<https://w3id.org/risky/riskonto#Consequence> <http://www.w3.org/2000/01/rdf-schema#label> "Consequence"@en .
+# 
+# https://w3id.org/risky/riskonto#Control
+<https://w3id.org/risky/riskonto#Control> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Control> <http://www.w3.org/2000/01/rdf-schema#comment> "A control is intended to detect, or to change, modifiy, or remove the probability, likelihood, or severity of an event"@en .
+<https://w3id.org/risky/riskonto#Control> <http://www.w3.org/2000/01/rdf-schema#label> "Control"@en .
+# 
+# https://w3id.org/risky/riskonto#ControlConsequence
+<https://w3id.org/risky/riskonto#ControlConsequence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#ControlConsequence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#ControlConsequence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasConsequence> .
+_:genid30 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/risky/riskonto#Consequence> .
+<https://w3id.org/risky/riskonto#ControlConsequence> <http://www.w3.org/2000/01/rdf-schema#comment> "A control applied to reduce the probability, likelihood, or severity of a potential risk consequence"@en .
+<https://w3id.org/risky/riskonto#ControlConsequence> <http://www.w3.org/2000/01/rdf-schema#label> "Control Consequence"@en .
+# 
+# https://w3id.org/risky/riskonto#ControlImpact
+<https://w3id.org/risky/riskonto#ControlImpact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#ControlImpact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#ControlImpact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasImpact> .
+_:genid31 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/risky/riskonto#Impact> .
+<https://w3id.org/risky/riskonto#ControlImpact> <http://www.w3.org/2000/01/rdf-schema#comment> "A control applied to reduce the probability, likelihood, or severity of a potential consequence's impact"@en .
+<https://w3id.org/risky/riskonto#ControlImpact> <http://www.w3.org/2000/01/rdf-schema#label> "Control Impact"@en .
+# 
+# https://w3id.org/risky/riskonto#ControlOrigin
+<https://w3id.org/risky/riskonto#ControlOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#ControlOrigin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#ControlOrigin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasOrigin> .
+_:genid32 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/risky/riskonto#Origin> .
+<https://w3id.org/risky/riskonto#ControlOrigin> <http://www.w3.org/2000/01/rdf-schema#comment> "A control applied to the risk cause to reduce the probability, likelihood, or severity of a potential risk materialising"@en .
+<https://w3id.org/risky/riskonto#ControlOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "Control Origin"@en .
+# 
+# https://w3id.org/risky/riskonto#ControlSource
+<https://w3id.org/risky/riskonto#ControlSource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#ControlSource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#ControlSource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSource> .
+_:genid33 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/risky/riskonto#Source> .
+<https://w3id.org/risky/riskonto#ControlSource> <http://www.w3.org/2000/01/rdf-schema#comment> "A control applied to the risk source to reduce the possibility, likelihood, or severity of risk" .
+<https://w3id.org/risky/riskonto#ControlSource> <http://www.w3.org/2000/01/rdf-schema#label> "Control Source"@en .
+# 
+# https://w3id.org/risky/riskonto#Event
+<https://w3id.org/risky/riskonto#Event> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Event> <http://www.w3.org/2000/01/rdf-schema#comment> "An event is an occurence or an activity that takes place."@en .
+<https://w3id.org/risky/riskonto#Event> <http://www.w3.org/2000/01/rdf-schema#label> "Event"@en .
+# 
+# https://w3id.org/risky/riskonto#HighRisk
+<https://w3id.org/risky/riskonto#HighRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#HighRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Risk> .
+<https://w3id.org/risky/riskonto#HighRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid34 <http://www.w3.org/2002/07/owl#unionOf> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid48 .
+_:genid48 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid52 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid52 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Certain> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid50 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid50 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#High> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid42 .
+_:genid42 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid46 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Frequent> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid44 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyHigh> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid40 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Frequent> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid38 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#High> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# https://w3id.org/risky/riskonto#Impact
+<https://w3id.org/risky/riskonto#Impact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Impact> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Consequence> .
+<https://w3id.org/risky/riskonto#Impact> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates impact(s) arising from consequence(s)"@en .
+<https://w3id.org/risky/riskonto#Impact> <http://www.w3.org/2000/01/rdf-schema#label> "Impact"@en .
+# 
+# https://w3id.org/risky/riskonto#Indicator
+<https://w3id.org/risky/riskonto#Indicator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Indicator> <http://www.w3.org/2000/01/rdf-schema#comment> "An indicator for expressing attributes associated with events, controls, and system components in relation to risk."@en .
+<https://w3id.org/risky/riskonto#Indicator> <http://www.w3.org/2000/01/rdf-schema#label> "Indicator"@en .
+# 
+# https://w3id.org/risky/riskonto#InitialEvent
+<https://w3id.org/risky/riskonto#InitialEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#InitialEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#InitialEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "An event that has not been modified or changed by any control."@en .
+<https://w3id.org/risky/riskonto#InitialEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Initial Event"@en .
+# 
+# https://w3id.org/risky/riskonto#LowRisk
+<https://w3id.org/risky/riskonto#LowRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#LowRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Risk> .
+<https://w3id.org/risky/riskonto#LowRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid53 <http://www.w3.org/2002/07/owl#unionOf> _:genid108 .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid109 .
+_:genid109 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid112 .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid113 .
+_:genid113 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid113 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid113 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Certain> .
+_:genid112 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid110 .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid111 .
+_:genid111 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid111 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid111 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyLow> .
+_:genid110 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid109 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid108 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid102 .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid103 .
+_:genid103 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid106 .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid107 .
+_:genid107 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid107 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid107 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Certain> .
+_:genid106 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid104 .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid105 .
+_:genid105 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid105 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid105 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Low> .
+_:genid104 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid103 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid102 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid96 .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid97 .
+_:genid97 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid100 .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid101 .
+_:genid101 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid101 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid101 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Frequent> .
+_:genid100 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid98 .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid99 .
+_:genid99 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid99 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid99 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyLow> .
+_:genid98 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid97 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid96 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid90 .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid91 .
+_:genid91 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid94 .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid95 .
+_:genid95 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid95 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid95 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Frequent> .
+_:genid94 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid92 .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid93 .
+_:genid93 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid93 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid93 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Low> .
+_:genid92 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid91 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid90 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid84 .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid85 .
+_:genid85 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid88 .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid89 .
+_:genid89 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid89 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid89 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Likely> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid86 .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid87 .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid87 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid87 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Low> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid78 .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid79 .
+_:genid79 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid82 .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid83 .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid83 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid83 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Occasional> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid80 .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid81 .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid81 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid81 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyHigh> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid72 .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid73 .
+_:genid73 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid76 .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid77 .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid77 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid77 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Occasional> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid74 .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid75 .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid75 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid75 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#High> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid66 .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid67 .
+_:genid67 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid70 .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid71 .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid71 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid71 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Occasional> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid68 .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid69 .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid69 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid69 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Moderate> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid60 .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid61 .
+_:genid61 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid64 .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid65 .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid65 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid65 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Rare> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid62 .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid63 .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid63 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid63 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyHigh> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid55 .
+_:genid55 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid59 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid59 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Rare> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid57 .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid57 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#High> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# https://w3id.org/risky/riskonto#ModerateRisk
+<https://w3id.org/risky/riskonto#ModerateRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#ModerateRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Risk> .
+<https://w3id.org/risky/riskonto#ModerateRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid114 .
+_:genid114 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid114 <http://www.w3.org/2002/07/owl#unionOf> _:genid139 .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid140 .
+_:genid140 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid143 .
+_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid144 .
+_:genid144 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid144 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid144 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Certain> .
+_:genid143 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid141 .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid142 .
+_:genid142 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid142 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid142 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Moderate> .
+_:genid141 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid140 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid139 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid133 .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid134 .
+_:genid134 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid137 .
+_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid138 .
+_:genid138 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid138 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid138 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Frequent> .
+_:genid137 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid135 .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid136 .
+_:genid136 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid136 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid136 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Moderate> .
+_:genid135 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid134 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid133 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid127 .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid128 .
+_:genid128 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid131 .
+_:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid132 .
+_:genid132 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid132 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid132 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Likely> .
+_:genid131 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid129 .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid130 .
+_:genid130 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid130 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid130 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyHigh> .
+_:genid129 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid128 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid127 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid121 .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid122 .
+_:genid122 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid125 .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid126 .
+_:genid126 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid126 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid126 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Likely> .
+_:genid125 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid123 .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid124 .
+_:genid124 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid124 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid124 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#High> .
+_:genid123 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid122 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid121 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid115 .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid116 .
+_:genid116 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid119 .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid120 .
+_:genid120 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid120 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid120 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Likely> .
+_:genid119 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid117 .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid118 .
+_:genid118 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid118 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid118 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Moderate> .
+_:genid117 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid116 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid115 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# https://w3id.org/risky/riskonto#NullifiedEvent
+<https://w3id.org/risky/riskonto#NullifiedEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#NullifiedEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#NullifiedEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid145 .
+_:genid145 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid145 <http://www.w3.org/2002/07/owl#unionOf> _:genid150 .
+_:genid150 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid150 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid151 .
+_:genid151 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid151 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasFrequencyOfOccurence> .
+_:genid151 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Never> .
+_:genid150 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid148 .
+_:genid148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid149 .
+_:genid149 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid149 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid149 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Never> .
+_:genid148 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid146 .
+_:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid147 .
+_:genid147 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid147 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasProbability> .
+_:genid147 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Never> .
+_:genid146 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/risky/riskonto#NullifiedEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "An event that has been nullified or prevented completely by some control."@en .
+<https://w3id.org/risky/riskonto#NullifiedEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Nullified Event"@en .
+# 
+# https://w3id.org/risky/riskonto#Occurence
+<https://w3id.org/risky/riskonto#Occurence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Occurence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Indicator> .
+<https://w3id.org/risky/riskonto#Occurence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid152 .
+_:genid152 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid155 .
+_:genid155 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid155 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid156 .
+_:genid156 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid156 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid156 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Certain> .
+_:genid155 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid153 .
+_:genid153 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid153 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid154 .
+_:genid154 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid154 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid154 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyHigh> .
+_:genid153 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid152 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Occurence> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid157 .
+_:genid157 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid157 <http://www.w3.org/2002/07/owl#unionOf> _:genid182 .
+_:genid182 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid182 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid183 .
+_:genid183 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid186 .
+_:genid186 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid186 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid187 .
+_:genid187 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid187 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid187 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Certain> .
+_:genid186 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid184 .
+_:genid184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid185 .
+_:genid185 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid185 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid185 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Moderate> .
+_:genid184 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid183 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid182 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid176 .
+_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid177 .
+_:genid177 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid180 .
+_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid181 .
+_:genid181 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid181 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid181 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Frequent> .
+_:genid180 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid178 .
+_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid179 .
+_:genid179 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid179 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid179 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Moderate> .
+_:genid178 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid177 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid176 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid170 .
+_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid171 .
+_:genid171 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid174 .
+_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid175 .
+_:genid175 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid175 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid175 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Likely> .
+_:genid174 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid172 .
+_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid173 .
+_:genid173 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid173 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid173 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyHigh> .
+_:genid172 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid171 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid170 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid164 .
+_:genid164 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid164 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid165 .
+_:genid165 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid168 .
+_:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid169 .
+_:genid169 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid169 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid169 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Likely> .
+_:genid168 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid166 .
+_:genid166 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid166 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid167 .
+_:genid167 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid167 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid167 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#High> .
+_:genid166 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid165 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid164 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid158 .
+_:genid158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid159 .
+_:genid159 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid162 .
+_:genid162 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid162 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid163 .
+_:genid163 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid163 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid163 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Likely> .
+_:genid162 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid160 .
+_:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid161 .
+_:genid161 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid161 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid161 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Moderate> .
+_:genid160 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid159 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid158 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/risky/riskonto#Occurence> <http://www.w3.org/2000/01/rdf-schema#comment> "Occurence represents instances representing the likelihood of something e.g. an event to occur."@en .
+<https://w3id.org/risky/riskonto#Occurence> <http://www.w3.org/2000/01/rdf-schema#label> "Occurence"@en .
+# 
+# https://w3id.org/risky/riskonto#Origin
+<https://w3id.org/risky/riskonto#Origin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Origin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#System> .
+<https://w3id.org/risky/riskonto#Origin> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the source of risk i.e. the risk exists because of the source"@en .
+<https://w3id.org/risky/riskonto#Origin> <http://www.w3.org/2000/01/rdf-schema#label> "Origin"@en .
+# 
+# https://w3id.org/risky/riskonto#PartialControl
+<https://w3id.org/risky/riskonto#PartialControl> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#PartialControl> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid188 .
+_:genid188 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid191 .
+_:genid191 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid191 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/risky/riskonto#Control> .
+_:genid191 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid189 .
+_:genid189 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid189 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid190 .
+_:genid190 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid190 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#isPartOf> .
+_:genid190 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/risky/riskonto#Control> .
+_:genid189 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid188 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#PartialControl> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Control> .
+<https://w3id.org/risky/riskonto#PartialControl> <http://www.w3.org/2000/01/rdf-schema#comment> "A component or part of a larger control distinguished by its application"@en .
+<https://w3id.org/risky/riskonto#PartialControl> <http://www.w3.org/2000/01/rdf-schema#label> "Partial Control"@en .
+# 
+# https://w3id.org/risky/riskonto#Period
+<https://w3id.org/risky/riskonto#Period> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Period> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Indicator> .
+<https://w3id.org/risky/riskonto#Period> <http://www.w3.org/2000/01/rdf-schema#comment> "Period represents instances representing the temporal period for something e.g. an event to occur."@en .
+<https://w3id.org/risky/riskonto#Period> <http://www.w3.org/2000/01/rdf-schema#label> "Period"@en .
+# 
+# https://w3id.org/risky/riskonto#ResidualEvent
+<https://w3id.org/risky/riskonto#ResidualEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#ResidualEvent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#ResidualEvent> <http://www.w3.org/2000/01/rdf-schema#comment> "An event that has been modified or changed by a control such that it still has a chance to occur or take place."@en .
+<https://w3id.org/risky/riskonto#ResidualEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Residual Event"@en .
+# 
+# https://w3id.org/risky/riskonto#Risk
+<https://w3id.org/risky/riskonto#Risk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Risk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#Risk> <http://www.w3.org/2000/01/rdf-schema#comment> "A 'risk' is an event representing the possibility of consequence and their impacts to occur based, which are usually considered to be negative or harmful."@en .
+<https://w3id.org/risky/riskonto#Risk> <http://www.w3.org/2000/01/rdf-schema#label> "Risk"@en .
+# 
+# https://w3id.org/risky/riskonto#RiskLevel
+<https://w3id.org/risky/riskonto#RiskLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#RiskLevel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Scale> .
+<https://w3id.org/risky/riskonto#RiskLevel> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid192 .
+_:genid192 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid195 .
+_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid196 .
+_:genid196 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid196 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid196 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/risky/riskonto#Occurence> .
+_:genid195 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid193 .
+_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid194 .
+_:genid194 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid194 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid194 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/risky/riskonto#Scale> .
+_:genid193 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid192 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/risky/riskonto#Scale
+<https://w3id.org/risky/riskonto#Scale> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Scale> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Indicator> .
+<https://w3id.org/risky/riskonto#Scale> <http://www.w3.org/2000/01/rdf-schema#comment> "Scale represents instances representing the chance or impact of something e.g. severity of an event to occur."@en .
+<https://w3id.org/risky/riskonto#Scale> <http://www.w3.org/2000/01/rdf-schema#label> "Scale"@en .
+# 
+# https://w3id.org/risky/riskonto#Source
+<https://w3id.org/risky/riskonto#Source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#Source> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Event> .
+<https://w3id.org/risky/riskonto#Source> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the source or threat that has the potential to materialise associated risk(s)"@en .
+<https://w3id.org/risky/riskonto#Source> <http://www.w3.org/2000/01/rdf-schema#label> "Source"@en .
+# 
+# https://w3id.org/risky/riskonto#System
+<https://w3id.org/risky/riskonto#System> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#System> <http://www.w3.org/2000/01/rdf-schema#comment> "A system representing the operational and organisational processes relevant to risk and its sources, causes, consequences, and impacts"@en .
+<https://w3id.org/risky/riskonto#System> <http://www.w3.org/2000/01/rdf-schema#label> "System"@en .
+# 
+# https://w3id.org/risky/riskonto#SystemMaintainer
+<https://w3id.org/risky/riskonto#SystemMaintainer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#SystemMaintainer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Agent> .
+<https://w3id.org/risky/riskonto#SystemMaintainer> <http://www.w3.org/2000/01/rdf-schema#comment> "A 'maintainer' of a system e.g. developer, manager, owner."@en .
+<https://w3id.org/risky/riskonto#SystemMaintainer> <http://www.w3.org/2000/01/rdf-schema#label> "System Maintainer"@en .
+# 
+# https://w3id.org/risky/riskonto#SystemUser
+<https://w3id.org/risky/riskonto#SystemUser> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#SystemUser> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Agent> .
+<https://w3id.org/risky/riskonto#SystemUser> <http://www.w3.org/2000/01/rdf-schema#comment> "A 'user' of a system e.g. end user."@en .
+<https://w3id.org/risky/riskonto#SystemUser> <http://www.w3.org/2000/01/rdf-schema#label> "System User"@en .
+# 
+# https://w3id.org/risky/riskonto#ThreatActor
+<https://w3id.org/risky/riskonto#ThreatActor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#ThreatActor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Agent> .
+<https://w3id.org/risky/riskonto#ThreatActor> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent whose actions create a threat."@en .
+<https://w3id.org/risky/riskonto#ThreatActor> <http://www.w3.org/2000/01/rdf-schema#label> "Threat Actor"@en .
+# 
+# https://w3id.org/risky/riskonto#VeryHighRisk
+<https://w3id.org/risky/riskonto#VeryHighRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#VeryHighRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Risk> .
+<https://w3id.org/risky/riskonto#VeryHighRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid197 .
+_:genid197 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid200 .
+_:genid200 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid200 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid201 .
+_:genid201 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid201 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid201 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Certain> .
+_:genid200 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid198 .
+_:genid198 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid198 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid199 .
+_:genid199 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid199 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid199 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyHigh> .
+_:genid198 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid197 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/risky/riskonto#VeryLowRisk
+<https://w3id.org/risky/riskonto#VeryLowRisk> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/risky/riskonto#VeryLowRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/risky/riskonto#Risk> .
+<https://w3id.org/risky/riskonto#VeryLowRisk> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid202 .
+_:genid202 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid202 <http://www.w3.org/2002/07/owl#unionOf> _:genid233 .
+_:genid233 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid233 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid234 .
+_:genid234 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid237 .
+_:genid237 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid237 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid238 .
+_:genid238 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid238 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid238 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Likely> .
+_:genid237 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid235 .
+_:genid235 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid235 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid236 .
+_:genid236 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid236 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid236 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyLow> .
+_:genid235 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid234 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid233 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid227 .
+_:genid227 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid227 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid228 .
+_:genid228 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid231 .
+_:genid231 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid231 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid232 .
+_:genid232 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid232 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid232 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Occasional> .
+_:genid231 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid229 .
+_:genid229 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid229 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid230 .
+_:genid230 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid230 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid230 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyLow> .
+_:genid229 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid228 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid227 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid221 .
+_:genid221 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid221 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid222 .
+_:genid222 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid225 .
+_:genid225 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid225 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid226 .
+_:genid226 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid226 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid226 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Occasional> .
+_:genid225 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid223 .
+_:genid223 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid223 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid224 .
+_:genid224 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid224 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid224 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Low> .
+_:genid223 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid222 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid221 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid215 .
+_:genid215 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid215 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid216 .
+_:genid216 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid219 .
+_:genid219 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid219 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid220 .
+_:genid220 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid220 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid220 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Rare> .
+_:genid219 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid217 .
+_:genid217 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid217 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid218 .
+_:genid218 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid218 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid218 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#ExtremelyLow> .
+_:genid217 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid216 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid215 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid209 .
+_:genid209 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid209 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid210 .
+_:genid210 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid213 .
+_:genid213 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid213 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid214 .
+_:genid214 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid214 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid214 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Rare> .
+_:genid213 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid211 .
+_:genid211 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid211 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid212 .
+_:genid212 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid212 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid212 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Low> .
+_:genid211 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid210 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid209 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid203 .
+_:genid203 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid203 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid204 .
+_:genid204 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid207 .
+_:genid207 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid207 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid208 .
+_:genid208 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid208 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasLikelihood> .
+_:genid208 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Rare> .
+_:genid207 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid205 .
+_:genid205 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid205 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid206 .
+_:genid206 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid206 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/risky/riskonto#hasSeverity> .
+_:genid206 <http://www.w3.org/2002/07/owl#hasValue> <https://w3id.org/risky/riskonto#Moderate> .
+_:genid205 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid204 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid203 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/risky/riskonto#Certain
+<https://w3id.org/risky/riskonto#Certain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Certain> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#Certain> <https://w3id.org/risky/riskonto#hasValue> "1.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#Certain> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing certainty of occurence."@en .
+<https://w3id.org/risky/riskonto#Certain> <http://www.w3.org/2000/01/rdf-schema#label> "Certain"@en .
+# 
+# https://w3id.org/risky/riskonto#Day
+<https://w3id.org/risky/riskonto#Day> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Day> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#Day> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing temporal period of a day."@en .
+<https://w3id.org/risky/riskonto#Day> <http://www.w3.org/2000/01/rdf-schema#label> "Day"@en .
+# 
+# https://w3id.org/risky/riskonto#Decade
+<https://w3id.org/risky/riskonto#Decade> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Decade> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#Decade> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing temporal period of a decade (10 years)."@en .
+<https://w3id.org/risky/riskonto#Decade> <http://www.w3.org/2000/01/rdf-schema#label> "Decade"@en .
+# 
+# https://w3id.org/risky/riskonto#ExtremelyHigh
+<https://w3id.org/risky/riskonto#ExtremelyHigh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#ExtremelyHigh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Scale> .
+<https://w3id.org/risky/riskonto#ExtremelyHigh> <https://w3id.org/risky/riskonto#hasValue> "0.9"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#ExtremelyHigh> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing extremely high rating on a scale."@en .
+<https://w3id.org/risky/riskonto#ExtremelyHigh> <http://www.w3.org/2000/01/rdf-schema#label> "ExtremelyHigh"@en .
+# 
+# https://w3id.org/risky/riskonto#ExtremelyLow
+<https://w3id.org/risky/riskonto#ExtremelyLow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#ExtremelyLow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Scale> .
+<https://w3id.org/risky/riskonto#ExtremelyLow> <https://w3id.org/risky/riskonto#hasValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#ExtremelyLow> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing extremely low rating on a scale."@en .
+<https://w3id.org/risky/riskonto#ExtremelyLow> <http://www.w3.org/2000/01/rdf-schema#label> "ExtremelyLow"@en .
+# 
+# https://w3id.org/risky/riskonto#ExtremelyRare
+<https://w3id.org/risky/riskonto#ExtremelyRare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#ExtremelyRare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#ExtremelyRare> <https://w3id.org/risky/riskonto#hasValue> "0.05"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#ExtremelyRare> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing extreme rarity of occurence."@en .
+<https://w3id.org/risky/riskonto#ExtremelyRare> <http://www.w3.org/2000/01/rdf-schema#label> "ExtremelyRare"@en .
+# 
+# https://w3id.org/risky/riskonto#Frequent
+<https://w3id.org/risky/riskonto#Frequent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Frequent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#Frequent> <https://w3id.org/risky/riskonto#hasValue> "0.75"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#Frequent> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing frequent occurence."@en .
+<https://w3id.org/risky/riskonto#Frequent> <http://www.w3.org/2000/01/rdf-schema#label> "Frequent"@en .
+# 
+# https://w3id.org/risky/riskonto#High
+<https://w3id.org/risky/riskonto#High> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#High> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Scale> .
+<https://w3id.org/risky/riskonto#High> <https://w3id.org/risky/riskonto#hasValue> "0.75"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#High> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing high rating on a scale."@en .
+<https://w3id.org/risky/riskonto#High> <http://www.w3.org/2000/01/rdf-schema#label> "High"@en .
+# 
+# https://w3id.org/risky/riskonto#Hour
+<https://w3id.org/risky/riskonto#Hour> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Hour> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#Hour> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing temporal period of an hour."@en .
+<https://w3id.org/risky/riskonto#Hour> <http://www.w3.org/2000/01/rdf-schema#label> "Hour"@en .
+# 
+# https://w3id.org/risky/riskonto#Likely
+<https://w3id.org/risky/riskonto#Likely> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Likely> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#Likely> <https://w3id.org/risky/riskonto#hasValue> "0.5"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#Likely> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing likely occurence."@en .
+<https://w3id.org/risky/riskonto#Likely> <http://www.w3.org/2000/01/rdf-schema#label> "Likely"@en .
+# 
+# https://w3id.org/risky/riskonto#Low
+<https://w3id.org/risky/riskonto#Low> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Low> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Scale> .
+<https://w3id.org/risky/riskonto#Low> <https://w3id.org/risky/riskonto#hasValue> "0.25"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#Low> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing low rating on a scale."@en .
+<https://w3id.org/risky/riskonto#Low> <http://www.w3.org/2000/01/rdf-schema#label> "Low"@en .
+# 
+# https://w3id.org/risky/riskonto#Lustrum
+<https://w3id.org/risky/riskonto#Lustrum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Lustrum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#Lustrum> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing temporal period of a lustrum (5 years)."@en .
+<https://w3id.org/risky/riskonto#Lustrum> <http://www.w3.org/2000/01/rdf-schema#label> "Lustrum"@en .
+# 
+# https://w3id.org/risky/riskonto#Moderate
+<https://w3id.org/risky/riskonto#Moderate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Moderate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Scale> .
+<https://w3id.org/risky/riskonto#Moderate> <https://w3id.org/risky/riskonto#hasValue> "0.5"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#Moderate> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing moderate rating on a scale."@en .
+<https://w3id.org/risky/riskonto#Moderate> <http://www.w3.org/2000/01/rdf-schema#label> "Moderate"@en .
+# 
+# https://w3id.org/risky/riskonto#Month
+<https://w3id.org/risky/riskonto#Month> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Month> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#Month> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing temporal period of a month. Note that a month may have variable number of days depending on how it is defined."@en .
+<https://w3id.org/risky/riskonto#Month> <http://www.w3.org/2000/01/rdf-schema#label> "Month"@en .
+# 
+# https://w3id.org/risky/riskonto#Never
+<https://w3id.org/risky/riskonto#Never> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Never> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#Never> <https://w3id.org/risky/riskonto#hasValue> "0.0"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#Never> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing certainty of occurence never taking place."@en .
+<https://w3id.org/risky/riskonto#Never> <http://www.w3.org/2000/01/rdf-schema#label> "Never"@en .
+# 
+# https://w3id.org/risky/riskonto#Occasional
+<https://w3id.org/risky/riskonto#Occasional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Occasional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#Occasional> <https://w3id.org/risky/riskonto#hasValue> "0.25"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#Occasional> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing occasional occurence."@en .
+<https://w3id.org/risky/riskonto#Occasional> <http://www.w3.org/2000/01/rdf-schema#label> "Occasional"@en .
+# 
+# https://w3id.org/risky/riskonto#QuarterYear
+<https://w3id.org/risky/riskonto#QuarterYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#QuarterYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#QuarterYear> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing temporal period of a yearly quarter (3 months)."@en .
+<https://w3id.org/risky/riskonto#QuarterYear> <http://www.w3.org/2000/01/rdf-schema#label> "QuarterYear"@en .
+# 
+# https://w3id.org/risky/riskonto#Rare
+<https://w3id.org/risky/riskonto#Rare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Rare> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Occurence> .
+<https://w3id.org/risky/riskonto#Rare> <https://w3id.org/risky/riskonto#hasValue> "0.1"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/risky/riskonto#Rare> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing rarity of occurence."@en .
+<https://w3id.org/risky/riskonto#Rare> <http://www.w3.org/2000/01/rdf-schema#label> "Rare"@en .
+# 
+# https://w3id.org/risky/riskonto#SemiYear
+<https://w3id.org/risky/riskonto#SemiYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#SemiYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#SemiYear> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing temporal period of a semi-year or bi-annual (6 months)."@en .
+<https://w3id.org/risky/riskonto#SemiYear> <http://www.w3.org/2000/01/rdf-schema#label> "SemiYear"@en .
+# 
+# https://w3id.org/risky/riskonto#Week
+<https://w3id.org/risky/riskonto#Week> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Week> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#Week> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing temporal period of a week."@en .
+<https://w3id.org/risky/riskonto#Week> <http://www.w3.org/2000/01/rdf-schema#label> "Week"@en .
+# 
+# https://w3id.org/risky/riskonto#Year
+<https://w3id.org/risky/riskonto#Year> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/risky/riskonto#Year> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/risky/riskonto#Period> .
+<https://w3id.org/risky/riskonto#Year> <http://www.w3.org/2000/01/rdf-schema#comment> "A value representing temporal period of a year."@en .
+<https://w3id.org/risky/riskonto#Year> <http://www.w3.org/2000/01/rdf-schema#label> "Year"@en .
+# 
+# Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/
