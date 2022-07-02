@@ -1,0 +1,39 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix : <https://w3id.org/riskos/iso/vocab#> .
+
+<https://www.iso.org/standard/79637.html> a skos:ConceptScheme ;
+    skos:prefLabel "ISO 31073:2022 Risk management — Vocabulary"@en ;
+    dct:date "2022-02"^^xsd:string .
+
+# Risk
+:RiskTerms a skos:Collection ;
+    skos:prefLabel "Terms related to Risk"@en ;
+    skos:member :Risk, :Effect, :Objective, :Uncertainty .
+
+:Risk a skos:Concept ;
+    skos:prefLabel "Risk"@en ;
+    skos:definition "effect of uncertainty on objectives"@en ;
+    skos:scopeNote "Risk is usually expressed in terms of risk sources, potential events, their consequences and their likelihood."@en ;
+    skos:inScheme <https://www.iso.org/standard/79637.html> .
+
+:Effect a skos:Concept ;
+    skos:prefLabel "effect"@en ;
+    skos:definition "An effect is a deviation from the expected. It can be positive, negative or both, and can address, create or result in opportunities and threats."@en ;
+    skos:inScheme <https://www.iso.org/standard/79637.html> .
+
+:Objective a skos:Concept ;
+    skos:prefLabel "objective"@en ;
+    skos:definition "result to be achieved"@en ;
+    skos:scopeNote "An objective can be strategic, tactical or operational."@en ;
+    skos:scopeNote "Objectives can relate to different disciplines (such as financial, health and safety, and environmental goals) and can apply at different levels (such as strategic, organization-wide, project, product and process)."@en ;
+    skos:scopeNote "An objective can be expressed in other ways, e.g. as an intended outcome, a purpose, an operational criterion, as a management system objective, or by the use of other words with similar meaning (e.g. aim, goal, target)."@en ;
+    skos:scopeNote "Objectives can have different aspects and categories, and can be applied at different levels."@en ;
+    skos:inScheme <https://www.iso.org/standard/79637.html> .
+
+:Uncertainty a skos:Concept ;
+    skos:prefLabel "Uncertainty"@en ;
+    skos:definition "state, even partial, of deficiency of information related to understanding or knowledge"@en ;
+    skos:scopeNote "In some cases, uncertainty can be related to the organization’s context as well as to its objectives."@en ;
+    skos:scopeNote "Uncertainty is the root source of risk, namely any kind of “deficiency of information” that matters in relation to objectives (and objectives, in turn, relate to all relevant interested parties’ needs and expectations)."@en ;
+    skos:inScheme <https://www.iso.org/standard/79637.html> .

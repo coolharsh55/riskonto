@@ -7,3 +7,25 @@
 - [ ] add concepts for risk management
 - [ ] controls can be unidirectional (e.g. only dealing with sources) or 
       bidirectional (e.g. specific source and risk)
+
+- [ ] Upper ontology application over risk concepts e.g. are they single occurence, continuous, temporal, physical, etc.
+
+# Concepts to add from ISO 31073:2022
+- Objective
+- Uncertainty
+- InterestedParty (was Stakeholder)
+- Organization
+- Threat
+- Likelihood (not event Likelihood...)
+- Exposure (not Exposure to Risk)
+- Probability
+- Frequency (not event frequency)
+- Vulnerability (not to risk)
+- Level of risk (not risk level)
+- Opportunity
+- RiskDriver
+- RiskAttitude
+- RiskFinancing
+- Resilience (no suffix.)
+- Monitoring (no suffix.)
+- Review (no suffix.)
