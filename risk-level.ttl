@@ -1,0 +1,73 @@
+@prefix : <https://w3id.org/dpv/risk#> .
+
+:LowRisk a skos:Concept ;
+    skos:prefLabel "Low Risk"@en ;
+    skos:broader :RiskLevel .
+:ModerateRisk a skos:Concept ;
+    skos:prefLabel "Moderate Risk"@en ;
+    skos:broader :RiskLevel .
+:HighRisk a skos:Concept ;
+    skos:prefLabel "High Risk"@en ;
+    skos:broader :RiskLevel .
+
+:RiskLevelScales a skos:ConceptScheme ;
+    skos:prefLabel "Risk Level Scales"@en ;
+    skos:hasTopConcept :RiskLevelScale1to3, :RiskLevelScale1to5 .
+
+:RiskLevelScale1to5 a skos:Concept ;
+    skos:prefLabel "Risk Level Scale from 1 to 5"@en ;
+    skos:altLabel "Risk Levels (1 to 5)"@en ;
+    skos:inScheme :RiskLevelScales .
+    skos:broader :RiskLevel .
+:RiskLevelScale1to3 a skos:Concept ;
+    skos:prefLabel "Risk Level Scale from 1 to 3"@en ;
+    skos:altLabel "Risk Levels (1 to 3)"@en ;
+    skos:inScheme :RiskLevelScales .
+    skos:broader :RiskLevel .
+
+:RiskLevel1of5 a skos:Concept ;
+    skos:prefLabel "Level 1 (of 5)"@en ;
+    skos:altLabel "Very Low"@en ;
+    skos:inScheme :RiskLevelScales ;
+    skos:broader :RiskLevelScale1to5 .
+:RiskLevel2of5 a skos:Concept ;
+    skos:prefLabel "Level 2 (of 5)"@en ;
+    skos:altLabel "Low"@en ;
+    skos:inScheme :RiskLevelScales ;
+    skos:broader :RiskLevelScale1to5 .
+:RiskLevel3of5 a skos:Concept ;
+    skos:prefLabel "Level 3 (of 5)"@en ;
+    skos:altLabel "Moderate"@en ;
+    skos:inScheme :RiskLevelScales ;
+    skos:broader :RiskLevelScale1to5 .
+:RiskLevel4of5 a skos:Concept ;
+    skos:prefLabel "Level 4 (of 5)"@en ;
+    skos:altLabel "High"@en ;
+    skos:inScheme :RiskLevelScales ;
+    skos:broader :RiskLevelScale1to5 .
+:RiskLevel5of5 a skos:Concept ;
+    skos:prefLabel "Level 5 (of 5)"@en ;
+    skos:altLabel "Very High"@en ;
+    skos:inScheme :RiskLevelScales ;
+    skos:broader :RiskLevelScale1to5 .
+
+:RiskLevel1of3 a skos:Concept ;
+    skos:prefLabel "Level 1 (of 3)"@en ;
+    skos:altLabel "Low"@en ;
+    skos:inScheme :RiskLevelScales ;
+    skos:broader :RiskLevelScale1to3 .
+:RiskLevel2of3 a skos:Concept ;
+    skos:prefLabel "Level 2 (of 3)"@en ;
+    skos:altLabel "Moderate"@en ;
+    skos:inScheme :RiskLevelScales ;
+    skos:broader :RiskLevelScale1to3 .
+:RiskLevel3of3 a skos:Concept ;
+    skos:prefLabel "Level 3 (of 3)" ;
+    skos:altLabel "High"@en ;
+    skos:inScheme :RiskLevelScales ;
+    skos:broader :RiskLevelScale1to3 .
+
+:RiskLevel7of9 a skos:Concept ;
+    skos:prefLabel "7 (of 9)"@en ;
+    skos:altLabel "Seven of Nine"@en ;
+    skos:hiddenLabel "Annika Hansen"@en .
