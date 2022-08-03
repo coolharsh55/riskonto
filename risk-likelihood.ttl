@@ -1,0 +1,78 @@
+@prefix : <https://w3id.org/dpv/risk#> .
+
+:LikelihoodLevel a skos:Concept ;
+    skos:prefLabel "Likelihood Level"@en ;
+    skos:altLabel "Impact Likelihood Level"@en ;
+    rdfs:seeAlso "https://en.wikipedia.org/wiki/Words_of_estimative_probability"^^xsd:anyURI ;
+    skos:definition "Likelihood of impact expressed as a quantified value"@en .
+
+:ExtremelyLowLikelihood a skos:Concept ;
+    skos:prefLabel "Extremely Low Likelihood"@en ;
+    skos:altLabel "Extremely Rare"@en ;
+    rdf:value "0.01"^^xsd:float ;
+    skos:broader dpv:LikelihoodLevel .
+:VeryLowLikelihood a skos:Concept ;
+    skos:prefLabel "Very Low Likelihood"@en ;
+    skos:altLabel "Rare"@en ;
+    rdf:value "0.1"^^xsd:float ;
+    skos:broader dpv:LikelihoodLevel .
+:LowLikelihood a skos:Concept ;
+    skos:prefLabel "Low Likelihood"@en ;
+    rdf:value "0.25"^^xsd:float ;
+    skos:prefLabel "Unlikely"@en ;
+    skos:broader dpv:LikelihoodLevel .
+:ModerateLikelihood a skos:Concept ;
+    skos:prefLabel "Moderate Likelihood"@en ;
+    skos:altLabel "Probable"@en ;
+    rdf:value "0.5"^^xsd:float ;
+    skos:broader dpv:LikelihoodLevel .
+:HighLikelihood a skos:Concept ;
+    skos:prefLabel "High Likelihood"@en ;
+    skos:altLabel "Likely"@en ;
+    rdf:value "0.75"^^xsd:float ;
+    skos:broader dpv:LikelihoodLevel .
+:VeryHighLikelihood a skos:Concept ;
+    skos:prefLabel "Very High Likelihood"@en ;
+    skos:altLabel "Almost Certain"@en ;
+    rdf:value "0.9"^^xsd:float ;
+    skos:broader dpv:LikelihoodLevel .
+:ExtremelyHighLikelihood a skos:Concept ;
+    skos:prefLabel "Extremely High Likelihood"@en ;
+    skos:altLabel "Certain"@en ;
+    rdf:value "0.99"^^xsd:float ;
+    skos:broader dpv:LikelihoodLevel .
+
+:LikelihoodLevelScales a skos:ConceptScheme ;
+    skos:prefLabel "Likelihood Level Scale"@en ;
+    skos:hasTopConcept :7LikelihoodLevels, :5LikelihoodLevels, :3LikelihoodLevels .
+
+:hasLowestValue a rdf:Property, skos:Concept ;
+    skos:prefLabel "has lowest value"@en ;
+    skos:definition "The lowest value within some scale"@en .
+:hasHighestValue a rdf:Property, skos:Concept ;
+    skos:prefLabel "has highest value"@en ;
+    skos:definition "The highest value within some scale"@en .
+
+:7LikelihoodLevels a skos:Concept ;
+    skos:prefLabel "Likelihood Level scale from 1 (min) to 7 (max)"@en ;
+    skos:altLabel "Likelihood Level scale (1 to 7)"@en ;
+    skos:inScheme :LikelihoodLevelScale ;
+    :hasLowestValue :ExtremelyLowLikelihood ;
+    :hasHighestValue :ExtremelyHighLikelihood ;
+    skos:broader :LikelihoodLevel .
+
+:5LikelihoodLevels a skos:Concept ;
+    skos:prefLabel "Likelihood Level scale from 1 (min) to 5 (max)"@en ;
+    skos:altLabel "Likelihood Level scale (1 to 5)"@en ;
+    skos:inScheme :LikelihoodLevelScales ;
+    :hasLowestValue :VeryLowLikelihood ;
+    :hasHighestValue :VeryHighLikelihood ;
+    skos:broader :LikelihoodLevel .
+:3LikelihoodLevel a skos:Concept ;
+    skos:prefLabel "Likelihood Level scale from 1 (min) to 3 (max)"@en ;
+    skos:altLabel "Likelihood Level scale (1 to 3)"@en ;
+    skos:inScheme :LikelihoodLevelScales ;
+    :hasLowestValue :LowLikelihood ;
+    :hasHighestValue :HighLikelihood ;
+    skos:broader dpv:RiskLevel .
+

@@ -6,9 +6,19 @@
     skos:broader :RiskLevel .
 
 :RiskMatrix3x3 a skos:Concept ;
-    skos:prefLabel "Risk Matrix with 3 Risk Levels, 3 Severity levels, and 3 Likelihood levels"@en ;
+    skos:prefLabel "Risk Matrix 3x3"@en ;
+    skos:definition "A Risk Matrix with 3 Risk Levels, 3 Severity levels, and 3 Likelihood levels"@en ;
+    skos:broader :RiskMatrix .
+:RiskMatrix5x5 a skos:Concept ;
+    skos:prefLabel "Risk Matrix 5x5"@en ;
+    skos:definition "A Risk Matrix with 3 Risk Levels, 3 Severity levels, and 3 Likelihood levels"@en ;
+    skos:broader :RiskMatrix .
+:RiskMatrix7x7 a skos:Concept ;
+    skos:prefLabel "Risk Matrix 7x7"@en ;
+    skos:definition "A Risk Matrix with 3 Risk Levels, 3 Severity levels, and 3 Likelihood levels"@en ;
     skos:broader :RiskMatrix .
 
+# e.g. of how to create a risk matrix for use
 :RM3x3N1 a skos:Concept, :RiskLevel, :RiskMatrixLevel ;
     skos:prefLabel "Low Risk"@en ;
     :associatedRiskLevel :LowRisk ;

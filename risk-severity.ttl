@@ -1,0 +1,70 @@
+@prefix : <https://w3id.org/dpv/risk#> .
+
+:SeverityLevel a skos:Concept ;
+    skos:prefLabel "Severity Level"@en ;
+    skos:altLabel "Impact Severity Level"@en ;
+    skos:definition "Severity of impact expressed as a quantified value"@en .
+
+:ExtremelyLowSeverity a skos:Concept ;
+    skos:prefLabel "Extremely Low Severity"@en ;
+    rdf:value "0.01"^^xsd:float ;
+    skos:broader dpv:SeverityLevel .
+:VeryLowSeverity a skos:Concept ;
+    skos:prefLabel "Very Low Severity"@en ;
+    rdf:value "0.1"^^xsd:float ;
+    skos:broader dpv:SeverityLevel .
+:LowSeverity a skos:Concept ;
+    skos:prefLabel "Low Severity"@en ;
+    rdf:value "0.25"^^xsd:float ;
+    skos:broader dpv:SeverityLevel .
+:ModerateSeverity a skos:Concept ;
+    skos:prefLabel "Moderate Severity"@en ;
+    rdf:value "0.5"^^xsd:float ;
+    skos:broader dpv:SeverityLevel .
+:HighSeverity a skos:Concept ;
+    skos:prefLabel "High Severity"@en ;
+    rdf:value "0.75"^^xsd:float ;
+    skos:broader dpv:SeverityLevel .
+:VeryHighSeverity a skos:Concept ;
+    skos:prefLabel "Very High Severity"@en ;
+    rdf:value "0.9"^^xsd:float ;
+    skos:broader dpv:SeverityLevel .
+:ExtremelyHighSeverity a skos:Concept ;
+    skos:prefLabel "Extremely High Severity"@en ;
+    rdf:value "0.99"^^xsd:float ;
+    skos:broader dpv:SeverityLevel .
+
+:SeverityLevelScales a skos:ConceptScheme ;
+    skos:prefLabel "Severity Level Scale"@en ;
+    skos:hasTopConcept :7SeverityLevels, :5SeverityLevels, :3SeverityLevels .
+
+:hasLowestValue a rdf:Property, skos:Concept ;
+    skos:prefLabel "has lowest value"@en ;
+    skos:definition "The lowest value within some scale"@en .
+:hasHighestValue a rdf:Property, skos:Concept ;
+    skos:prefLabel "has highest value"@en ;
+    skos:definition "The highest value within some scale"@en .
+
+:7SeverityLevels a skos:Concept ;
+    skos:prefLabel "Severity Level scale from 1 (min) to 7 (max)"@en ;
+    skos:altLabel "Severity Level scale (1 to 7)"@en ;
+    skos:inScheme :SeverityLevelScale ;
+    :hasLowestValue :ExtremelyLowSeverity ;
+    :hasHighestValue :ExtremelyHighSeverity ;
+    skos:broader :SeverityLevel .
+
+:5SeverityLevels a skos:Concept ;
+    skos:prefLabel "Severity Level scale from 1 (min) to 5 (max)"@en ;
+    skos:altLabel "Severity Level scale (1 to 5)"@en ;
+    skos:inScheme :SeverityLevelScales ;
+    :hasLowestValue :VeryLowSeverity ;
+    :hasHighestValue :VeryHighSeverity ;
+    skos:broader :SeverityLevel .
+:3SeverityLevel a skos:Concept ;
+    skos:prefLabel "Severity Level scale from 1 (min) to 3 (max)"@en ;
+    skos:altLabel "Severity Level scale (1 to 3)"@en ;
+    skos:inScheme :SeverityLevelScales ;
+    :hasLowestValue :LowSeverity ;
+    :hasHighestValue :HighSeverity ;
+    skos:broader dpv:RiskLevel .
+
