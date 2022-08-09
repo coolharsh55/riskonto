@@ -48,18 +48,23 @@ def generate_nodes(n):
             node = RISK[f'RM{n}x{n}N{node_index}']
             graph.add((node, RDF.type, SKOS.Concept))
             graph.add((node, SKOS.prefLabel, 
-                Literal(f'Node {node_index} in Risk Matrix {n} x {n}', lang='en')))
-            graph.add((node, DPV.hasRiskLevel, RISK[f'{labels[index]}Risk']))
+                Literal(f'Node {node_index} (row: {index2+1} col: {index+1}) in Risk Matrix {n} x {n}', lang='en')))
+
+            risk_level = abs(index+index2+1)//((n+1)//2)
+            # print(f'row: {index2} col: {index} risk: {risk_level}')
+            risk_level = labels[risk_level]
+            graph.add((node, DPV.hasRiskLevel, RISK[f'{risk_level}Risk']))
             graph.add((node, DPV.hasSeverity, 
                 RISK[f'{labels[element[0]-1]}Severity']))
             graph.add((node, DPV.hasLikelihood, 
                 RISK[f'{labels[element[1]-1]}Likelihood']))
             graph.add((node, SKOS.broader, RISK[f'RiskMatrix{n}x{n}']))
+            print(f'row: {index2} col: {index} risk: {risk_level}')
 
 
 generate_nodes(3)
-generate_nodes(5)
-generate_nodes(7)
+# generate_nodes(5)
+# generate_nodes(7)
 # print(select_labels(7))
 graph.serialize('risk-matrix-nodes.ttl', format='ttl')
 

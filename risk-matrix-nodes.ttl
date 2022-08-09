@@ -1,0 +1,67 @@
+@prefix : <https://w3id.org/dpv/risk/matrix#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+:RM3x3N1 a skos:Concept ;
+    skos:broader :RiskMatrix3x3 ;
+    skos:prefLabel "Node 1 (row: 1 col: 1) in Risk Matrix 3 x 3"@en ;
+    dpv:hasLikelihood :LowLikelihood ;
+    dpv:hasRiskLevel :LowRisk ;
+    dpv:hasSeverity :LowSeverity .
+
+:RM3x3N2 a skos:Concept ;
+    skos:broader :RiskMatrix3x3 ;
+    skos:prefLabel "Node 2 (row: 2 col: 1) in Risk Matrix 3 x 3"@en ;
+    dpv:hasLikelihood :ModerateLikelihood ;
+    dpv:hasRiskLevel :ModerateRisk ;
+    dpv:hasSeverity :LowSeverity .
+
+:RM3x3N3 a skos:Concept ;
+    skos:broader :RiskMatrix3x3 ;
+    skos:prefLabel "Node 3 (row: 3 col: 1) in Risk Matrix 3 x 3"@en ;
+    dpv:hasLikelihood :LowLikelihood ;
+    dpv:hasRiskLevel :ModerateRisk ;
+    dpv:hasSeverity :ModerateSeverity .
+
+:RM3x3N4 a skos:Concept ;
+    skos:broader :RiskMatrix3x3 ;
+    skos:prefLabel "Node 4 (row: 1 col: 2) in Risk Matrix 3 x 3"@en ;
+    dpv:hasLikelihood :ModerateLikelihood ;
+    dpv:hasRiskLevel :ModerateRisk ;
+    dpv:hasSeverity :LowSeverity .
+
+:RM3x3N5 a skos:Concept ;
+    skos:broader :RiskMatrix3x3 ;
+    skos:prefLabel "Node 5 (row: 2 col: 2) in Risk Matrix 3 x 3"@en ;
+    dpv:hasLikelihood :LowLikelihood ;
+    dpv:hasRiskLevel :ModerateRisk ;
+    dpv:hasSeverity :ModerateSeverity .
+
+:RM3x3N6 a skos:Concept ;
+    skos:broader :RiskMatrix3x3 ;
+    skos:prefLabel "Node 6 (row: 3 col: 2) in Risk Matrix 3 x 3"@en ;
+    dpv:hasLikelihood :HighLikelihood ;
+    dpv:hasRiskLevel :HighRisk ;
+    dpv:hasSeverity :LowSeverity .
+
+:RM3x3N7 a skos:Concept ;
+    skos:broader :RiskMatrix3x3 ;
+    skos:prefLabel "Node 7 (row: 1 col: 3) in Risk Matrix 3 x 3"@en ;
+    dpv:hasLikelihood :LowLikelihood ;
+    dpv:hasRiskLevel :ModerateRisk ;
+    dpv:hasSeverity :ModerateSeverity .
+
+:RM3x3N8 a skos:Concept ;
+    skos:broader :RiskMatrix3x3 ;
+    skos:prefLabel "Node 8 (row: 2 col: 3) in Risk Matrix 3 x 3"@en ;
+    dpv:hasLikelihood :HighLikelihood ;
+    dpv:hasRiskLevel :HighRisk ;
+    dpv:hasSeverity :LowSeverity .
+
+:RM3x3N9 a skos:Concept ;
+    skos:broader :RiskMatrix3x3 ;
+    skos:prefLabel "Node 9 (row: 3 col: 3) in Risk Matrix 3 x 3"@en ;
+    dpv:hasLikelihood :ModerateLikelihood ;
+    dpv:hasRiskLevel :HighRisk ;
+    dpv:hasSeverity :ModerateSeverity .
+
