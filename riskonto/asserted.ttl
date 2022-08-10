@@ -1,0 +1,336 @@
+@prefix : <http://www.semanticweb.org/harsh/ontologies/2022/0/untitled-ontology-16#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/harsh/ontologies/2022/0/untitled-ontology-16> .
+
+<http://www.semanticweb.org/harsh/ontologies/2022/0/untitled-ontology-16> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/risky/riskonto#hasControl
+<https://w3id.org/risky/riskonto#hasControl> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <https://w3id.org/risky/riskonto#hasPart> ,
+                                                                [ owl:inverseOf <https://w3id.org/risky/riskonto#isPartOf>
+                                                                ] .
+
+
+###  https://w3id.org/risky/riskonto#hasPart
+<https://w3id.org/risky/riskonto#hasPart> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/risky/riskonto#isControlOfSystem
+<https://w3id.org/risky/riskonto#isControlOfSystem> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <https://w3id.org/risky/riskonto#isPartOf> ,
+                                                                       [ owl:inverseOf <https://w3id.org/risky/riskonto#hasPart>
+                                                                       ] .
+
+
+###  https://w3id.org/risky/riskonto#isPartOf
+<https://w3id.org/risky/riskonto#isPartOf> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/risky/riskonto#Agent
+<https://w3id.org/risky/riskonto#Agent> rdf:type owl:Class .
+
+
+###  https://w3id.org/risky/riskonto#Consequence
+<https://w3id.org/risky/riskonto#Consequence> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/risky/riskonto#Event> .
+
+
+###  https://w3id.org/risky/riskonto#Control
+<https://w3id.org/risky/riskonto#Control> rdf:type owl:Class .
+
+
+###  https://w3id.org/risky/riskonto#ControlConsequence
+<https://w3id.org/risky/riskonto#ControlConsequence> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <https://w3id.org/risky/riskonto#Control> .
+
+
+###  https://w3id.org/risky/riskonto#ControlImpact
+<https://w3id.org/risky/riskonto#ControlImpact> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/risky/riskonto#Control> .
+
+
+###  https://w3id.org/risky/riskonto#ControlOrigin
+<https://w3id.org/risky/riskonto#ControlOrigin> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/risky/riskonto#Control> .
+
+
+###  https://w3id.org/risky/riskonto#ControlSource
+<https://w3id.org/risky/riskonto#ControlSource> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/risky/riskonto#Control> .
+
+
+###  https://w3id.org/risky/riskonto#Event
+<https://w3id.org/risky/riskonto#Event> rdf:type owl:Class .
+
+
+###  https://w3id.org/risky/riskonto#HighRisk
+<https://w3id.org/risky/riskonto#HighRisk> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://w3id.org/risky/riskonto#Risk> .
+
+
+###  https://w3id.org/risky/riskonto#Impact
+<https://w3id.org/risky/riskonto#Impact> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/risky/riskonto#Consequence> .
+
+
+###  https://w3id.org/risky/riskonto#Indicator
+<https://w3id.org/risky/riskonto#Indicator> rdf:type owl:Class .
+
+
+###  https://w3id.org/risky/riskonto#InitialEvent
+<https://w3id.org/risky/riskonto#InitialEvent> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/risky/riskonto#Event> .
+
+
+###  https://w3id.org/risky/riskonto#LowRisk
+<https://w3id.org/risky/riskonto#LowRisk> rdf:type owl:Class ;
+                                          rdfs:subClassOf <https://w3id.org/risky/riskonto#Risk> .
+
+
+###  https://w3id.org/risky/riskonto#ModerateRisk
+<https://w3id.org/risky/riskonto#ModerateRisk> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/risky/riskonto#Risk> .
+
+
+###  https://w3id.org/risky/riskonto#NullifiedEvent
+<https://w3id.org/risky/riskonto#NullifiedEvent> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <https://w3id.org/risky/riskonto#Event> .
+
+
+###  https://w3id.org/risky/riskonto#Occurence
+<https://w3id.org/risky/riskonto#Occurence> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/risky/riskonto#Event> ,
+                                                            <https://w3id.org/risky/riskonto#Indicator> .
+
+
+###  https://w3id.org/risky/riskonto#Origin
+<https://w3id.org/risky/riskonto#Origin> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/risky/riskonto#System> .
+
+
+###  https://w3id.org/risky/riskonto#PartialControl
+<https://w3id.org/risky/riskonto#PartialControl> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <https://w3id.org/risky/riskonto#Control> .
+
+
+###  https://w3id.org/risky/riskonto#Period
+<https://w3id.org/risky/riskonto#Period> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/risky/riskonto#Indicator> .
+
+
+###  https://w3id.org/risky/riskonto#ResidualEvent
+<https://w3id.org/risky/riskonto#ResidualEvent> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/risky/riskonto#Event> .
+
+
+###  https://w3id.org/risky/riskonto#Risk
+<https://w3id.org/risky/riskonto#Risk> rdf:type owl:Class ;
+                                       rdfs:subClassOf <https://w3id.org/risky/riskonto#Event> .
+
+
+###  https://w3id.org/risky/riskonto#RiskLevel
+<https://w3id.org/risky/riskonto#RiskLevel> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/risky/riskonto#Event> ,
+                                                            <https://w3id.org/risky/riskonto#Scale> .
+
+
+###  https://w3id.org/risky/riskonto#Scale
+<https://w3id.org/risky/riskonto#Scale> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://w3id.org/risky/riskonto#Indicator> .
+
+
+###  https://w3id.org/risky/riskonto#Source
+<https://w3id.org/risky/riskonto#Source> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://w3id.org/risky/riskonto#Event> .
+
+
+###  https://w3id.org/risky/riskonto#System
+<https://w3id.org/risky/riskonto#System> rdf:type owl:Class .
+
+
+###  https://w3id.org/risky/riskonto#SystemMaintainer
+<https://w3id.org/risky/riskonto#SystemMaintainer> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <https://w3id.org/risky/riskonto#Agent> .
+
+
+###  https://w3id.org/risky/riskonto#SystemUser
+<https://w3id.org/risky/riskonto#SystemUser> rdf:type owl:Class ;
+                                             rdfs:subClassOf <https://w3id.org/risky/riskonto#Agent> .
+
+
+###  https://w3id.org/risky/riskonto#ThreatActor
+<https://w3id.org/risky/riskonto#ThreatActor> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/risky/riskonto#Agent> .
+
+
+###  https://w3id.org/risky/riskonto#VeryHighRisk
+<https://w3id.org/risky/riskonto#VeryHighRisk> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/risky/riskonto#Risk> .
+
+
+###  https://w3id.org/risky/riskonto#VeryLowRisk
+<https://w3id.org/risky/riskonto#VeryLowRisk> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/risky/riskonto#Risk> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://example.com/riskonto/ex#DB
+<https://example.com/riskonto/ex#DB> rdf:type owl:NamedIndividual ,
+                                              <https://w3id.org/risky/riskonto#System> .
+
+
+###  https://example.com/riskonto/ex#UnauthorisedAccess
+<https://example.com/riskonto/ex#UnauthorisedAccess> rdf:type owl:NamedIndividual ,
+                                                              <https://w3id.org/risky/riskonto#Event> ,
+                                                              <https://w3id.org/risky/riskonto#Risk> .
+
+
+###  https://w3id.org/risky/riskonto#Certain
+<https://w3id.org/risky/riskonto#Certain> rdf:type owl:NamedIndividual ,
+                                                   <https://w3id.org/risky/riskonto#Event> ,
+                                                   <https://w3id.org/risky/riskonto#Indicator> ,
+                                                   <https://w3id.org/risky/riskonto#Occurence> .
+
+
+###  https://w3id.org/risky/riskonto#Day
+<https://w3id.org/risky/riskonto#Day> rdf:type owl:NamedIndividual ,
+                                               <https://w3id.org/risky/riskonto#Indicator> ,
+                                               <https://w3id.org/risky/riskonto#Period> .
+
+
+###  https://w3id.org/risky/riskonto#Decade
+<https://w3id.org/risky/riskonto#Decade> rdf:type owl:NamedIndividual ,
+                                                  <https://w3id.org/risky/riskonto#Indicator> ,
+                                                  <https://w3id.org/risky/riskonto#Period> .
+
+
+###  https://w3id.org/risky/riskonto#ExtremelyHigh
+<https://w3id.org/risky/riskonto#ExtremelyHigh> rdf:type owl:NamedIndividual ,
+                                                         <https://w3id.org/risky/riskonto#Indicator> ,
+                                                         <https://w3id.org/risky/riskonto#Scale> .
+
+
+###  https://w3id.org/risky/riskonto#ExtremelyLow
+<https://w3id.org/risky/riskonto#ExtremelyLow> rdf:type owl:NamedIndividual ,
+                                                        <https://w3id.org/risky/riskonto#Indicator> ,
+                                                        <https://w3id.org/risky/riskonto#Scale> .
+
+
+###  https://w3id.org/risky/riskonto#ExtremelyRare
+<https://w3id.org/risky/riskonto#ExtremelyRare> rdf:type owl:NamedIndividual ,
+                                                         <https://w3id.org/risky/riskonto#Event> ,
+                                                         <https://w3id.org/risky/riskonto#Indicator> ,
+                                                         <https://w3id.org/risky/riskonto#Occurence> .
+
+
+###  https://w3id.org/risky/riskonto#Frequent
+<https://w3id.org/risky/riskonto#Frequent> rdf:type owl:NamedIndividual ,
+                                                    <https://w3id.org/risky/riskonto#Event> ,
+                                                    <https://w3id.org/risky/riskonto#Indicator> ,
+                                                    <https://w3id.org/risky/riskonto#Occurence> .
+
+
+###  https://w3id.org/risky/riskonto#High
+<https://w3id.org/risky/riskonto#High> rdf:type owl:NamedIndividual ,
+                                                <https://w3id.org/risky/riskonto#Indicator> ,
+                                                <https://w3id.org/risky/riskonto#Scale> .
+
+
+###  https://w3id.org/risky/riskonto#Hour
+<https://w3id.org/risky/riskonto#Hour> rdf:type owl:NamedIndividual ,
+                                                <https://w3id.org/risky/riskonto#Indicator> ,
+                                                <https://w3id.org/risky/riskonto#Period> .
+
+
+###  https://w3id.org/risky/riskonto#Likely
+<https://w3id.org/risky/riskonto#Likely> rdf:type owl:NamedIndividual ,
+                                                  <https://w3id.org/risky/riskonto#Event> ,
+                                                  <https://w3id.org/risky/riskonto#Indicator> ,
+                                                  <https://w3id.org/risky/riskonto#Occurence> .
+
+
+###  https://w3id.org/risky/riskonto#Low
+<https://w3id.org/risky/riskonto#Low> rdf:type owl:NamedIndividual ,
+                                               <https://w3id.org/risky/riskonto#Indicator> ,
+                                               <https://w3id.org/risky/riskonto#Scale> .
+
+
+###  https://w3id.org/risky/riskonto#Lustrum
+<https://w3id.org/risky/riskonto#Lustrum> rdf:type owl:NamedIndividual ,
+                                                   <https://w3id.org/risky/riskonto#Indicator> ,
+                                                   <https://w3id.org/risky/riskonto#Period> .
+
+
+###  https://w3id.org/risky/riskonto#Moderate
+<https://w3id.org/risky/riskonto#Moderate> rdf:type owl:NamedIndividual ,
+                                                    <https://w3id.org/risky/riskonto#Indicator> ,
+                                                    <https://w3id.org/risky/riskonto#Scale> .
+
+
+###  https://w3id.org/risky/riskonto#Month
+<https://w3id.org/risky/riskonto#Month> rdf:type owl:NamedIndividual ,
+                                                 <https://w3id.org/risky/riskonto#Indicator> ,
+                                                 <https://w3id.org/risky/riskonto#Period> .
+
+
+###  https://w3id.org/risky/riskonto#Never
+<https://w3id.org/risky/riskonto#Never> rdf:type owl:NamedIndividual ,
+                                                 <https://w3id.org/risky/riskonto#Event> ,
+                                                 <https://w3id.org/risky/riskonto#Indicator> ,
+                                                 <https://w3id.org/risky/riskonto#Occurence> .
+
+
+###  https://w3id.org/risky/riskonto#Occasional
+<https://w3id.org/risky/riskonto#Occasional> rdf:type owl:NamedIndividual ,
+                                                      <https://w3id.org/risky/riskonto#Event> ,
+                                                      <https://w3id.org/risky/riskonto#Indicator> ,
+                                                      <https://w3id.org/risky/riskonto#Occurence> .
+
+
+###  https://w3id.org/risky/riskonto#QuarterYear
+<https://w3id.org/risky/riskonto#QuarterYear> rdf:type owl:NamedIndividual ,
+                                                       <https://w3id.org/risky/riskonto#Indicator> ,
+                                                       <https://w3id.org/risky/riskonto#Period> .
+
+
+###  https://w3id.org/risky/riskonto#Rare
+<https://w3id.org/risky/riskonto#Rare> rdf:type owl:NamedIndividual ,
+                                                <https://w3id.org/risky/riskonto#Event> ,
+                                                <https://w3id.org/risky/riskonto#Indicator> ,
+                                                <https://w3id.org/risky/riskonto#Occurence> .
+
+
+###  https://w3id.org/risky/riskonto#SemiYear
+<https://w3id.org/risky/riskonto#SemiYear> rdf:type owl:NamedIndividual ,
+                                                    <https://w3id.org/risky/riskonto#Indicator> ,
+                                                    <https://w3id.org/risky/riskonto#Period> .
+
+
+###  https://w3id.org/risky/riskonto#Week
+<https://w3id.org/risky/riskonto#Week> rdf:type owl:NamedIndividual ,
+                                                <https://w3id.org/risky/riskonto#Indicator> ,
+                                                <https://w3id.org/risky/riskonto#Period> .
+
+
+###  https://w3id.org/risky/riskonto#Year
+<https://w3id.org/risky/riskonto#Year> rdf:type owl:NamedIndividual ,
+                                                <https://w3id.org/risky/riskonto#Indicator> ,
+                                                <https://w3id.org/risky/riskonto#Period> .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

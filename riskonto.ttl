@@ -72,7 +72,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/risky/riskonto#detectsEvent
 :detectsEvent rdf:type owl:ObjectProperty ;
-              rdfs:domain :Control ;
+              rdfs:domain :DetectionControl ;
               rdfs:range :Event ;
               rdfs:comment "Indicates that the control detects occurence of specified event."@en ;
               rdfs:label "detects event"@en .
@@ -80,7 +80,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/risky/riskonto#eliminatesEvent
 :eliminatesEvent rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Control ;
+                 rdfs:domain :EliminationControl ;
                  rdfs:range :NullifiedEvent ;
                  rdfs:comment "Indicates that the control eliminates or nullifies or completely prevents occurence of specified event."@en ;
                  rdfs:label "eliminates event"@en .
@@ -95,7 +95,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                                  )
                                    ] ;
                        rdfs:range :Vulnerability ;
-                       rdfs:label "exploitsVulnerability"@en .
+                       rdfs:label "exploits vulnerability"@en .
 
 
 ###  https://w3id.org/risky/riskonto#follows
@@ -306,7 +306,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/risky/riskonto#modifiesEvent
 :modifiesEvent rdf:type owl:ObjectProperty ;
-               rdfs:domain :Control ;
+               rdfs:domain :ModificationControl ;
                rdfs:range :ResidualEvent ;
                rdfs:comment "Indicates the Control modifies the specified Event."@en ;
                rdfs:label "modifies event"@en .
@@ -393,6 +393,18 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                ] ;
                rdfs:comment "A control applied to the risk source to reduce the possibility, likelihood, or severity of risk" ;
                rdfs:label "Control Source"@en .
+
+
+###  https://w3id.org/risky/riskonto#DetectionControl
+:DetectionControl rdf:type owl:Class ;
+                  rdfs:subClassOf :Control ;
+                  rdfs:label "Detection Control"@en .
+
+
+###  https://w3id.org/risky/riskonto#EliminationControl
+:EliminationControl rdf:type owl:Class ;
+                    rdfs:subClassOf :Control ;
+                    rdfs:label "Elimination Control" .
 
 
 ###  https://w3id.org/risky/riskonto#Event
@@ -646,6 +658,12 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
               rdfs:label "Moderate Risk"@en .
 
 
+###  https://w3id.org/risky/riskonto#ModificationControl
+:ModificationControl rdf:type owl:Class ;
+                     rdfs:subClassOf :Control ;
+                     rdfs:label "Modification Control"@en .
+
+
 ###  https://w3id.org/risky/riskonto#NullifiedEvent
 :NullifiedEvent rdf:type owl:Class ;
                 rdfs:subClassOf :Event ,
@@ -670,82 +688,21 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/risky/riskonto#Occurence
 :Occurence rdf:type owl:Class ;
-           rdfs:subClassOf :Indicator ,
-                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :hasLikelihood ;
-                                                    owl:hasValue :Certain
-                                                  ]
-                                                  [ rdf:type owl:Restriction ;
-                                                    owl:onProperty :hasSeverity ;
-                                                    owl:hasValue :ExtremelyHigh
-                                                  ]
-                                                ) ;
-                             rdf:type owl:Class
-                           ] ,
-                           [ rdf:type owl:Class ;
-                             owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasLikelihood ;
-                                                                    owl:hasValue :Certain
-                                                                  ]
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasSeverity ;
-                                                                    owl:hasValue :Moderate
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ]
-                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasLikelihood ;
-                                                                    owl:hasValue :Frequent
-                                                                  ]
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasSeverity ;
-                                                                    owl:hasValue :Moderate
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ]
-                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasLikelihood ;
-                                                                    owl:hasValue :Likely
-                                                                  ]
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasSeverity ;
-                                                                    owl:hasValue :ExtremelyHigh
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ]
-                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasLikelihood ;
-                                                                    owl:hasValue :Likely
-                                                                  ]
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasSeverity ;
-                                                                    owl:hasValue :High
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ]
-                                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasLikelihood ;
-                                                                    owl:hasValue :Likely
-                                                                  ]
-                                                                  [ rdf:type owl:Restriction ;
-                                                                    owl:onProperty :hasSeverity ;
-                                                                    owl:hasValue :Moderate
-                                                                  ]
-                                                                ) ;
-                                             rdf:type owl:Class
-                                           ]
-                                         )
-                           ] ;
+           rdfs:subClassOf :Indicator ;
            rdfs:comment "Occurence represents instances representing the likelihood of something e.g. an event to occur."@en ;
            rdfs:label "Occurence"@en .
 
 
 ###  https://w3id.org/risky/riskonto#Origin
 :Origin rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( :System
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasRisk ;
+                                                     owl:someValuesFrom :Risk
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
         rdfs:subClassOf :System ;
         rdfs:comment "Indicates the source of risk i.e. the risk exists because of the source"@en ;
         rdfs:label "Origin"@en .
@@ -839,7 +796,11 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/risky/riskonto#ThreatActor
 :ThreatActor rdf:type owl:Class ;
-             rdfs:subClassOf :Agent ;
+             rdfs:subClassOf :Agent ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :exploitsVulnerability ;
+                               owl:someValuesFrom :Vulnerability
+                             ] ;
              rdfs:comment "An agent whose actions create a threat."@en ;
              rdfs:label "Threat Actor"@en .
 
