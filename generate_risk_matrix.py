@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import itertools
 import re
 from rdflib.term import Literal, URIRef, BNode
 from rdflib.namespace import RDF, RDFS, SKOS
@@ -13,14 +14,17 @@ graph.namespace_manager.bind('', RISK)
 
 import itertools
 
-def generate_combinations(max, min=1, size=None):
+def generate_permutations(max, min=1, size=None):
     '''generate and return combinations from min(1) to max of size each'''
     if size is None:
         size = max
     data = tuple(n for n in range(min, max+1))
-    data = tuple(itertools.product(data, data))
-    data = sorted(data, key=lambda x:sum(x))
-    data = [data[n:n+size] for n in range(0,size)]
+    print("range n", data)
+    data = tuple(itertools.product(data,repeat=2))
+    print("permute", data)
+    data = sorted(data, key=lambda x:x[0]*x[1])
+    print("sorted", data)
+    data = [data[n:n+size] for n in range(0,len(data),size)]
     return data
 
 
@@ -42,41 +46,29 @@ def select_labels(n):
 def generate_nodes(n):
     '''Generate risk matrix of nxn with labels'''
     labels = select_labels(n)
-    data = tuple(generate_combinations(n))
+    data = tuple(generate_permutations(n))
     print(data)
-    squares = tuple(n*x for x in range(1, n+1, 1))
-    print(squares)
-    for index, level in enumerate(data):
-        for index2, element in enumerate(level):
-            node_index = index*n + index2 + 1
-            node = RISK[f'RM{n}x{n}N{node_index}']
+    for risk_level, node_list in enumerate(data):
+        for row, col in node_list:
+            node = RISK[f'RM{n}x{n}R{row}C{col}']
             graph.add((node, RDF.type, SKOS.Concept))
-            node_score = (index+1) * (index2+1)
-            risk_level = 0
-            try:
-                while(node_score >= squares[risk_level]):
-                    risk_level += 1
-            except IndexError:
-                risk_level = len(squares) - 1
-            risk_level = labels[risk_level]
-            risk_label = ' '.join(
-                x for x in re.split(r'([A-Z][a-z]*)', risk_level) if x)
+            risk_label = labels[risk_level]
+            pref_label = ' '.join(x for x in re.split(r'([A-Z][a-z]*)', risk_label) if x)
             graph.add((node, SKOS.prefLabel, 
-                Literal(f'{risk_label} Risk', lang='en')))
+                Literal(f'{pref_label} Risk', lang='en')))
             graph.add((node, SKOS.definition,
-                Literal(f'Node {node_index} (row: {index+1}, col: {index2+1}) in {n}x{n} risk matrix with risk level {risk_level}, severity {labels[element[0]-1]}, and likelihood {labels[element[1]-1]}', lang='en')))
-            graph.add((node, DPV.hasRiskLevel, RISK[f'{risk_level}Risk']))
+                Literal(f'Node (row: {row}, col: {col}) in {n}x{n} risk matrix with risk level {risk_level}, severity {labels[col-1]}, and likelihood {labels[row-1]}', lang='en')))
+            graph.add((node, DPV.hasRiskLevel, RISK[f'{risk_label}Risk']))
             graph.add((node, DPV.hasSeverity, 
-                RISK[f'{labels[element[0]-1]}Severity']))
+                RISK[f'{labels[col-1]}Severity']))
             graph.add((node, DPV.hasLikelihood, 
-                RISK[f'{labels[element[1]-1]}Likelihood']))
+                RISK[f'{labels[row-1]}Likelihood']))
             graph.add((node, SKOS.broader, RISK[f'RiskMatrix{n}x{n}']))
-            print(f'row: {index} col: {index2} risk: {risk_level}')
+            print(f'row: {row} col: {col} risk: {risk_label}')
 
 
 generate_nodes(3)
-# generate_nodes(5)
-# generate_nodes(7)
-# print(select_labels(7))
+generate_nodes(5)
+generate_nodes(7)
 graph.serialize('risk-matrix-nodes.ttl', format='ttl')
 
