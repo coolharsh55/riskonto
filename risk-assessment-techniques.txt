@@ -1,0 +1,47 @@
+RiskAssessmentTechnique
+ALARP
+ALARA
+SFAIRP
+BayesianAnalysis
+BayesianNetworks
+BowTie
+Brainstorming
+BusinessImpactAnalysis
+CausalMapping
+CauseConsequenceAnalysis
+Checklists
+Classifications
+Taxonomies
+Cindynic
+RiskMatrix
+CostBenefitAnalysis
+CrossImpactAnalysis
+DecisionTreeAnalysis
+DelphiTechnique
+EventTreeAnalysis
+FailureModesEffectsAnalysis
+FailureModesEffectsCriticalityAnalysis
+FaultTreeAnalysis
+FNDiagrams
+GameTheory
+HAZOP
+HACCP
+HumanReliabilityAnalysis
+Fishbone
+LOPA
+MarkovAnalysis
+MonteCarloSimulation
+MCA
+NominalGroupTechnique
+ParetoCharts
+PIA
+DPIA
+Reliability centred maintenance
+Risk indices
+S-curves
+Scenario analysis
+StructuredInterviews
+SWIFT
+Surveys
+Toxicological
+VaR

@@ -1,0 +1,15 @@
+HaltSource
+RemoveSource
+AvoidSource
+ReduceLikelihood
+ReduceSeverity
+ChangeConsequence
+ChangeImpact
+RemoveConsequence
+RemoveImpact
+ShareRisk
+MonitorRisk
+MonitorRiskSource
+MonitorVulnerabilities
+MonitorConsequence
+MonitorImpact

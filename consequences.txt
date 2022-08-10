@@ -1,0 +1,98 @@
+Business Performance Impairment
+Loss of Reputation
+Loss of Goodwill
+Data Breach
+Personal Safety Endangerment
+Law Enforcement Adverse Effects
+Confidentiality Breach
+Public Order Breach
+Financial Loss
+Business disruption
+Environmental Safety Endangerment
+Service Interruption
+Loss of Customer Confidence
+Loss of Credibility
+Internal Operation Disruption
+Organisation Disruption
+Increase Internal Cost
+Third Party Operation Disruption
+Injury
+Danger to Personnel 
+Danger to Customers
+Attack on Private Life
+Financial Repair Costs
+Financial Personnel Costs
+Financial Equipment Costs
+Financial Investigation Costs
+Loss of Goods
+Loss of Assets
+Loss of Funds
+Loss of Customers
+Loss of Suppliers
+Cost of Judicial Proceedings
+Cost of Judicial Penalties
+Loss of Competitive Advantage
+Loss of Technological Advantage
+Loss of Trust
+Loss of Negotiating Capacity
+Industrial Crisis
+Government Crisis
+Material Damage
+Replacement Costs
+Cost of Acquisition
+Cost of Configuration
+Cost of Installation
+Cost of Backup
+Cost of Suspended Operations
+Security Breach
+Loss of Opportunity
+Cost of Operation Interruption
+Misuse of Breached Information
+Violation of Statutory Obligations
+Violation of Regulatory Obligations
+Violation of Contractual Obligations
+Violation of Code of Conduct
+Violation of Ethical Code
+Interception of Communications
+Spying
+Physical Spying
+Cyber Spying
+Remote Spying
+Eavesdropping
+Theft
+Theft of Equipment
+Theft of Media
+Retrieval of Discarded Equipment
+Retrieval of Deleted Data
+Unwanted Disclosure of Data
+Unauthorised Disclosure of Data
+Equipment Failure
+Equipment Malfunction
+Software Malfunction
+Unauthorised Use of Equipment
+Unauthorised Access to Premises
+Fraud
+Terrorism
+Scam
+Corruption of Data
+Unwanted Deletion of Data
+Illegal Processing of Data
+Errornous Use
+Impact to Rights
+Denial of Service Attack
+Distributed Denial of Service Attack
+Unauthorised System Access
+Stalking
+Physical Stalking
+Cyber Stalking
+Unauthorised Impersonation
+Ransom Demand
+Spoofing
+Blackmail
+Physical Assault
+Loss of Proprietary Information
+Malicious Software
+Virus
+Malware
+Sale of Data
+Vulnerability Created
