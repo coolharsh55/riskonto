@@ -19,11 +19,11 @@ def generate_permutations(max, min=1, size=None):
     if size is None:
         size = max
     data = tuple(n for n in range(min, max+1))
-    print("range n", data)
+    # print("range n", data)
     data = tuple(itertools.product(data,repeat=2))
-    print("permute", data)
+    # print("permute", data)
     data = sorted(data, key=lambda x:x[0]*x[1])
-    print("sorted", data)
+    # print("sorted", data)
     data = [data[n:n+size] for n in range(0,len(data),size)]
     return data
 
@@ -47,24 +47,26 @@ def generate_nodes(n):
     '''Generate risk matrix of nxn with labels'''
     labels = select_labels(n)
     data = tuple(generate_permutations(n))
-    print(data)
+    # print(data)
     for risk_level, node_list in enumerate(data):
         for row, col in node_list:
             node = RISK[f'RM{n}x{n}R{row}C{col}']
             graph.add((node, RDF.type, SKOS.Concept))
             risk_label = labels[risk_level]
             pref_label = ' '.join(x for x in re.split(r'([A-Z][a-z]*)', risk_label) if x)
+            description = f'Node (row: {row} col: {col}) in {n}x{n} risk matrix with Risk Level: {risk_label} Severity: {labels[col-1]} and Likelihood: {labels[row-1]}'
             graph.add((node, SKOS.prefLabel, 
                 Literal(f'{pref_label} Risk', lang='en')))
             graph.add((node, SKOS.definition,
-                Literal(f'Node (row: {row}, col: {col}) in {n}x{n} risk matrix with risk level {risk_level}, severity {labels[col-1]}, and likelihood {labels[row-1]}', lang='en')))
+                Literal(description, lang='en')))
             graph.add((node, DPV.hasRiskLevel, RISK[f'{risk_label}Risk']))
             graph.add((node, DPV.hasSeverity, 
                 RISK[f'{labels[col-1]}Severity']))
             graph.add((node, DPV.hasLikelihood, 
                 RISK[f'{labels[row-1]}Likelihood']))
             graph.add((node, SKOS.broader, RISK[f'RiskMatrix{n}x{n}']))
-            print(f'row: {row} col: {col} risk: {risk_label}')
+            # print(f'row: {row} col: {col} risk: {risk_label}')
+            print(f"{RISK[f'RM{n}x{n}R{row}C{col}']},{pref_label} Risk,{description},{RISK[f'RiskMatrix{n}x{n}']}")
 
 
 generate_nodes(3)

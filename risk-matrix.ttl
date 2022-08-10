@@ -1,10 +1,5 @@
 @prefix : <https://w3id.org/dpv/risk/matrix#> .
 
-:RiskMatrixLevel a skos:Concept ;
-    skos:prefLabel "Risk Matrix Level"@en ;
-    skos:definition "Risk Level as expressed as a combination of Severity and Likelihood within a Risk Matrix"@en ;
-    skos:broader :RiskLevel .
-
 :RiskMatrix3x3 a skos:Concept ;
     skos:prefLabel "Risk Matrix 3x3"@en ;
     skos:definition "A Risk Matrix with 3 Risk Levels, 3 Severity levels, and 3 Likelihood levels"@en ;

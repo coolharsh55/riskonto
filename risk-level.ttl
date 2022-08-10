@@ -29,25 +29,21 @@
     rdf:value "0.99"^^xsd:float ;
     skos:broader dpv:RiskLevel .
 
-:RiskLevelScale a skos:Concept ;
-    skos:prefLabel "Risk Level Scale"@en ;
-    skos:hasNarrower :7RiskLevels, :5RiskLevels, :3RiskLevels .
-
 :7RiskLevels a skos:Concept ;
     skos:prefLabel "Risk Level scale from 1 (min) to 7 (max)"@en ;
     skos:altLabel "Risk Level scale (1 to 7)"@en ;
-    skos:broader :RiskLevelScale ;
+    skos:broader :RiskLevel ;
     skos:narrower :ExtremelyLowRisk, :VeryLowRisk, :LowRisk, :ModerateRisk, :HighRisk, :VeryHighRisk, :ExtremelyHighRisk .
 
 :5RiskLevels a skos:Concept ;
     skos:prefLabel "Risk Level scale from 1 (min) to 5 (max)"@en ;
     skos:altLabel "Risk Level scale (1 to 5)"@en ;
-    skos:broader :RiskLevelScales ;
+    skos:broader :RiskLevel ;
     skos:narrower :VeryLowRisk, :LowRisk, :ModerateRisk, :HighRisk, :VeryHighRisk .
 
 :3RiskLevel a skos:Concept ;
     skos:prefLabel "Risk Level scale from 1 (min) to 3 (max)"@en ;
     skos:altLabel "Risk Level scale (1 to 3)"@en ;
-    skos:broader :RiskLevelScales ;
+    skos:broader :RiskLevel ;
     skos:narrower :LowRisk, :ModerateRisk, :HighRisk .
 
