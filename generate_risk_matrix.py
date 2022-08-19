@@ -6,11 +6,17 @@ from rdflib.term import Literal, URIRef, BNode
 from rdflib.namespace import RDF, RDFS, SKOS
 from rdflib import Namespace, Graph
 DPV = Namespace('https://w3id.org/dpv#')
-RISK = Namespace('https://w3id.org/dpv/risk/matrix#')
+RISK = Namespace('https://w3id.org/dpv/risk#')
+DPV_SKOS = Namespace('https://w3id.org/dpv/dpv-skos#')
+RISK_SKOS = Namespace('https://w3id.org/dpv/risk/skos#')
+DPV_OWL = Namespace('https://w3id.org/dpv/dpv-owl#')
+RISK_OWL = Namespace('https://w3id.org/dpv/risk/owl#')
 
-graph = Graph()
-graph.namespace_manager.bind('dpv', DPV)
-graph.namespace_manager.bind('', RISK)
+DPV_Serialisations = (
+    ('', Graph(), DPV, RISK),
+    ('-skos', Graph(), DPV_SKOS, RISK_SKOS),
+    ('-owl', Graph(), DPV_OWL, RISK_OWL),
+)
 
 import itertools
 
@@ -50,27 +56,29 @@ def generate_nodes(n):
     # print(data)
     for risk_level, node_list in enumerate(data):
         for row, col in node_list:
-            node = RISK[f'RM{n}x{n}R{row}C{col}']
-            graph.add((node, RDF.type, SKOS.Concept))
+            risk_score = (row * col) / (n * n)
             risk_label = labels[risk_level]
             pref_label = ' '.join(x for x in re.split(r'([A-Z][a-z]*)', risk_label) if x)
-            description = f'Node (row: {row} col: {col}) in {n}x{n} risk matrix with Risk Level: {risk_label} Severity: {labels[col-1]} and Likelihood: {labels[row-1]}'
-            graph.add((node, SKOS.prefLabel, 
-                Literal(f'{pref_label} Risk', lang='en')))
-            graph.add((node, SKOS.definition,
-                Literal(description, lang='en')))
-            graph.add((node, DPV.hasRiskLevel, RISK[f'{risk_label}Risk']))
-            graph.add((node, DPV.hasSeverity, 
-                RISK[f'{labels[col-1]}Severity']))
-            graph.add((node, DPV.hasLikelihood, 
-                RISK[f'{labels[row-1]}Likelihood']))
-            graph.add((node, SKOS.broader, RISK[f'RiskMatrix{n}x{n}']))
-            # print(f'row: {row} col: {col} risk: {risk_label}')
-            print(f"{RISK[f'RM{n}x{n}R{row}C{col}']},{pref_label} Risk,{description},{RISK[f'RiskMatrix{n}x{n}']}")
+            pref_label = f'{pref_label} Risk (S:{col} L:{row})'
+            description = f'Node in a {n}x{n} Risk Matrix with Risk Severity: {labels[col-1]}; Likelihood: {labels[row-1]}; and Risk Level: {risk_label}'
 
+            # Output for importing into spreadsheets
+            # print(f'risk:RM{n}x{n}S{col}L{row},{pref_label},{description},risk:RiskMatrix{n}x{n},a,"{risk_score:.2f},xsd:decimal"')
+
+            # Output for importing into/as RDF
+
+            # General definitions and descriptions will get added via spreadsheet
+            # Additional properties: risk severity, likelihood, level
+            for _, graph, nm_dpv, nm_risk in DPV_Serialisations:
+                node = nm_risk[f'RM{n}x{n}S{col}L{row}']
+                graph.add((node, nm_dpv['hasRiskLevel'], nm_risk[f'{risk_label}Risk']))
+                graph.add((node, nm_dpv['hasSeverity'], nm_risk[f'{labels[col-1]}Severity']))
+                graph.add((node, nm_dpv['hasLikelihood'], nm_risk[f'{labels[row-1]}Likelihood']))
 
 generate_nodes(3)
 generate_nodes(5)
 generate_nodes(7)
-graph.serialize('risk-matrix-nodes.ttl', format='ttl')
+
+for suffix, graph, *_ in DPV_Serialisations:
+    graph.serialize(f'risk-matrix-nodes{suffix}.ttl', format='ttl')
 
