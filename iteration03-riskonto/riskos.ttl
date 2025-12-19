@@ -1,0 +1,194 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix riskos: <https://w3id.org/riskos#> .
+
+# Risk
+:Risk a skos:Concept ;
+	skos:prefLabel "Risk"@en ;
+    skos:narrower :Description, :Level, :Source .
+:RiskDescription a skos:Concept ;
+    skos:prefLabel "Description"@en ;
+    skos:broader :Risk .
+:RiskLevel a skos:Concept ;
+    skos:prefLabel "Level of Risk"@en ;
+    skos:broader :Risk .
+
+# Risk Management
+:RiskManagement a skos:Concept ;
+	skos:prefLabel "Risk Management"@en .
+:RiskManagementFramework a skos:Concept ;
+	skos:prefLabel "Management Framework"@en .
+:RiskManagementPolicy a skos:Concept ;
+	skos:prefLabel "Management Policy"@en .
+:RiskManagementPlan a skos:Concept ;
+	skos:prefLabel "Management Plan"@en .
+:RiskManagementProcess a skos:Concept ;
+	skos:prefLabel "Management Process"@en .
+:RiskCommunication a skos:Concept ;
+	skos:prefLabel "Communication"@en .
+:RiskConsultation a skos:Concept ;
+	skos:prefLabel "Consultation"@en .
+:RiskContextEstablishment a skos:Concept ;
+	skos:prefLabel "Context Establishment"@en .
+:ExternalContext a skos:Concept ;
+	skos:prefLabel "External Context"@en .
+:InternalContext a skos:Concept ;
+	skos:prefLabel "Internal Context"@en .
+:RiskCriteria a skos:Concept ;
+	skos:prefLabel "Criteria"@en .
+:ExposureToRisk a skos:Concept ;
+	skos:prefLabel "Exposure"@en .
+:RiskOwner a skos:Concept ;
+	skos:prefLabel "Owner"@en .
+:DeterminesRiskTolerance a skos:Concept ;
+	skos:prefLabel "determinesRiskTolerance"@en .
+:AttitudeTowardsRisk a skos:Concept ;
+	skos:prefLabel "Attitude"@en .
+:RiskAppetite a skos:Concept ;
+	skos:prefLabel "Appetite"@en .
+:RiskTolerance a skos:Concept ;
+	skos:prefLabel "Tolerance"@en .
+:RiskAversion a skos:Concept ;
+	skos:prefLabel "Aversion"@en .
+:RiskAcceptance a skos:Concept ;
+	skos:prefLabel "Acceptance"@en .
+
+# Risk Assessment
+:RiskAssessment a skos:Concept ;
+	skos:prefLabel "Risk Assessment"@en ;
+    skos:narrower :Identification, :Analysis, :Evaluation .
+:RiskIdentification a skos:Concept ;
+	skos:prefLabel "Risk Identification"@en ;
+    skos:narrower :Finding, :Recognising, :Describing ;
+    skos:broader :RiskAssessment .
+:RiskFinding a skos:Concept ;
+	# discovery vs finding
+    skos:prefLabel "Finding Risk"@en ;
+    skos:broader :RiskIdentification .
+:RiskRecognising a skos:Concept ;
+    skos:prefLabel "Recognising Risk"@en ;
+    skos:broader :RiskIdentification .
+:RiskDescribing a skos:Concept ;
+    skos:prefLabel "Describin Risk"@en ;
+    skos:broader :RiskIdentification .
+:RiskAnalysis a skos:Concept ;
+	skos:prefLabel "Analysis"@en ;
+    skos:narrower :RiskLevelDetermination ;
+    skos:broader :RiskAssessment .
+:RiskLevelDetermination a skos:Concept ;
+    skos:prefLabel "Determine Level of Risk"@en ;
+    skos:broader :Analysis .
+
+# Risk Events, Sources, Causes, and Consequences
+:RiskSource a skos:Concept ;
+    skos:prefLabel "Risk Source"@en ;
+    skos:broader :Risk .
+:Hazard a skos:Concept ;
+	skos:prefLabel "Hazard"@en ;
+	skos:broader :RiskSource .
+:Event a skos:Concept ;
+    skos:prefLabel "Event"@en .
+:RiskEvent a skos:Conceopt ;
+	skos:prefLabel "Risk Event"@en ;
+	skos:broader :Event .
+:SusceptibilityToRiskSource a skos:Concept ;
+	skos:prefLabel "Susceptibility to Risk Source"@en .
+:Consequence a skos:Concept ;
+    skos:prefLabel "Consequence of an Event"@en ;
+    skos:broader :Event .
+:Cause a skos:Copncept ;
+	skos:prefLabel "Cause of an Event"@en ;
+	skos:broader :Event .
+
+# Event properties
+:EventLikelihood a skos:Concept ;
+    skos:prefLabel "Likelihood of an Event"@en .
+:EventProbability a skos:Concept ;
+	skos:prefLabel "Probability of an Event"@en ;
+	skos:broader :EventLikelihood .
+:EventFrequency a skos:Concept ;
+	skos:prefLabel "Frequency of an Event"@en .
+:EventFrequencyOccurences a skos:Concept ;
+	skos:prefLabel "Event Frequency Occurences"@en ;
+	skos:broader :EventFrequency .
+:EventFrequencyPeriod a skos:Concept ;
+	skos:prefLabel "Event Frequency Period"@en ;
+	skos:broader :EventFrequency .
+
+:VulnerabilityToRisk a skos:Concept ;
+	skos:prefLabel "Vulnerability to Risk"@en .
+
+:RiskMatrix a skos:Concept ;
+	skos:prefLabel "Matrix"@en .
+:RiskLevel a skos:Concept ;
+	skos:prefLabel "LevelOf"@en .
+:CombinedLikelihood a skos:Concept ;
+	skos:prefLabel "combinesLikelihood"@en .
+:CombinedConsequence a skos:Concept ;
+	skos:prefLabel "combinesConsequence"@en .
+
+# Risk Evaluation
+:RiskEvaluation a skos:Concept ;
+	skos:prefLabel "Evaluation"@en .
+
+
+:RiskAggregation a skos:Concept ;
+	skos:prefLabel "Aggregation"@en .
+:AggregatedRisk a skos:Concept ;
+	skos:prefLabel "AggregatedRisk"@en .
+
+# Risk Treatment
+:RiskTreatment a skos:Concept ;
+	skos:prefLabel "Risk Treatment"@en .
+:RiskTreatmentMethod a skos:Concept ;
+	skos:prefLabel "Risk Treatment Method"@en ;
+	skos:broader :RiskTreatment .
+:EliminateRisk skos:Concept ;
+	skos:prefLabel "Eliminate Risk"@en ;
+	skos:broader :RiskTreatmentMethod .
+:AvoidRisk skos:Concept ;
+	skos:prefLabel "Avoid Risk"@en ;
+	skos:broader :RiskTreatmentMethod .
+:TransferRisk skos:Concept ;
+	skos:prefLabel "Transfer Risk"@en ;
+	skos:broader :RiskTreatmentMethod .
+:AcceptRisk skos:Concept ;
+	skos:prefLabel "Accept Risk"@en ;
+	skos:broader :RiskTreatmentMethod .
+:ReduceRisk skos:Concept ;
+	skos:prefLabel "Reduce Risk"@en ;
+	skos:broader :RiskTreatmentMethod .
+:RiskControl a skos:Concept ;
+	skos:prefLabel "Control"@en ;
+	skos:broader :RiskTreatment .
+
+:RiskAvoidance a skos:Concept ;
+	skos:prefLabel "Avoidance"@en .
+:RiskSharing a skos:Concept ;
+	skos:prefLabel "Sharing"@en .
+:FinancingForRisk a skos:Concept ;
+	skos:prefLabel "Financing"@en .
+:RiskRetention a skos:Concept ;
+	skos:prefLabel "Retention"@en .
+:ResidualRisk a skos:Concept ;
+	skos:prefLabel "Residual"@en .
+:RiskResilience a skos:Concept ;
+	skos:prefLabel "Resilience"@en .
+:RiskMonitoring a skos:Concept ;
+	skos:prefLabel "Monitoring"@en .
+:RiskReview a skos:Concept ;
+	skos:prefLabel "Review"@en .
+:RiskReporting a skos:Concept ;
+	skos:prefLabel "Reporting"@en .
+:RiskRegister a skos:Concept ;
+	skos:prefLabel "Register"@en .
+:RiskRecord a skos:Concept ;
+	skos:prefLabel "recordsRisk"@en .
+:RiskProfile a skos:Concept ;
+	skos:prefLabel "Profile"@en .
+:RiskManagementAudit a skos:Concept ;
+	skos:prefLabel "ManagementAudit"@en .
+:Stakeholder a skos:Concept ;
+	skos:prefLabel "Stakeholder"@en .
+:RiskPerception a skos:Concept ;
+	skos:prefLabel "Perception"@en .
